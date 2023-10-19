@@ -5,3 +5,8 @@
 
 ![Block Diagram](images/block_diagram.png)
 
+## Waveform 
+- Short snippet of waveform
+
+![Waveform](images/waveform.png)
+

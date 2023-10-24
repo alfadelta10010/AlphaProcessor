@@ -1,4 +1,4 @@
-module avsdpll (CLK, VCO_IN, ENb_CP, ENb_VCO, REF);
+module avsdpll (CLK, VCO_IN, ENb_CP, REF, ENb_VCO);
 	output reg CLK;
 	input wire VCO_IN;
 	input wire ENb_CP;

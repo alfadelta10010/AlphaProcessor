@@ -33,6 +33,19 @@ sandpiper-saas -i src/module/alphacore.tlv -o alphacore.v --bestsv --noline -p v
 
 ![Result](images/sandpiper_op.png)
 
+### Running pre-synthesis simulations
+- Here, we increase/decrease the digital output value and feed it to the DAC. so we can watch the changes on the SoC output
+- We use `iverilog` and `gtkwave` to run the testbench on our module with the following command:
+```bash
+iverilog -o output/pre_synth_sim/pre_synth_sim.out src/module/testbench.v -I src/include -I src/module -I output/compiled_tlv
+cd output/pre_synth_sim
+./pre_synth_sim.out
+```
+- It gives the following output:
+
+![pre_synth_term](images/pre_synth_term.png)
+
+![pre_synth_waveform](images/pre_synth_waveform.png)
 
 
 ## Files

@@ -14,7 +14,6 @@ module alphasoc_tb;
 	reg real VREFL;
 	reg real VREFH;
 	wire real OUT;
-	
 	alphasoc uut (.OUT(OUT), .reset(reset), .VCO_IN(VCO_IN), .ENb_CP(ENb_CP), .ENb_VCO(ENb_VCO), .REF(REF), .VREFH(VREFH));
 	initial begin
 		reset = 0;
@@ -35,6 +34,6 @@ module alphasoc_tb;
 			#100 REF = ~REF;
 			#(83.33/2) VCO_IN = ~VCO_IN;
 		end
-		$finish
+		$finish;
 	end
 endmodule

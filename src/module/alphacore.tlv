@@ -1,8 +1,9 @@
 \m4_TLV_version 1d: tl-x.org
 \SV
    // This code can be found in: https://github.com/stevehoover/RISC-V_MYTH_Workshop
-   m4_include_lib(['https://raw.githubusercontent.com/stevehoover/RISC-V_MYTH_Workshop/master/tlv_lib/risc-v_shell_lib.tlv'])
-   m4_makerchip_module   // (Expanded in Nav-TLV pane.)
+   //m4_include_lib(['https://raw.githubusercontent.com/stevehoover/RISC-V_MYTH_Workshop/master/tlv_lib/risc-v_shell_lib.tlv'])
+   //m4_makerchip_module   // (Expanded in Nav-TLV pane.)
+   m4_include_lib(['https://raw.githubusercontent.com/shivanishah269/risc-v-core/master/FPGA_Implementation/riscv_shell_lib.tlv'])
    m4_ifelse_block(M4_MAKERCHIP, 1, ['
    // Makerchip module interface.
    m4_makerchip_module
@@ -214,10 +215,6 @@
       //       be sure to avoid having unassigned signals (which you might be using for random inputs)
       //       other than those specifically expected in the labs. You'll get strange errors for these.
    
-   // Assert these to end simulation (before Makerchip cycle limit).
-   *passed = *cyc_cnt > 40;
-   *failed = 1'b0;
-   
    // Macro instantiations for:
    //  o instruction memory
    //  o register file
@@ -228,6 +225,6 @@
       m4+rf(@2, @3)  // Args: (read stage, write stage) - if equal, no register bypass is required
       m4+dmem(@4)    // Args: (read/write stage)
       //m4+myth_fpga(@0)  // Uncomment to run on fpga
-   m4+cpu_viz(@4)    // For visualisation, argument should be at least equal to the last stage of CPU logic. @4 would work for all labs.
+   //m4+cpu_viz(@4)    // For visualisation, argument should be at least equal to the last stage of CPU logic. @4 would work for all labs.
 \SV
    endmodule

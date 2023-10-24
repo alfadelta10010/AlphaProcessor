@@ -47,6 +47,94 @@ cd output/pre_synth_sim
 
 ![pre_synth_waveform](images/pre_synth_waveform.png)
 
+### Running Synthesis
+- First, we need to create `.lib` files for `avsdpll.v` and `avsddac.v`. 
+- We do this using the `verilog_to_lib.pl` script, which is run using the following commands:
+```bash
+cd ../../src/lib
+perl verilog_to_lib.pl ../module/avsdpll.v avsdpll
+perl verilog_to_lib.pl ../module/avsddac.v avsddac
+```
+- This creates `avsdpll.lib` and `avsddac.lib`, which we can invoke in YoSys
+- To synthesize our design, we execute the following commands:
+```
+read_verilog ./module/alphasoc.v
+read_verilog -I./include ../output/compiled_tlv/alphacore.v
+read_verilog -I./include ./module/clk_gate.v
+read_liberty -lib ./lib/avsdpll.lib
+read_liberty -lib ./lib/avsddac.lib
+read_liberty -lib ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+synth -top alphasoc
+dfflibmap -liberty ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+opt
+abc -liberty ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib -script +strash;scorr;ifraig;retime;{D};strash;dch,-f;map,-M,1,{D}
+flatten
+setundef -zero
+clean -purge
+rename -enumerate
+stat
+write_verilog -noattr ../output/synth/alphasoc.synth.v
+```
+- After running these commands, we get a synthesized module with all of our individual components connected together in `alphasoc.synth.v`, found [here](output/synth/alphasoc.synth.v).
+- These are the statistics of our design:
+```
+=== alphasoc ===
+
+   Number of wires:              10457
+   Number of wire bits:          12558
+   Number of public wires:       10457
+   Number of public wire bits:   12558
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              12444
+     avsddac                         1
+     avsdpll                         1
+     sky130_fd_sc_hd__a2111oi_0     23
+     sky130_fd_sc_hd__a211o_2       32
+     sky130_fd_sc_hd__a211oi_1      22
+     sky130_fd_sc_hd__a21boi_0       7
+     sky130_fd_sc_hd__a21o_2         3
+     sky130_fd_sc_hd__a21oi_1     1835
+     sky130_fd_sc_hd__a221oi_1      68
+     sky130_fd_sc_hd__a22o_2         9
+     sky130_fd_sc_hd__a22oi_1      420
+     sky130_fd_sc_hd__a311oi_1       3
+     sky130_fd_sc_hd__a31o_2         2
+     sky130_fd_sc_hd__a31oi_1       39
+     sky130_fd_sc_hd__a32oi_1        4
+     sky130_fd_sc_hd__and2_2        11
+     sky130_fd_sc_hd__and3_2         3
+     sky130_fd_sc_hd__clkinv_1    1386
+     sky130_fd_sc_hd__dfxtp_1     1970
+     sky130_fd_sc_hd__mux2i_1       25
+     sky130_fd_sc_hd__nand2_1     3500
+     sky130_fd_sc_hd__nand3_1      195
+     sky130_fd_sc_hd__nand3b_1       1
+     sky130_fd_sc_hd__nand4_1      179
+     sky130_fd_sc_hd__nor2_1       794
+     sky130_fd_sc_hd__nor3_1        77
+     sky130_fd_sc_hd__nor4_1       108
+     sky130_fd_sc_hd__o2111ai_1     23
+     sky130_fd_sc_hd__o211ai_1      84
+     sky130_fd_sc_hd__o21a_1        17
+     sky130_fd_sc_hd__o21ai_0      848
+     sky130_fd_sc_hd__o21bai_1      34
+     sky130_fd_sc_hd__o221a_2        3
+     sky130_fd_sc_hd__o221ai_1      46
+     sky130_fd_sc_hd__o22ai_1      582
+     sky130_fd_sc_hd__o2bb2ai_1      2
+     sky130_fd_sc_hd__o311ai_0       7
+     sky130_fd_sc_hd__o31ai_1        5
+     sky130_fd_sc_hd__o32ai_1        2
+     sky130_fd_sc_hd__or2_2         19
+     sky130_fd_sc_hd__or4_2          9
+     sky130_fd_sc_hd__xnor2_1        9
+     sky130_fd_sc_hd__xor2_1        36
+```
+- The synthesis log can be found in [synth.log](output/synth/synth.log)
+
+
 
 ## Files
 - [alphacore.tlv](src/module/alphacore.tlv): The source TL-Verilog file

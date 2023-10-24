@@ -10,6 +10,11 @@
 ### AlphaCore 
 - AlphaCore is a simple RISC-V CPU, written in TL-Verilog, made by following the RISC-V MYTH course by VSD and RedwoodEDA.
 
+### PLL
+- A Phase-locked loop is a control system that generate an output signal with a phase related to the phase of the input signal.
+- A PLL is used for synchronization, and here we are using a PLL for clock generation
+- We are using a PLL made by VSD-IP, called [avsdpll](https://github.com/vsdip/rvmyth_avsdpll_interface)
+
 
 ### AlphaCore Block Diagram
 

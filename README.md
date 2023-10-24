@@ -15,6 +15,10 @@
 - A PLL is used for synchronization, and here we are using a PLL for clock generation
 - We are using a PLL made by VSD-IP, called [avsdpll](https://github.com/vsdip/rvmyth_avsdpll_interface)
 
+### DAC
+- A digital-to-analog converter is used to convert digital signals to analog signals.
+- A DAC is used for communication purposes, to enable the generation of digitally-defined transmission signals.
+- We are using a DAC made by VSD-IP, called [avsddac](https://github.com/vsdip/rvmyth_avsddac_interface).
 
 ### AlphaCore Block Diagram
 

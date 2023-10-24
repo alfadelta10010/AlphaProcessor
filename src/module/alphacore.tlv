@@ -148,6 +148,9 @@
                              $rf_rd_data1;
          $src2_value[31:0] = (>>1$rf_wr_index == $rf_rd_index2) && >>1$rf_wr_en ? >>1$result :
                              $rf_rd_data2;
+         `BOGUS_USE($is_sw)
+         `BOGUS_USE($is_sb)
+         `BOGUS_USE($is_sh)
 
       @3
          $is_jump = $is_jal || $is_jalr ;

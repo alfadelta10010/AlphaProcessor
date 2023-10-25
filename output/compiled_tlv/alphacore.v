@@ -3,215 +3,205 @@
    // This code can be found in: https://github.com/stevehoover/RISC-V_MYTH_Workshop
    // Included URL: "https://raw.githubusercontent.com/stevehoover/RISC-V_MYTH_Workshop/master/tlv_lib/risc-v_shell_lib.tlv"// Included URL: "https://raw.githubusercontent.com/stevehoover/warp-v_includes/2d6d36baa4d2bc62321f982f78c8fe1456641a43/risc-v_defs.tlv"
 //_\SV
-`include "alphacore_gen.v"
-module riscv(input clk, 
-			 input reset, 
-			 input [31:0] idata0, idata1, idata2, idata3, idata4, idata5, idata6, idata7, idata8, idata9, idata10, idata11, idata12, idata13, idata14, idata15, idata16, idata17, idata18, idata19, idata20, idata21, idata22, idata23, idata24, idata25, idata26, idata27, idata28, idata29, idata30, idata31, 
-			 output reg [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23, reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31
-			); 
- //_\TLV
+   module riscv(input clk, input reset, input [31:0] idata0, idata1, idata2, idata3, idata4, idata5, idata6, idata7, idata8, idata9, idata10, idata11, idata12, idata13, idata14, idata15, idata16, idata17, idata18, idata19, idata20, idata21, idata22, idata23, idata24, idata25, idata26, idata27, idata28, idata29, idata30, idata31, output reg [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23, reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31); 
+   
+`include "alphacore_gen.v" //_\TLV
+   // /=======================\
+   // | Little to Big Endian  |
+   // \=======================/
+   //m4_asm(LUI, r5, 10010001101000101)
+   //m4_asm(ADDI, r10, r10, 11111111)
+   //m4_asm(AND, r28, r5, r10)
+   //m4_asm(SLLI, r28, r28, 11000)
+   //m4_asm(ADD, r8, r8, r28)
+   //m4_asm(SLLI, r10, r10, 1000)
+   //m4_asm(AND, r28, r5, r10)
+   //m4_asm(SLLI, r28, r28, 1000)
+   //m4_asm(ADD, r8, r8, r28)
+   //m4_asm(SLLI, r10, r10, 1000)
+   //m4_asm(AND, r28, r5, r10)
+   //m4_asm(SRLI, r28, r28, 1000)
+   //m4_asm(ADD, r8, r8, r28)
+   //m4_asm(SLLI, r10, r10, 1000)
+   //m4_asm(AND, r28, r5, r10)
+   //m4_asm(SRLI, r28, r28, 11000)
+   //m4_asm(ADD, r8, r8, r28)
+   //m4_asm(SLLI, r10, r10, 1000)
+   //m4_asm(SW, r0, r8, 10000)           // Store the final result value to byte address 16
+   
    //_|cpu
       //_@0
          assign CPU_reset_a0 = reset;
-      
-      //Fetch
-         // Next PC
-         assign CPU_pc_a0[31:0] = (CPU_reset_a1) ? 32'd0 : 
-                     (CPU_valid_taken_br_a3) ? CPU_br_tgt_pc_a3 : 
-                     (CPU_valid_load_a3) ? CPU_inc_pc_a3 : 
-                     (CPU_valid_jump_a3 && CPU_is_jal_a3) ? CPU_br_tgt_pc_a3 :
-                     (CPU_valid_jump_a3 && CPU_is_jalr_a3) ? CPU_jalr_tgt_pc_a3 : CPU_inc_pc_a1;
-         
-         assign CPU_imem_rd_en_a0 = !CPU_reset_a0;
-         assign CPU_imem_rd_addr_a0[31:0] = CPU_pc_a0[30+1:2];
-         
-      //_@1         
+         assign CPU_pc_a0[31:0] = CPU_reset_a1 ? 32'b0 :
+                     CPU_valid_taken_branch_a3 ? CPU_br_target_pc_a3 :
+                     CPU_valid_load_a3 ? CPU_inc_pc_a3 :
+                     CPU_valid_jump_a3 && CPU_is_jal_a3 ? CPU_br_target_pc_a3 :
+                     CPU_valid_jump_a3 && CPU_is_jalr_a3 ? CPU_jalr_target_pc_a3 :
+                     CPU_inc_pc_a1 ;
+      //_@1   
+         assign CPU_inc_pc_a1[31:0] = CPU_pc_a1 + 32'd4;
+         assign CPU_imem_rd_addr_a1[30-1:0] = CPU_pc_a1[30+1:2];
+         assign CPU_imem_rd_en_a1 = !CPU_reset_a1;
          assign CPU_instr_a1[31:0] = CPU_imem_rd_data_a1[31:0];
-         assign CPU_inc_pc_a1[31:0] = CPU_pc_a1 + 32'd4;          
-      // Decode   
-         assign CPU_is_i_instr_a1 = CPU_instr_a1[6:2] == 5'b00000 ||
-                       CPU_instr_a1[6:2] == 5'b00001 ||
-                       CPU_instr_a1[6:2] == 5'b00100 ||
-                       CPU_instr_a1[6:2] == 5'b00110 ||
-                       CPU_instr_a1[6:2] == 5'b11001;
-         assign CPU_is_r_instr_a1 = CPU_instr_a1[6:2] == 5'b01011 ||
-                       CPU_instr_a1[6:2] == 5'b10100 ||
-                       CPU_instr_a1[6:2] == 5'b01100 ||
-                       CPU_instr_a1[6:2] == 5'b01101;                       
-         assign CPU_is_b_instr_a1 = CPU_instr_a1[6:2] == 5'b11000;
-         assign CPU_is_u_instr_a1 = CPU_instr_a1[6:2] == 5'b00101 ||
-                       CPU_instr_a1[6:2] == 5'b01101;
-         assign CPU_is_s_instr_a1 = CPU_instr_a1[6:2] == 5'b01000 ||
-                       CPU_instr_a1[6:2] == 5'b01001;
-         assign CPU_is_j_instr_a1 = CPU_instr_a1[6:2] == 5'b11011;
+         assign CPU_is_u_instr_a1 = CPU_instr_a1[6:2] ==? 5'b0x101;
          
-         assign CPU_imm_a1[31:0] = CPU_is_i_instr_a1 ? { {21{CPU_instr_a1[31]}} , CPU_instr_a1[30:20] } :
-                      CPU_is_s_instr_a1 ? { {21{CPU_instr_a1[31]}} , CPU_instr_a1[30:25] , CPU_instr_a1[11:8] , CPU_instr_a1[7] } :
-                      CPU_is_b_instr_a1 ? { {20{CPU_instr_a1[31]}} , CPU_instr_a1[7] , CPU_instr_a1[30:25] , CPU_instr_a1[11:8] , 1'b0} :
-                      CPU_is_u_instr_a1 ? { CPU_instr_a1[31:12] , 12'b0} : 
-                      CPU_is_j_instr_a1 ? { {12{CPU_instr_a1[31]}} , CPU_instr_a1[19:12] , CPU_instr_a1[20] , CPU_instr_a1[30:21] , 1'b0} : 32'b0;
+         assign CPU_is_s_instr_a1 = CPU_instr_a1[6:2] ==? 5'b0100x;
          
+         assign CPU_is_r_instr_a1 = CPU_instr_a1[6:2] ==? 5'b01011 ||
+                       CPU_instr_a1[6:2] ==? 5'b011x0 ||
+                       CPU_instr_a1[6:2] ==? 5'b10100;
+         
+         assign CPU_is_j_instr_a1 = CPU_instr_a1[6:2] ==? 5'b11011;
+         
+         assign CPU_is_i_instr_a1 = CPU_instr_a1[6:2] ==? 5'b0000x ||
+                       CPU_instr_a1[6:2] ==? 5'b001x0 ||
+                       CPU_instr_a1[6:2] ==? 5'b11001;
+         
+         assign CPU_is_b_instr_a1 = CPU_instr_a1[6:2] ==? 5'b11000;
+         assign CPU_imm_a1[31:0] = CPU_is_i_instr_a1 ? {{21{CPU_instr_a1[31]}}, CPU_instr_a1[30:20]} :
+                      CPU_is_s_instr_a1 ? {{21{CPU_instr_a1[31]}}, CPU_instr_a1[30:25], CPU_instr_a1[11:7]} :
+                      CPU_is_b_instr_a1 ? {{20{CPU_instr_a1[31]}}, CPU_instr_a1[7], CPU_instr_a1[30:25], CPU_instr_a1[11:8], 1'b0} :
+                      CPU_is_u_instr_a1 ? {CPU_instr_a1[31:12], 12'b0} :
+                      CPU_is_j_instr_a1 ? {{12{CPU_instr_a1[31]}}, CPU_instr_a1[19:12], CPU_instr_a1[20], CPU_instr_a1[30:21], 1'b0} :
+                                    32'b0;
+         //`BOGUS_USE(CPU_imm_a1)
+         
+         assign CPU_opcode_a1[6:0] = CPU_instr_a1[6:0];
          assign CPU_rs2_valid_a1 = CPU_is_r_instr_a1 || CPU_is_s_instr_a1 || CPU_is_b_instr_a1;
-         assign CPU_rs1_valid_a1 = CPU_is_r_instr_a1 || CPU_is_s_instr_a1 || CPU_is_b_instr_a1 || CPU_is_i_instr_a1;
-         assign CPU_rd_valid_a1 = CPU_is_r_instr_a1 || CPU_is_i_instr_a1 || CPU_is_u_instr_a1 || CPU_is_j_instr_a1;
-         assign CPU_funct3_valid_a1 = CPU_is_r_instr_a1 || CPU_is_s_instr_a1 || CPU_is_b_instr_a1 || CPU_is_i_instr_a1;
-         assign CPU_funct7_valid_a1 = CPU_is_r_instr_a1;
-         
          //_?$rs2_valid
             assign w_CPU_rs2_a1[4:0] = CPU_instr_a1[24:20];
+            
+         assign CPU_rs1_valid_a1 = CPU_is_r_instr_a1 || CPU_is_i_instr_a1 || CPU_is_s_instr_a1 || CPU_is_b_instr_a1;
          //_?$rs1_valid
             assign w_CPU_rs1_a1[4:0] = CPU_instr_a1[19:15];
-         //_?$rd_valid
-            assign w_CPU_rd_a1[4:0] = CPU_instr_a1[11:7];
+         
+         assign CPU_funct3_valid_a1 = CPU_is_r_instr_a1 || CPU_is_i_instr_a1 || CPU_is_s_instr_a1 || CPU_is_b_instr_a1;
          //_?$funct3_valid
-            assign CPU_funct3_a1[2:0] = CPU_instr_a1[14:12];
+            assign w_CPU_funct3_a1[2:0] = CPU_instr_a1[14:12];
+            
+         assign CPU_funct7_valid_a1 = CPU_is_r_instr_a1 ;
          //_?$funct7_valid
-            assign CPU_funct7_a1[6:0] = CPU_instr_a1[31:25];
+            assign w_CPU_funct7_a1[6:0] = CPU_instr_a1[31:25];
             
-         assign CPU_opcode_a1[6:0] = CPU_instr_a1[6:0];
+         assign CPU_rd_valid_a1 = CPU_is_r_instr_a1 || CPU_is_i_instr_a1 || CPU_is_u_instr_a1 || CPU_is_j_instr_a1;
+         //_?$rd_valid
+            assign CPU_rd_a1[4:0] = CPU_instr_a1[11:7];
+            
+         //`BOGUS_USE(CPU_rd_a1)
          
-         assign CPU_dec_bits_a1[10:0] = {CPU_funct7_a1[5],CPU_funct3_a1,CPU_opcode_a1};
-         
-         // Branch Instruction
-         assign CPU_is_beq_a1 = CPU_dec_bits_a1[9:0] == 10'b000_1100011;
-         assign CPU_is_bne_a1 = CPU_dec_bits_a1[9:0] == 10'b001_1100011;
-         assign CPU_is_blt_a1 = CPU_dec_bits_a1[9:0] == 10'b100_1100011;
-         assign CPU_is_bge_a1 = CPU_dec_bits_a1[9:0] == 10'b101_1100011;
-         assign CPU_is_bltu_a1 = CPU_dec_bits_a1[9:0] == 10'b110_1100011;
-         assign CPU_is_bgeu_a1 = CPU_dec_bits_a1[9:0] == 10'b111_1100011;
-         
-         // Arithmetic Instruction
-         assign CPU_is_add_a1 = CPU_dec_bits_a1 == 11'b0_000_0110011;
-         assign CPU_is_addi_a1 = CPU_dec_bits_a1[9:0] == 10'b000_0010011;
-         assign CPU_is_or_a1 = CPU_dec_bits_a1 == 11'b0_110_0110011;
-         assign CPU_is_ori_a1 = CPU_dec_bits_a1[9:0] == 10'b110_0010011;
-         assign CPU_is_xor_a1 = CPU_dec_bits_a1 == 11'b0_100_0110011;
-         assign CPU_is_xori_a1 = CPU_dec_bits_a1[9:0] == 10'b100_0010011;
-         assign CPU_is_and_a1 = CPU_dec_bits_a1 == 11'b0_111_0110011;
-         assign CPU_is_andi_a1 = CPU_dec_bits_a1[9:0] == 10'b111_0010011;
-         assign CPU_is_sub_a1 = CPU_dec_bits_a1 == 11'b1_000_0110011;
-         assign CPU_is_slti_a1 = CPU_dec_bits_a1[9:0] == 10'b010_0010011;
-         assign CPU_is_sltiu_a1 = CPU_dec_bits_a1[9:0] == 10'b011_0010011;
-         assign CPU_is_slli_a1 = CPU_dec_bits_a1 == 11'b0_001_0010011;
-         assign CPU_is_srli_a1 = CPU_dec_bits_a1 == 11'b0_101_0010011;
-         assign CPU_is_srai_a1 = CPU_dec_bits_a1 == 11'b1_101_0010011;
-         assign CPU_is_sll_a1 = CPU_dec_bits_a1 == 11'b0_001_0110011;
-         assign CPU_is_slt_a1 = CPU_dec_bits_a1 == 11'b0_010_0110011;
-         assign CPU_is_sltu_a1 = CPU_dec_bits_a1 == 11'b0_011_0110011;
-         assign CPU_is_srl_a1 = CPU_dec_bits_a1 == 11'b0_101_0110011;
-         assign CPU_is_sra_a1 = CPU_dec_bits_a1 == 11'b1_101_0110011;
-         
-         // Load Instruction
-         assign CPU_is_load_a1 = CPU_dec_bits_a1[6:0] == 7'b0000011;
-         
-         // Store Instruction
-         assign CPU_is_sb_a1 = CPU_dec_bits_a1[9:0] == 10'b000_0100011;
-         assign CPU_is_sh_a1 = CPU_dec_bits_a1[9:0] == 10'b001_0100011;
-         assign CPU_is_sw_a1 = CPU_dec_bits_a1[9:0] == 10'b010_0100011;
-         
-         // Jump Instruction
-         assign CPU_is_lui_a1 = CPU_dec_bits_a1[6:0] == 7'b0110111;
-         assign CPU_is_auipc_a1 = CPU_dec_bits_a1[6:0] == 7'b0010111;
-         assign CPU_is_jal_a1 = CPU_dec_bits_a1[6:0] == 7'b1101111;
-         assign CPU_is_jalr_a1 = CPU_dec_bits_a1[9:0] == 10'b000_1100111;
-         
-         assign CPU_is_jump_a1 = CPU_is_jal_a1 || CPU_is_jalr_a1;
-         
-      //_@2   
-      // Register File Read
+      //_@2
+         assign CPU_dec_bits_a2[10:0] = {CPU_funct7_a2[5], CPU_funct3_a2, CPU_opcode_a2};
+         assign CPU_is_beq_a2 = CPU_dec_bits_a2 ==? 11'bx_000_1100011;
+         assign CPU_is_bne_a2 = CPU_dec_bits_a2 ==? 11'bx_001_1100011;
+         assign CPU_is_blt_a2 = CPU_dec_bits_a2 ==? 11'bx_100_1100011;
+         assign CPU_is_bge_a2 = CPU_dec_bits_a2 ==? 11'bx_101_1100011;
+         assign CPU_is_bltu_a2 = CPU_dec_bits_a2 ==? 11'bx_110_1100011;
+         assign CPU_is_bgeu_a2 = CPU_dec_bits_a2 ==? 11'bx_111_1100011;
+         assign CPU_is_addi_a2 = CPU_dec_bits_a2 ==? 11'bx_000_0010011;
+         assign CPU_is_add_a2 = CPU_dec_bits_a2 ==? 11'b0_000_0110011;
+         assign CPU_is_load_a2 = CPU_opcode_a2 == 7'b0000011;
+         assign CPU_is_xori_a2 = CPU_dec_bits_a2 ==? 11'bx_100_0010011;
+         assign CPU_is_xor_a2 = CPU_dec_bits_a2 ==? 11'b0_100_0110011;
+         assign CPU_is_sw_a2 = CPU_dec_bits_a2 ==? 11'bx_010_0100011;
+         assign CPU_is_sub_a2 = CPU_dec_bits_a2 ==? 11'b1_000_0110011;
+         assign CPU_is_srli_a2 = CPU_dec_bits_a2 ==? 11'b0_101_0010011;
+         assign CPU_is_srl_a2 = CPU_dec_bits_a2 ==? 11'b0_101_0110011;
+         assign CPU_is_srai_a2 = CPU_dec_bits_a2 ==? 11'b1_101_0010011;
+         assign CPU_is_sra_a2 = CPU_dec_bits_a2 ==? 11'b1_101_0110011;
+         assign CPU_is_sltu_a2 = CPU_dec_bits_a2 ==? 11'b0_011_0110011;
+         assign CPU_is_sltiu_a2 = CPU_dec_bits_a2 ==? 11'bx_011_0010011;
+         assign CPU_is_slti_a2 = CPU_dec_bits_a2 ==? 11'bx_010_0010011;
+         assign CPU_is_slt_a2 = CPU_dec_bits_a2 ==? 11'b0_010_0110011;
+         assign CPU_is_slli_a2 = CPU_dec_bits_a2 ==? 11'b0_001_0010011;
+         assign CPU_is_sll_a2 = CPU_dec_bits_a2 ==? 11'b0_001_0110011;
+         assign CPU_is_sh_a2 = CPU_dec_bits_a2 ==? 11'bx_001_0100011;
+         assign CPU_is_sb_a2 = CPU_dec_bits_a2 ==? 11'bx_000_0100011;
+         assign CPU_is_ori_a2 = CPU_dec_bits_a2 ==? 11'bx_110_0010011;
+         assign CPU_is_or_a2 = CPU_dec_bits_a2 ==? 11'b0_110_0110011;
+         assign CPU_is_lui_a2 = CPU_dec_bits_a2 ==? 11'bx_xxx_0110111;
+         assign CPU_is_jalr_a2 = CPU_dec_bits_a2 ==? 11'bx_000_1100111;
+         assign CPU_is_jal_a2 = CPU_dec_bits_a2 ==? 11'bx_xxx_1101111;
+         assign CPU_is_auipc_a2 = CPU_dec_bits_a2 ==? 11'bx_xxx_0010111;
+         assign CPU_is_andi_a2 = CPU_dec_bits_a2 ==? 11'bx_111_0010011;
+         assign CPU_is_and_a2 = CPU_dec_bits_a2 ==? 11'b0_111_0110011;
+         assign CPU_jalr_target_pc_a2[31:0] = CPU_src1_value_a2 +CPU_imm_a2 ;
+         assign CPU_br_target_pc_a2[31:0] = CPU_pc_a2 +CPU_imm_a2;
          assign CPU_rf_rd_en1_a2 = CPU_rs1_valid_a2;
-         //_?$rf_rd_en1
-            assign CPU_rf_rd_index1_a2[4:0] = CPU_rs1_a2[4:0];
-         
+         assign CPU_rf_rd_index1_a2[4:0] = CPU_rs1_a2;
          assign CPU_rf_rd_en2_a2 = CPU_rs2_valid_a2;
-         //_?$rf_rd_en2
-            assign CPU_rf_rd_index2_a2[4:0] = CPU_rs2_a2[4:0];
-            
-      // Branch Target PC       
-         assign CPU_br_tgt_pc_a2[31:0] = CPU_pc_a2 + CPU_imm_a2;
-      
-      // Jump Target PC
-         assign CPU_jalr_tgt_pc_a2[31:0] = CPU_src1_value_a2 + CPU_imm_a2;
+         assign CPU_rf_rd_index2_a2[4:0] = CPU_rs2_a2;
+         assign CPU_src1_value_a2[31:0] = (CPU_rf_wr_index_a3 == CPU_rf_rd_index1_a2) && CPU_rf_wr_en_a3 ? CPU_result_a3 :  
+                             CPU_rf_rd_data1_a2;
+         assign CPU_src2_value_a2[31:0] = (CPU_rf_wr_index_a3 == CPU_rf_rd_index2_a2) && CPU_rf_wr_en_a3 ? CPU_result_a3 :
+                             CPU_rf_rd_data2_a2;
+
+      //_@3
+         assign CPU_is_jump_a3 = CPU_is_jal_a3 || CPU_is_jalr_a3 ;
+         //`BOGUS_USE (CPU_is_beq_a3 CPU_is_bne_a3 CPU_is_blt_a3 CPU_is_bge_a3 CPU_is_bltu_a3 CPU_is_bgeu_a3 CPU_is_addi_a3 CPU_is_add_a3)
+         assign CPU_rf_wr_en_a3 = (CPU_rd_valid_a3 && CPU_rd_a3 != 5'b0 && CPU_valid_a3) || CPU_valid_load_a5;
+         assign CPU_rf_wr_index_a3[4:0] = CPU_valid_load_a5 ? CPU_rd_a5 : CPU_rd_a3;
+         assign CPU_rf_wr_data_a3[31:0] = CPU_valid_load_a5 ? CPU_ld_data_a5 : CPU_result_a3;  
+         assign CPU_sltu_rslt_a3[31:0] = CPU_src1_value_a3 < CPU_src2_value_a3 ;
+         assign CPU_sltiu_rslt_a3[31:0]  = CPU_src1_value_a3 < CPU_imm_a3 ;
+         assign CPU_valid_a3 = !(CPU_valid_taken_branch_a4 || CPU_valid_taken_branch_a5 || 
+                    CPU_valid_load_a4 || CPU_valid_load_a5 ||  
+                    CPU_valid_jump_a4 || CPU_valid_jump_a5) ;
          
-      // Input signals to ALU
-         assign CPU_src1_value_a2[31:0] = ((CPU_rd_a3 == CPU_rs1_a2) && CPU_rf_wr_en_a3) ? CPU_result_a3 : CPU_rf_rd_data1_a2[31:0];
-         assign CPU_src2_value_a2[31:0] = ((CPU_rd_a3 == CPU_rs2_a2) && CPU_rf_wr_en_a3) ? CPU_result_a3 : CPU_rf_rd_data2_a2[31:0];
-         
-      //_@3   
-         
-      // ALU
-         assign CPU_sltu_result_a3 = CPU_src1_value_a3 < CPU_src2_value_a3 ;
-         assign CPU_sltiu_result_a3 = CPU_src1_value_a3 < CPU_imm_a3 ;
-         
-         assign CPU_result_a3[31:0] = CPU_is_addi_a3 ? CPU_src1_value_a3 + CPU_imm_a3 :
-                         CPU_is_add_a3 ? CPU_src1_value_a3 + CPU_src2_value_a3 : 
-                         CPU_is_or_a3 ? CPU_src1_value_a3 | CPU_src2_value_a3 : 
+         assign CPU_valid_load_a3 = CPU_valid_a3 && CPU_is_load_a3 ;
+         assign CPU_valid_jump_a3 = CPU_is_jump_a3 && CPU_valid_a3 ;
+         assign CPU_result_a3[31:0] = CPU_is_andi_a3 ? CPU_src1_value_a3 & CPU_imm_a3 :
                          CPU_is_ori_a3 ? CPU_src1_value_a3 | CPU_imm_a3 :
-                         CPU_is_xor_a3 ? CPU_src1_value_a3 ^ CPU_src2_value_a3 :
                          CPU_is_xori_a3 ? CPU_src1_value_a3 ^ CPU_imm_a3 :
-                         CPU_is_and_a3 ? CPU_src1_value_a3 & CPU_src2_value_a3 :
-                         CPU_is_andi_a3 ? CPU_src1_value_a3 & CPU_imm_a3 :
-                         CPU_is_sub_a3 ? CPU_src1_value_a3 - CPU_src2_value_a3 :
-                         CPU_is_slti_a3 ? ((CPU_src1_value_a3[31] == CPU_imm_a3[31]) ? CPU_sltiu_result_a3 : {31'b0,CPU_src1_value_a3[31]}) :
-                         CPU_is_sltiu_a3 ? CPU_sltiu_result_a3 :
+                         (CPU_is_addi_a3 || CPU_is_load_a3 || CPU_is_s_instr_a3) ? CPU_src1_value_a3 + CPU_imm_a3 :
                          CPU_is_slli_a3 ? CPU_src1_value_a3 << CPU_imm_a3[5:0] :
                          CPU_is_srli_a3 ? CPU_src1_value_a3 >> CPU_imm_a3[5:0] :
-                         CPU_is_srai_a3 ? ({{32{CPU_src1_value_a3[31]}}, CPU_src1_value_a3} >> CPU_imm_a3[4:0]) :
+                         CPU_is_and_a3 ? CPU_src1_value_a3 & CPU_src2_value_a3 :
+                         CPU_is_or_a3 ? CPU_src1_value_a3 | CPU_src2_value_a3 :
+                         CPU_is_xor_a3 ? CPU_src1_value_a3 ^ CPU_src2_value_a3 :
+                         CPU_is_add_a3 ? CPU_src1_value_a3 + CPU_src2_value_a3 :
+                         CPU_is_sub_a3 ? CPU_src1_value_a3 - CPU_src2_value_a3 :
                          CPU_is_sll_a3 ? CPU_src1_value_a3 << CPU_src2_value_a3[4:0] :
-                         CPU_is_slt_a3 ? ((CPU_src1_value_a3[31] == CPU_src2_value_a3[31]) ? CPU_sltu_result_a3 : {31'b0,CPU_src1_value_a3[31]}) :
-                         CPU_is_sltu_a3 ? CPU_sltu_result_a3 :
-                         CPU_is_srl_a3 ? CPU_src1_value_a3 >> CPU_src2_value_a3[5:0] :
-                         CPU_is_sra_a3 ? ({{32{CPU_src1_value_a3[31]}}, CPU_src1_value_a3} >> CPU_src2_value_a3[4:0]) :
-                         CPU_is_lui_a3 ? ({CPU_imm_a3[31:12], 12'b0}) :
+                         CPU_is_srl_a3 ? CPU_src1_value_a3 >> CPU_src2_value_a3[4:0] :
+                         CPU_is_sltu_a3 ? CPU_src1_value_a3 | CPU_src2_value_a3 :
+                         CPU_is_sltiu_a3 ? CPU_src1_value_a3 < CPU_imm_a3 :
+                         CPU_is_lui_a3 ? {CPU_imm_a3[31:12], 12'b0} :
                          CPU_is_auipc_a3 ? CPU_pc_a3 + CPU_imm_a3 :
                          CPU_is_jal_a3 ? CPU_pc_a3 + 4 :
-                         CPU_is_jalr_a3 ? CPU_pc_a3 + 4 : 
-                         (CPU_is_load_a3 || CPU_is_s_instr_a3) ? CPU_src1_value_a3 + CPU_imm_a3 : 32'bx;
-                         
-      // Register File Write
-         assign CPU_rf_wr_en_a3 = (CPU_rd_valid_a3 && CPU_valid_a3 && CPU_rd_a3 != 5'b0) || CPU_valid_load_a5;
-         //_?$rf_wr_en
-            assign CPU_rf_wr_index_a3[4:0] = !CPU_valid_a3 ? CPU_rd_a5[4:0] : CPU_rd_a3[4:0];
-      
-         assign CPU_rf_wr_data_a3[31:0] = !CPU_valid_a3 ? CPU_ld_data_a5[31:0] : CPU_result_a3[31:0];
-      
-      // Branch
-         assign CPU_taken_br_a3 = CPU_is_beq_a3 ? (CPU_src1_value_a3 == CPU_src2_value_a3) :
-                     CPU_is_bne_a3 ? (CPU_src1_value_a3 != CPU_src2_value_a3) :
-                     CPU_is_blt_a3 ? ((CPU_src1_value_a3 < CPU_src2_value_a3) ^ (CPU_src1_value_a3[31] != CPU_src2_value_a3[31])) :
-                     CPU_is_bge_a3 ? ((CPU_src1_value_a3 >= CPU_src2_value_a3) ^ (CPU_src1_value_a3[31] != CPU_src2_value_a3[31])) :
-                     CPU_is_bltu_a3 ? (CPU_src1_value_a3 < CPU_src2_value_a3) :
-                     CPU_is_bgeu_a3 ? (CPU_src1_value_a3 >= CPU_src2_value_a3) : 1'b0;
-                     
-         assign CPU_valid_taken_br_a3 = CPU_valid_a3 && CPU_taken_br_a3;
-         
-      // Load
-         assign CPU_valid_load_a3 = CPU_valid_a3 && CPU_is_load_a3;
-         assign CPU_valid_a3 = !(CPU_valid_taken_br_a4 || CPU_valid_taken_br_a5 || CPU_valid_load_a4 || CPU_valid_load_a5 || CPU_valid_jump_a4 || CPU_valid_jump_a5);
-      
-      // Jump
-         assign CPU_valid_jump_a3 = CPU_valid_a3 && CPU_is_jump_a3;
-                  
+                         CPU_is_jalr_a3 ? CPU_pc_a3 + 4 :
+                         CPU_is_srai_a3 ? {{32{CPU_src1_value_a3[31]}}, CPU_src1_value_a3} >> CPU_imm_a3[4:0] :
+                         CPU_is_slt_a3 ? (CPU_src1_value_a3[31] == CPU_src2_value_a3[31]) ? CPU_sltu_rslt_a3 : {31'b0, CPU_src1_value_a3[31]} :
+                         CPU_is_slti_a3 ? (CPU_src1_value_a3[31] == CPU_imm_a3[31]) ? CPU_sltiu_rslt_a3 : {31'b0, CPU_src1_value_a3[31]} :
+                         CPU_is_sra_a3 ? {{32{CPU_src1_value_a3[31]}}, CPU_src1_value_a3} > CPU_src2_value_a3[4:0] :
+                         32'bx ;
+         assign CPU_taken_branch_a3 = CPU_is_beq_a3 ? (CPU_src1_value_a3 == CPU_src2_value_a3):
+                         CPU_is_bne_a3 ? (CPU_src1_value_a3 != CPU_src2_value_a3):
+                         CPU_is_blt_a3 ? ((CPU_src1_value_a3 < CPU_src2_value_a3) ^ (CPU_src1_value_a3[31] != CPU_src2_value_a3[31])):
+                         CPU_is_bge_a3 ? ((CPU_src1_value_a3 >= CPU_src2_value_a3) ^ (CPU_src1_value_a3[31] != CPU_src2_value_a3[31])):
+                         CPU_is_bltu_a3 ? (CPU_src1_value_a3 < CPU_src2_value_a3):
+                         CPU_is_bgeu_a3 ? (CPU_src1_value_a3 >= CPU_src2_value_a3):
+                                    1'b0;
+         assign CPU_valid_taken_branch_a3 = CPU_valid_a3 && CPU_taken_branch_a3;
+         //`BOGUS_USE(CPU_is_sh_a3)
+         //`BOGUS_USE(CPU_is_sw_a3)
+         `//BOGUS_USE(CPU_is_sb_a3)
       //_@4
-         assign CPU_dmem_rd_en_a4 = CPU_valid_load_a4;
-         assign CPU_dmem_wr_en_a4 = CPU_valid_a4 && CPU_is_s_instr_a4;
-         assign CPU_dmem_addr_a4[3:0] = CPU_result_a4[5:2];
-         assign CPU_dmem_wr_data_a4[31:0] = CPU_src2_value_a4[31:0];
-         
-      //_@5   
-         assign CPU_ld_data_a5[31:0] = CPU_dmem_rd_data_a5[31:0];
-         
+         assign CPU_dmem_wr_en_a4 = CPU_is_s_instr_a4 && CPU_valid_a4 ;
+         assign CPU_dmem_addr_a4[3:0] = CPU_result_a4[5:2] ;
+         assign CPU_dmem_wr_data_a4[31:0] = CPU_src2_value_a4 ;
+         assign CPU_dmem_rd_en_a4 = CPU_is_load_a4 ;
+      //_@5
+         //LOAD DATA
+         assign CPU_ld_data_a5[31:0] = CPU_dmem_rd_data_a5 ;   
+      //_@2
+         //TESTBENCH
+         //*passed = |cpu/xreg[17]>>5$value == (1+2+3+4+5+6+7+8+9) ;
       // Note: Because of the magic we are using for visualisation, if visualisation is enabled below,
       //       be sure to avoid having unassigned signals (which you might be using for random inputs)
       //       other than those specifically expected in the labs. You'll get strange errors for these.
-
-         `BOGUS_USE(CPU_is_beq_a5 CPU_is_bne_a5 CPU_is_blt_a5 CPU_is_bge_a5 CPU_is_bltu_a5 CPU_is_bgeu_a5)
-         `BOGUS_USE(CPU_is_sb_a5 CPU_is_sh_a5 CPU_is_sw_a5)
+   
    // Assert these to end simulation (before Makerchip cycle limit).
-   /*SV_plus*/
-      always @ (posedge CLK) begin
-         OUT = CPU_Xreg_value_a5[17];                
-      end
+   //*passed = *cyc_cnt > 40;
+   //*failed = 1'b0;
    
    // Macro instantiations for:
    //  o instruction memory
@@ -219,7 +209,7 @@ module riscv(input clk,
    //  o data memory
    //  o CPU visualization
    //_|cpu
-      //_\source /raw.githubusercontent.com/stevehoover/RISCVMYTHWorkshop/master/tlvlib/riscvshelllib.tlv 19   // Instantiated from alphacore.tlv, 241 as: m4+imem(@1)
+      //_\source /raw.githubusercontent.com/stevehoover/RISCVMYTHWorkshop/master/tlvlib/riscvshelllib.tlv 19   // Instantiated from alphacore.tlv, 212 as: m4+imem(@1)
          // Instruction Memory containing program defined by m4_asm(...) instantiations.
          //_@1
             
@@ -270,7 +260,7 @@ module riscv(input clk,
               
           
       //_\end_source    // Args: (read stage)
-      //_\source /raw.githubusercontent.com/stevehoover/RISCVMYTHWorkshop/master/tlvlib/riscvshelllib.tlv 72   // Instantiated from alphacore.tlv, 242 as: m4+rf(@2, @3)
+      //_\source /raw.githubusercontent.com/stevehoover/RISCVMYTHWorkshop/master/tlvlib/riscvshelllib.tlv 72   // Instantiated from alphacore.tlv, 213 as: m4+rf(@2, @3)
          // Reg File
          //_@3
             generate for (xreg = 0; xreg <= 31; xreg=xreg+1) begin : L1_CPU_Xreg //_/xreg
@@ -288,9 +278,9 @@ module riscv(input clk,
                assign CPU_rf_rd_data1_a2[31:0] = CPU_Xreg_value_a4[CPU_rf_rd_index1_a2];
             //_?$rf_rd_en2
                assign CPU_rf_rd_data2_a2[31:0] = CPU_Xreg_value_a4[CPU_rf_rd_index2_a2];
-            `BOGUS_USE(CPU_rf_rd_data1_a2 CPU_rf_rd_data2_a2) 
+            //`BOGUS_USE(CPU_rf_rd_data1_a2 CPU_rf_rd_data2_a2) 
       //_\end_source  // Args: (read stage, write stage) - if equal, no register bypass is required
-      //_\source /raw.githubusercontent.com/stevehoover/RISCVMYTHWorkshop/master/tlvlib/riscvshelllib.tlv 89   // Instantiated from alphacore.tlv, 243 as: m4+dmem(@4)
+      //_\source /raw.githubusercontent.com/stevehoover/RISCVMYTHWorkshop/master/tlvlib/riscvshelllib.tlv 89   // Instantiated from alphacore.tlv, 214 as: m4+dmem(@4)
          // Data Memory
          //_@4
             generate for (dmem = 0; dmem <= 15; dmem=dmem+1) begin : L1_CPU_Dmem //_/dmem
@@ -306,12 +296,11 @@ module riscv(input clk,
                                         
             //_?$dmem_rd_en
                assign CPU_dmem_rd_data_a4[31:0] = CPU_Dmem_value_a5[CPU_dmem_addr_a4];
-            `BOGUS_USE(CPU_dmem_rd_data_a4)
+            //`BOGUS_USE(CPU_dmem_rd_data_a4)
       //_\end_source    // Args: (read/write stage)
-
-     
+      //m4+myth_fpga(@0)  // Uncomment to run on fpga
+   //m4+cpu_viz(@4)    // For visualisation, argument should be at least equal to the last stage of CPU logic. @4 would work for all labs.
 //_\SV
-   
    endmodule
 
 

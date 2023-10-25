@@ -1,6 +1,6 @@
 # AlphaCore
 - AlphaCore is a RISC-V Processor made as a part of the VLSI Physical Design for ASICs course.
-- AlphaCore is a simple RISC-V CPU, written in SystemVerilog.
+- AlphaCore is a simple RISC-V CPU, written in Verilog.
 
 ### AlphaCore Block Diagram
 

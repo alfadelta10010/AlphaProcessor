@@ -1,24 +1,9 @@
 \m4_TLV_version 1d: tl-x.org
 \SV
    // This code can be found in: https://github.com/stevehoover/RISC-V_MYTH_Workshop
-   //m4_include_lib(['https://raw.githubusercontent.com/stevehoover/RISC-V_MYTH_Workshop/master/tlv_lib/risc-v_shell_lib.tlv'])
-   //m4_makerchip_module   // (Expanded in Nav-TLV pane.)
-   m4_include_lib(['https://raw.githubusercontent.com/shivanishah269/risc-v-core/master/FPGA_Implementation/riscv_shell_lib.tlv'])
-   m4_ifelse_block(M4_MAKERCHIP, 1, ['
-   // Makerchip module interface.
-   m4_makerchip_module
-   wire CLK = clk;
-   logic [9:0] OUT;
-   assign passed = cyc_cnt > 300;
-   '], ['
-   // Custom module interface for BabySoC.
-   module alphacore(
-      output reg [9:0] OUT,
-      input CLK,
-      input reset
-   );
-   wire clk = CLK;
-   '])
+   m4_include_lib(['https://raw.githubusercontent.com/stevehoover/RISC-V_MYTH_Workshop/master/tlv_lib/risc-v_shell_lib.tlv'])
+\SV
+   m4_makerchip_module   // (Expanded in Nav-TLV pane.)
    
 \TLV
    // /=======================\

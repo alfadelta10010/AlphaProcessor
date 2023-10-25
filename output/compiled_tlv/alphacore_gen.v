@@ -9,7 +9,7 @@
 `include "sandpiper_gen.vh"
 
 
-genvar dmem, imem, xreg;
+genvar dmem, xreg;
 
 
 //
@@ -27,7 +27,7 @@ wire [10:0] CPU_dec_bits_a1;
 wire [3:0] CPU_dmem_addr_a4;
 
 // For |cpu$dmem_rd_data.
-wire [31:0] w_CPU_dmem_rd_data_a4;
+wire [31:0] CPU_dmem_rd_data_a4;
 reg  [31:0] CPU_dmem_rd_data_a5;
 
 // For |cpu$dmem_rd_en.
@@ -408,9 +408,6 @@ reg  CPU_valid_taken_br_a4,
 wire [31:0] CPU_Dmem_value_a4 [15:0];
 reg  [31:0] CPU_Dmem_value_a5 [15:0];
 
-// For |cpu/imem$instr.
-wire [31:0] CPU_Imem_instr_a1 [18:0];
-
 // For |cpu/xreg$value.
 wire [31:0] CPU_Xreg_value_a3 [31:0];
 reg  [31:0] CPU_Xreg_value_a4 [31:0],
@@ -440,7 +437,7 @@ wire clkP_CPU_rs2_valid_a2 ;
       always @(posedge clk) CPU_br_tgt_pc_a3[31:0] <= CPU_br_tgt_pc_a2[31:0];
 
       // Staging of $dmem_rd_data.
-      always @(posedge clkP_CPU_dmem_rd_en_a5) CPU_dmem_rd_data_a5[31:0] <= w_CPU_dmem_rd_data_a4[31:0];
+      always @(posedge clkP_CPU_dmem_rd_en_a5) CPU_dmem_rd_data_a5[31:0] <= CPU_dmem_rd_data_a4[31:0];
 
       // Staging of $imem_rd_addr.
       always @(posedge clk) CPU_imem_rd_addr_a1[31:0] <= CPU_imem_rd_addr_a0[31:0];

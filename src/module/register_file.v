@@ -28,7 +28,4 @@ module register_file (read_addr_1, read_addr_2, write_addr, read_data_1, read_da
 		
 		else if (reg_write == 1'b1) reg_file[write_addr] = write_data; 
 	end
-	
-
-
 endmodule

@@ -65,7 +65,6 @@ module alphacore (fastclk, reset, switch_select, switch_run, reg_read_data_1);
 	assign pc_in = pc_origin_al[7:0];
 	assign pc_out_unsign_extended = {26'b0000_0000_0000_0000_0000_0000, pc_out}; // from 7 bits to 32 bits
 	assign jump_addr = {pc_plus4[31:28], jump_base28}; // jump_addr = (pc+4)[31:28] joined with jump_base28[27:0]
-	// output processor clock (1 Hz or freeze) to a LED
 
 	program_counter program_counter1 (.clk(clk), .reset(reset), .pc_in(pc_in), .pc_out(pc_out));
 	instruction_memory instruction_memory1 (.read_addr(pc_out), .instruction(instruction), .reset(reset));
@@ -95,8 +94,8 @@ module alphacore (fastclk, reset, switch_select, switch_run, reg_read_data_1);
 	always @(switch_run) begin
 		if (switch_run) begin
 			// sys status 1: run single-cycle processor
-			clkrf_reg <= clknormal;	// 1 Hz
-			clk_reg <= clknormal;		// 1 Hz
+			clkrf_reg <= clknormal;
+			clk_reg <= clknormal;
 			multi_purpose_read_addr_reg <= instruction[25:21]; // reg-file-port1 reads from instruction
 			// reg-file protection measure; explained in "else"
 			multi_purpose_reg_write_reg <= reg_write;

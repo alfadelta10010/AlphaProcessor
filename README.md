@@ -22,10 +22,9 @@ cd output/pre_synth_sim
 ![pre_synth_waveform](images/pre_synth_waveform.png)
 
 ### Running Synthesis
-- In OpenLane container, we run the following commands:
+- In OpenLANE container, we run the following commands:
 ```
-cd /home/alphadelta1803/Desktop/projec
-ts/pes_riscv_processor/src
+cd /home/alphadelta1803/Desktop/projects/pes_riscv_processor/src
 yosys
 ```
 - To synthesize our design, we execute the following commands in yosys:
@@ -109,3 +108,54 @@ cd output/post_synth_sim
 ![post_synth_term](images/post_synth_output.png)
 
 ![post_synth_waveform](images/post_synth_waveform.png)
+
+## Static Timing Analysis
+- We use OpenSTA (part of OpenLANE) to perform gate-level static timing analyser
+- We verify the timing of our design using standard file formats
+- After starting OpenLANE and navigating to the project directory root, we start OpenSTA using `sta` and run the following commands:
+```
+read_liberty -min ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -max ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ../output/synth/vsdbabysoc.synth.v
+link_design vsdbabysoc
+report_checks
+```
+- The results are as follows:
+```
+```
+
+## Physical Design
+-  Physical Design Flow is a cardinal process of converting synthesized netlist, design curtailment and standard library to a layout as per the design rules provided by the foundry. 
+- This layout is later sent to the foundry for the creation of the chip.
+- Physical Design consists of:
+	1. Floorplanning
+	1. Placement
+	1. Clock Tree Synthesis
+	1. Optimization
+	1. Global Routing
+- We run OpenLANE in interactive mode, so that we can control the various stages
+- We also use [Magic](https://github.com/RTimothyEdwards/magic) in viewing and designing our circuit layout.
+
+### Layout Generation
+- We first run the following commands to set up our system and OpenLANE for layout generation:
+```bash
+mkdir -p output/rvmyth_layout
+mkdir -p /usr/local/tools/Openlane/designs/alphacore
+mkdir -p /usr/local/tools/Openlane/designs/alphacore/src
+mkdir -p /usr/local/tools/Openlane/designs/alphacore/src/module
+mkdir -p /usr/local/tools/Openlane/designs/alphacore/src/include
+cp -r src/layout_conf/* /usr/local/tools/Openlane/designs/alphacore
+cp output/compiled_tlv/alphacore.v /usr/local/tools/Openlane/designs/alphacore/src/module
+//cp src/module/clk_gate.v /usr/local/tools/Openlane/designs/rvmyth/src/module
+//cp output/compiled_tlv/rvmyth_gen.v /usr/local/tools/Openlane/designs/rvmyth/src/include
+//cp src/include/*.vh /usr/local/tools/Openlane/designs/rvmyth/src/include
+mkdir -p output/rvmyth_layout
+```
+- We then run the following command to generate the layout:
+```
+./flow.tcl -design alphacore
+```
+- We then copy the result back into our main project directory:
+```bash
+cp -r /usr/local/tools/Openlane/designs/rvmyth/runs/* output/rvmyth_layout
+```

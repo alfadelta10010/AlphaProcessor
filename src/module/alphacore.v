@@ -1,17 +1,17 @@
-`include "add_4.v"
-`include "ImmGen.v"
-`include "controller.v"
-`include "BranchComp.v"
-`include "dmem.v"
-`include "pc.v"
-`include "regfile32x32.v"
-`include "imem.v"
-`include "decoder.v"
-`include "alu.v"
-`include "wbmux.v" 
-`include "mux2.v"
+`include "src/module/add_4.v"
+`include "src/module/ImmGen.v"
+`include "src/module/controller.v"
+`include "src/module/BranchComp.v"
+`include "src/module/dmem.v"
+`include "src/module/pc.v"
+`include "src/module/regfile32x32.v"
+`include "src/module/imem.v"
+`include "src/module/decoder.v"
+`include "src/module/alu.v"
+`include "src/module/wbmux.v" 
+`include "src/module/mux2.v"
 
-module alphacore(input clk, memInput);
+module alphacore(clk, memInput);
 	wire [31:0] pc_in, pc_out;
 	wire [31:0] pc_plus4_out;
 	wire [4:0] rs1, rs2, rd;
@@ -19,8 +19,9 @@ module alphacore(input clk, memInput);
 	wire [31:0] imm_in, imm_out;
 	wire [31:0] alumux1_out, alumux2_out;
 	wire [31:0] alu_out, dmem_out, wb_out;
-	input [31:0] memInput [0:255];
+	input wire [31:0] memInput [0:255];
 	wire brlt;
+	input clk;
 	wire breq;
 	wire pcmux_sel;
 	wire [2:0] imm_sel;

@@ -1,9 +1,10 @@
 `timescale 1ns/1ps
-module testbench();
+`include "src/module/alphacore.v"
+module testbench;
 	reg clk;
 	reg [31:0] memInput [0:255];
 	
-	alphacore testbench(clk, memInput);
+	alphacore uut(clk, memInput);
 	
 	initial 
 		begin

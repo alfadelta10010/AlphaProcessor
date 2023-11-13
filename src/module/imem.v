@@ -7,7 +7,7 @@ module IMEM(inst,PC, DataIn);
 	output reg [INST_WIDTH_LENGTH-1:0]inst;
 	input [PC_WIDTH_LENGTH-1:0] PC;
 	
-	input [MEM_WIDTH_LENGTH-1:0] DataIn [0:MEM_DEPTH-1]
+	input wire [MEM_WIDTH_LENGTH-1:0] DataIn [0:MEM_DEPTH-1];
 	
 	reg	[MEM_WIDTH_LENGTH-1:0] IMEM [0:MEM_DEPTH-1];
 	
@@ -16,7 +16,9 @@ module IMEM(inst,PC, DataIn);
 
 	assign pWord = PC[9:2];
 	assign pByte = PC[1:0];
-	assign IMEM = DataIn;
+	initial begin
+		IMEM = DataIn;
+	end
 	always@(PC)
 		begin
 			if (pByte == 2'b00)

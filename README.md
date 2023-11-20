@@ -29,8 +29,6 @@ gtkwave testbench.vcd
 
 ![pre_synth_waveform](images/pre_synth_waveform3.png)
 
-![pre_synth_waveform](images/pre_synth_waveform4.png)
-
 ### Running Synthesis
 - In OpenLANE container, we run the following commands:
 ```

@@ -1,6 +1,7 @@
 # AlphaCore
-- AlphaCore is a RISC-V Processor made as a part of the VLSI Physical Design for ASICs course.
+- AlphaSoc is a System-On-Chip which includes a RISC-V Processor, a Register file, SPI Memory and a simple UART interface made as a part of the VLSI Physical Design for ASICs course.
 - AlphaCore is a simple RISC-V CPU, written in Verilog.
+- 
 
 ### AlphaCore Block Diagram
 
@@ -11,15 +12,24 @@
 - Here, we run our testbench to ensure our RISC-V processor is running correctly
 - We use `iverilog` and `gtkwave` to run the testbench on our module with the following command:
 ```bash
-iverilog -o output/pre_synth_sim/pre_synth_sim.out src/alphacore_tb.v -I src/module
-cd output/pre_synth_sim
-./pre_synth_sim.out
+mkdir output/pre_synth_sim
+iverilog -o output/pre_synth_sim/testbench.vvp src/module/testbench.v src/module/alphacore.v -I src/module
+chmod -x output/pre_synth_sim/testbench.vvp
+vvp -N output/pre_synth_sim/testbench.vvp +vcd
+mv testbench.vcd output/pre_synth_sim/
+gtkwave testbench.vcd
 ```
 - It gives the following output:
 
 ![pre_synth_term](images/pre_synth_output.png)
 
-![pre_synth_waveform](images/pre_synth_waveform.png)
+![pre_synth_waveform](images/pre_synth_waveform1.png)
+
+![pre_synth_waveform](images/pre_synth_waveform2.png)
+
+![pre_synth_waveform](images/pre_synth_waveform3.png)
+
+![pre_synth_waveform](images/pre_synth_waveform4.png)
 
 ### Running Synthesis
 - In OpenLANE container, we run the following commands:

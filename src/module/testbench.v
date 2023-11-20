@@ -1,23 +1,77 @@
-`timescale 1ns/1ps
-`include "src/module/alphacore.v"
+`timescale 1 ns / 1 ps
+
 module testbench;
-	reg clk;
-	reg [31:0] memInput [0:255];
-	
-	alphacore uut(clk, memInput);
-	
-	initial 
+	reg clk = 1;
+	reg resetn = 0;
+	wire trap;
+
+	always #5 clk = ~clk;
+
+	initial begin
+		if ($test$plusargs("vcd"))
+			begin
+				$dumpfile("testbench.vcd");
+				$dumpvars(0, testbench);
+			end
+		repeat (100) @(posedge clk);
+		resetn <= 1;
+		repeat (1000) @(posedge clk);
+		$finish;
+	end
+
+	wire mem_valid;
+	wire mem_instr;
+	reg mem_ready;
+	wire [31:0] mem_addr;
+	wire [31:0] mem_wdata;
+	wire [3:0] mem_wstrb;
+	reg  [31:0] mem_rdata;
+
+	always @(posedge clk)
 		begin
-			clk = 0;
-			memInput = '{32'h000006b3, 32'h00600713, 32'h00e6a023, 32'h00700713, 32'h00e6a223, 32'h00200713, 32'h00e6a423, 32'h00300713, 32'h00e6a623, 32'h00100713, 32'h00e6a823, 32'h00000713, 32'h00e6aa23, 32'h00400713, 32'h00e6ac23, 32'h00600713, 32'h00e6ae23, 32'h00900713, 32'h02e6a023, 32'h00800713, 32'h02e6a223, 32'h00900e93, 32'h020e8e63, 32'hfffe8e93, 32'h001e8e13, 32'h00068893, 32'hfe0e08e3, 32'hfffe0e13, 32'h0008a703, 32'h00488893, 32'h0008a783, 32'h00f72833, 32'hfe0804e3, 32'hfff80813, 32'h00e8a023, 32'hfef8ae23, 32'hfd9ff06f, 32'h00000033};
-			$dumpfile("pre_synth_sim.vcd");
-			$dumpvars(0, testbench);
-			#10000 $finish;
+			if (mem_valid && mem_ready)
+				begin
+					if (mem_instr)
+						$display("ifetch 0x%08x: 0x%08x", mem_addr, mem_rdata);
+					else if (mem_wstrb)
+						$display("write  0x%08x: 0x%08x (wstrb=%b)", mem_addr, mem_wdata, mem_wstrb);
+					else
+						$display("read   0x%08x: 0x%08x", mem_addr, mem_rdata);
+				end
 		end
-	
-	always 
+
+	alphacore #() uut (.clk(clk), .resetn(resetn), .trap(trap), .mem_valid(mem_valid), .mem_instr(mem_instr), .mem_ready(mem_ready), .mem_addr(mem_addr), .mem_wdata(mem_wdata), .mem_wstrb(mem_wstrb), .mem_rdata(mem_rdata)
+	);
+
+	reg [31:0] memory [0:255];
+
+	initial begin
+		memory[0] = 32'h3fc00093; //       li      x1,1020
+		memory[1] = 32'h0000a023; //       sw      x0,0(x1)
+		memory[2] = 32'h0000a103; // loop: lw      x2,0(x1)
+		memory[3] = 32'h00110113; //       addi    x2,x2,1
+		memory[4] = 32'h0020a023; //       sw      x2,0(x1)
+		memory[5] = 32'hff5ff06f; //       j       <loop>
+	end
+
+	always @(posedge clk)
 		begin
-			#5 clk =~ clk;
+			mem_ready <= 0;
+			if (mem_valid && !mem_ready) 
+				begin
+					if (mem_addr < 1024)
+						begin
+							mem_ready <= 1;
+							mem_rdata <= memory[mem_addr >> 2];
+							if (mem_wstrb[0])
+								memory[mem_addr >> 2][ 7: 0] <= mem_wdata[ 7: 0];
+							if (mem_wstrb[1]) 
+								memory[mem_addr >> 2][15: 8] <= mem_wdata[15: 8];
+							if (mem_wstrb[2])
+								memory[mem_addr >> 2][23:16] <= mem_wdata[23:16];
+							if (mem_wstrb[3])
+								memory[mem_addr >> 2][31:24] <= mem_wdata[31:24];
+						end
+				end
 		end
-	
-endmodule 
+endmodule

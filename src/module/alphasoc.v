@@ -1,5 +1,5 @@
-`define REGFILE picosoc_regs
-`define MEMFILE picosoc_mem
+`define REGFILE alphasoc_regs
+`define MEMFILE alphasoc_mem
 
 module alphasoc (
 	input clk,

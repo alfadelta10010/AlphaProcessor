@@ -1,7 +1,6 @@
 # AlphaCore
-- AlphaSoc is a System-On-Chip which includes a RISC-V Processor, a Register file, SPI Memory and a simple UART interface made as a part of the VLSI Physical Design for ASICs course.
+- AlphaCore is a System-On-Chip which includes a RISC-V Processor and a Register file, made as a part of the VLSI Physical Design for ASICs course.
 - AlphaCore is a simple RISC-V CPU, written in Verilog.
-- 
 
 ### AlphaCore Block Diagram
 
@@ -16,8 +15,8 @@ mkdir output/pre_synth_sim
 iverilog -o output/pre_synth_sim/testbench.vvp src/module/testbench.v src/module/alphacore.v -I src/module
 chmod -x output/pre_synth_sim/testbench.vvp
 vvp -N output/pre_synth_sim/testbench.vvp +vcd
-mv testbench.vcd output/pre_synth_sim/
-gtkwave testbench.vcd
+# mv testbench.vcd output/pre_synth_sim/
+gtkwave output/pre_synth_sim/testbench.vcd
 ```
 - It gives the following output:
 
@@ -134,18 +133,95 @@ write_verilog -noattr ../output/synth/alphasoc.synth.v
 ```
 - The synthesis log can be found in [synth.log](output/synth/synth.log)
 
+- We also synthesize our core separately to test for it's functionality in post-simulation synthesis.
+- The statistics of the design are as follows:
+```
+=== alphacore ===
+
+   Number of wires:              13024
+   Number of wire bits:          15103
+   Number of public wires:       13024
+   Number of public wire bits:   15103
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              14894
+     sky130_fd_sc_hd__a2111o_1       1
+     sky130_fd_sc_hd__a2111oi_0      6
+     sky130_fd_sc_hd__a211o_2        1
+     sky130_fd_sc_hd__a211oi_1      35
+     sky130_fd_sc_hd__a21boi_0      17
+     sky130_fd_sc_hd__a21o_2         3
+     sky130_fd_sc_hd__a21oi_1     2073
+     sky130_fd_sc_hd__a221oi_1      44
+     sky130_fd_sc_hd__a22o_2         3
+     sky130_fd_sc_hd__a22oi_1      145
+     sky130_fd_sc_hd__a311oi_1      10
+     sky130_fd_sc_hd__a31o_2        14
+     sky130_fd_sc_hd__a31oi_1       65
+     sky130_fd_sc_hd__a32o_1         5
+     sky130_fd_sc_hd__a32oi_1       40
+     sky130_fd_sc_hd__a41oi_1        4
+     sky130_fd_sc_hd__and2_2         6
+     sky130_fd_sc_hd__and3_2         2
+     sky130_fd_sc_hd__clkinv_1    1173
+     sky130_fd_sc_hd__dfxtp_1     1757
+     sky130_fd_sc_hd__maj3_1         1
+     sky130_fd_sc_hd__mux2_2        30
+     sky130_fd_sc_hd__mux2i_1       84
+     sky130_fd_sc_hd__nand2_1     3788
+     sky130_fd_sc_hd__nand3_1      758
+     sky130_fd_sc_hd__nand3b_1       6
+     sky130_fd_sc_hd__nand4_1      127
+     sky130_fd_sc_hd__nor2_1      1742
+     sky130_fd_sc_hd__nor3_1       143
+     sky130_fd_sc_hd__nor3b_1        1
+     sky130_fd_sc_hd__nor4_1        43
+     sky130_fd_sc_hd__nor4b_1        2
+     sky130_fd_sc_hd__o2111a_1       2
+     sky130_fd_sc_hd__o2111ai_1     36
+     sky130_fd_sc_hd__o211a_1        1
+     sky130_fd_sc_hd__o211ai_1     145
+     sky130_fd_sc_hd__o21a_1        25
+     sky130_fd_sc_hd__o21ai_0     1970
+     sky130_fd_sc_hd__o21bai_1      58
+     sky130_fd_sc_hd__o221a_2        2
+     sky130_fd_sc_hd__o221ai_1      24
+     sky130_fd_sc_hd__o22a_2         2
+     sky130_fd_sc_hd__o22ai_1      225
+     sky130_fd_sc_hd__o2bb2ai_1      4
+     sky130_fd_sc_hd__o311a_2        1
+     sky130_fd_sc_hd__o311ai_0      23
+     sky130_fd_sc_hd__o31ai_1       47
+     sky130_fd_sc_hd__o32ai_1       12
+     sky130_fd_sc_hd__o41ai_1        2
+     sky130_fd_sc_hd__or2_2         44
+     sky130_fd_sc_hd__or2b_2        65
+     sky130_fd_sc_hd__or3_2          7
+     sky130_fd_sc_hd__or3b_2         1
+     sky130_fd_sc_hd__or4_2          6
+     sky130_fd_sc_hd__xnor2_1        9
+     sky130_fd_sc_hd__xor2_1        54
+```
+
 ### Post-synthesis Simulation
 - We use `iverilog` and `gtkwave` to run the testbench on our module with the following command:
 ```bash
-iverilog -o output/post_synth_sim/post_synth_sim.out -DFUNCTIONAL -DUNIT_DELAY=#1 src/alphacore_tb_post.v -I src/module -I src/gls_model -I output/synth
-cd output/post_synth_sim
-./post_synth_sim.out
+iverilog -o output/post_synth_sim/testbench.vvp src/module/testbench_post.v output/synth/alphacore.synth.v -DFUNCTIONAL -DUNIT_DELAY=#1 -I src/module -I src/gls_model
+chmod -x output/post_synth_sim/testbench.vvp
+vvp -N output/post_synth_sim/testbench.vvp +vcd
+gtkwave output/post_synth_sim/testbench.vcd
 ```
+
 - It gives the following output:
 
 ![post_synth_term](images/post_synth_output.png)
 
-![post_synth_waveform](images/post_synth_waveform.png)
+![post_synth_waveform](images/post_synth_waveform1.png)
+
+![post_synth_waveform](images/post_synth_waveform2.png)
+
+![post_synth_waveform](images/post_synth_waveform3.png)
 
 ## Static Timing Analysis
 - We use OpenSTA (part of OpenLANE) to perform gate-level static timing analyser

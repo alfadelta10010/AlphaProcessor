@@ -230,12 +230,44 @@ gtkwave output/post_synth_sim/testbench.vcd
 ```
 read_liberty -min ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_liberty -max ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog ../output/synth/vsdbabysoc.synth.v
-link_design vsdbabysoc
+set_units -time ns
+read_verilog ../output/synth/alphasoc.synth.v
+link_design alphasoc
+create_clock [get_ports clk] -name core_clk -period 1100
 report_checks
 ```
 - The results are as follows:
 ```
+Startpoint: _53628_ (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: _100086_ (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _53628_/CLK (sky130_fd_sc_hd__dfxtp_1)
+  65.56   65.56 ^ _53628_/Q (sky130_fd_sc_hd__dfxtp_1)
+ 957.57 1023.13 v _62832_/Y (sky130_fd_sc_hd__nor2_1)
+  48.57 1071.70 ^ _76642_/Y (sky130_fd_sc_hd__clkinv_1)
+  22.08 1093.78 v _76643_/Y (sky130_fd_sc_hd__nor2_1)
+   5.49 1099.27 ^ _89963_/Y (sky130_fd_sc_hd__nand3_1)
+   0.16 1099.43 v _89965_/Y (sky130_fd_sc_hd__o21ai_0)
+   0.00 1099.43 v _100086_/D (sky130_fd_sc_hd__dfxtp_1)
+        1099.43   data arrival time
+
+1100.00 1100.00   clock core_clk (rise edge)
+   0.00 1100.00   clock network delay (ideal)
+   0.00 1100.00   clock reconvergence pessimism
+        1100.00 ^ _100086_/CLK (sky130_fd_sc_hd__dfxtp_1)
+  -0.25 1099.75   library setup time
+        1099.75   data required time
+---------------------------------------------------------
+        1099.75   data required time
+        -1099.43   data arrival time
+---------------------------------------------------------
+           0.32   slack (MET)
 ```
 
 ## Physical Design
@@ -253,7 +285,7 @@ report_checks
 ### Layout Generation
 - We first run the following commands to set up our system and OpenLANE for layout generation:
 ```bash
-mkdir -p output/rvmyth_layout
+mkdir -p output/alphacore_layout
 mkdir -p /usr/local/tools/Openlane/designs/alphacore
 mkdir -p /usr/local/tools/Openlane/designs/alphacore/src
 mkdir -p /usr/local/tools/Openlane/designs/alphacore/src/module

@@ -5,15 +5,15 @@ module simpleuart #(parameter integer DEFAULT_DIV = 1) (
 	output ser_tx,
 	input  ser_rx,
 
-	input   [3:0] reg_div_we,
-	input  [31:0] reg_div_di,
+	input [3:0] reg_div_we,
+	input [31:0] reg_div_di,
 	output [31:0] reg_div_do,
 
-	input         reg_dat_we,
-	input         reg_dat_re,
-	input  [31:0] reg_dat_di,
+	input reg_dat_we,
+	input reg_dat_re,
+	input [31:0] reg_dat_di,
 	output [31:0] reg_dat_do,
-	output        reg_dat_wait
+	output reg_dat_wait
 );
 	reg [31:0] cfg_divider;
 

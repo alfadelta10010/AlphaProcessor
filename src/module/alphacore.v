@@ -1,4 +1,4 @@
-`include "alphasoc_reg.v"
+//`include "alphasoc_reg.v"
 
 `timescale 1 ns / 1 ps
 `define debug(debug_command)
@@ -38,11 +38,8 @@ module alphacore #(
 	output reg [31:0] cpi_insn,
 	output [31:0] cpi_rs1,
 	output [31:0] cpi_rs2,
-	input cpi_wr,
-	input [31:0] cpi_rd,
 	input cpi_wait,
-	input cpi_ready,
-
+	
 	// IRQ Interface
 	input [31:0] irq,
 	output reg [31:0] eoi,
@@ -71,10 +68,10 @@ module alphacore #(
 	reg [31:0] dbg_insn_opcode;
 	reg [31:0] dbg_insn_addr;
 
-	reg cpi_int_wr;
-	reg [31:0] cpi_int_rd;
+	//reg cpi_int_wr;
+	//reg [31:0] cpi_int_rd;
 	reg cpi_int_wait;
-	reg cpi_int_ready;
+	//reg cpi_int_ready;
 
 	wire dbg_mem_valid = mem_valid;
 	wire dbg_mem_instr = mem_instr;
@@ -1322,39 +1319,8 @@ module alphacore #(
 
 				(* parallel_case *)
 				case (1'b1)
-					(1 || 0) && instr_trap: begin
-						if (0) begin
-							`debug($display("LD_RS1: %2d 0x%08x", decoded_rs1, cpuregs_rs1);)
-							reg_op1 <= cpuregs_rs1;
-							dbg_rs1val <= cpuregs_rs1;
-							dbg_rs1val_valid <= 1;
-							if (1) begin
-								cpi_valid <= 1;
-								`debug($display("LD_RS2: %2d 0x%08x", decoded_rs2, cpuregs_rs2);)
-								reg_sh <= cpuregs_rs2;
-								reg_op2 <= cpuregs_rs2;
-								dbg_rs2val <= cpuregs_rs2;
-								dbg_rs2val_valid <= 1;
-								if (cpi_int_ready) begin
-									mem_do_rinst <= 1;
-									cpi_valid <= 0;
-									reg_out <= cpi_int_rd;
-									latched_store <= cpi_int_wr;
-									cpu_state <= cpu_state_fetch;
-								end else
-								if (1 && (cpi_timeout || instr_ecall_ebreak)) begin
-									cpi_valid <= 0;
-									`debug($display("EBREAK OR UNSUPPORTED INSN AT 0x%08x", reg_pc);)
-									if (1 && !irq_mask[irq_ebreak] && !irq_active) begin
-										next_irq_pending[irq_ebreak] = 1;
-										cpu_state <= cpu_state_fetch;
-									end else
-										cpu_state <= cpu_state_trap;
-								end
-							end else begin
-								cpu_state <= cpu_state_ld_rs2;
-							end
-						end else begin
+					(1 || 0) && instr_trap:
+						begin
 							`debug($display("EBREAK OR UNSUPPORTED INSN AT 0x%08x", reg_pc);)
 							if (1 && !irq_mask[irq_ebreak] && !irq_active) begin
 								next_irq_pending[irq_ebreak] = 1;
@@ -1362,8 +1328,7 @@ module alphacore #(
 							end else
 								cpu_state <= cpu_state_trap;
 						end
-					end
-					1 && is_rdcycle_rdcycleh_rdinstr_rdinstrh: begin
+					is_rdcycle_rdcycleh_rdinstr_rdinstrh: begin
 						(* parallel_case, full_case *)
 						case (1'b1)
 							instr_rdcycle:
@@ -1387,24 +1352,7 @@ module alphacore #(
 							mem_do_rinst <= mem_do_prefetch;
 						cpu_state <= cpu_state_exec;
 					end
-					1 && 0 && instr_getq: begin
-						`debug($display("LD_RS1: %2d 0x%08x", decoded_rs1, cpuregs_rs1);)
-						reg_out <= cpuregs_rs1;
-						dbg_rs1val <= cpuregs_rs1;
-						dbg_rs1val_valid <= 1;
-						latched_store <= 1;
-						cpu_state <= cpu_state_fetch;
-					end
-					1 && 0 && instr_setq: begin
-						`debug($display("LD_RS1: %2d 0x%08x", decoded_rs1, cpuregs_rs1);)
-						reg_out <= cpuregs_rs1;
-						dbg_rs1val <= cpuregs_rs1;
-						dbg_rs1val_valid <= 1;
-						latched_rd <= latched_rd | irqregs_offset;
-						latched_store <= 1;
-						cpu_state <= cpu_state_fetch;
-					end
-					1 && instr_retirq: begin
+					instr_retirq: begin
 						eoi <= 0;
 						irq_active <= 0;
 						latched_branch <= 1;
@@ -1415,7 +1363,7 @@ module alphacore #(
 						dbg_rs1val_valid <= 1;
 						cpu_state <= cpu_state_fetch;
 					end
-					1 && instr_maskirq: begin
+					instr_maskirq: begin
 						latched_store <= 1;
 						reg_out <= irq_mask;
 						`debug($display("LD_RS1: %2d 0x%08x", decoded_rs1, cpuregs_rs1);)
@@ -1424,7 +1372,7 @@ module alphacore #(
 						dbg_rs1val_valid <= 1;
 						cpu_state <= cpu_state_fetch;
 					end
-					1 && 1 && instr_timer: begin
+					instr_timer: begin
 						latched_store <= 1;
 						reg_out <= timer;
 						`debug($display("LD_RS1: %2d 0x%08x", decoded_rs1, cpuregs_rs1);)
@@ -1466,32 +1414,29 @@ module alphacore #(
 						reg_op1 <= cpuregs_rs1;
 						dbg_rs1val <= cpuregs_rs1;
 						dbg_rs1val_valid <= 1;
-						if (1) begin
-							`debug($display("LD_RS2: %2d 0x%08x", decoded_rs2, cpuregs_rs2);)
-							reg_sh <= cpuregs_rs2;
-							reg_op2 <= cpuregs_rs2;
-							dbg_rs2val <= cpuregs_rs2;
-							dbg_rs2val_valid <= 1;
-							(* parallel_case *)
-							case (1'b1)
-								is_sb_sh_sw: begin
-									cpu_state <= cpu_state_stmem;
-									mem_do_rinst <= 1;
-								end
-								is_sll_srl_sra && 0: begin
-									cpu_state <= cpu_state_shift;
-								end
-								default: begin
-									if (0 || (0 && is_beq_bne_blt_bge_bltu_bgeu)) begin
-										alu_wait_2 <= 0 && (0 && is_beq_bne_blt_bge_bltu_bgeu);
-										alu_wait <= 1;
-									end else
-										mem_do_rinst <= mem_do_prefetch;
-									cpu_state <= cpu_state_exec;
-								end
-							endcase
-						end else
-							cpu_state <= cpu_state_ld_rs2;
+						`debug($display("LD_RS2: %2d 0x%08x", decoded_rs2, cpuregs_rs2);)
+						reg_sh <= cpuregs_rs2;
+						reg_op2 <= cpuregs_rs2;
+						dbg_rs2val <= cpuregs_rs2;
+						dbg_rs2val_valid <= 1;
+						(* parallel_case *)
+						case (1'b1)
+							is_sb_sh_sw: begin
+								cpu_state <= cpu_state_stmem;
+								mem_do_rinst <= 1;
+							end
+							is_sll_srl_sra && 0: begin
+								cpu_state <= cpu_state_shift;
+							end
+							default: begin
+								if (0 || (0 && is_beq_bne_blt_bge_bltu_bgeu)) begin
+									alu_wait_2 <= 0 && (0 && is_beq_bne_blt_bge_bltu_bgeu);
+									alu_wait <= 1;
+								end else
+									mem_do_rinst <= mem_do_prefetch;
+								cpu_state <= cpu_state_exec;
+							end
+						endcase
 					end
 				endcase
 			end
@@ -1505,25 +1450,19 @@ module alphacore #(
 
 				(* parallel_case *)
 				case (1'b1)
-					0 && instr_trap: begin
-						cpi_valid <= 1;
-						if (cpi_int_ready) begin
-							mem_do_rinst <= 1;
-							cpi_valid <= 0;
-							reg_out <= cpi_int_rd;
-							latched_store <= cpi_int_wr;
-							cpu_state <= cpu_state_fetch;
-						end else
-						if (1 && (cpi_timeout || instr_ecall_ebreak)) begin
-							cpi_valid <= 0;
-							`debug($display("EBREAK OR UNSUPPORTED INSN AT 0x%08x", reg_pc);)
-							if (1 && !irq_mask[irq_ebreak] && !irq_active) begin
-								next_irq_pending[irq_ebreak] = 1;
-								cpu_state <= cpu_state_fetch;
-							end else
-								cpu_state <= cpu_state_trap;
+					0 && instr_trap: 
+						begin
+							cpi_valid <= 1;
+							if (1 && (cpi_timeout || instr_ecall_ebreak)) begin
+								cpi_valid <= 0;
+								`debug($display("EBREAK OR UNSUPPORTED INSN AT 0x%08x", reg_pc);)
+								if (1 && !irq_mask[irq_ebreak] && !irq_active) begin
+									next_irq_pending[irq_ebreak] = 1;
+									cpu_state <= cpu_state_fetch;
+								end else
+									cpu_state <= cpu_state_trap;
+							end
 						end
-					end
 					is_sb_sh_sw: begin
 						cpu_state <= cpu_state_stmem;
 						mem_do_rinst <= 1;

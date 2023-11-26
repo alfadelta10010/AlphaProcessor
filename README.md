@@ -285,23 +285,47 @@ Path Type: max
 ### Layout Generation
 - We first run the following commands to set up our system and OpenLANE for layout generation:
 ```bash
-mkdir -p output/alphacore_layout
-mkdir -p /usr/local/tools/Openlane/designs/alphacore
-mkdir -p /usr/local/tools/Openlane/designs/alphacore/src
-mkdir -p /usr/local/tools/Openlane/designs/alphacore/src/module
-mkdir -p /usr/local/tools/Openlane/designs/alphacore/src/include
-cp -r src/layout_conf/* /usr/local/tools/Openlane/designs/alphacore
-cp output/compiled_tlv/alphacore.v /usr/local/tools/Openlane/designs/alphacore/src/module
-//cp src/module/clk_gate.v /usr/local/tools/Openlane/designs/rvmyth/src/module
-//cp output/compiled_tlv/rvmyth_gen.v /usr/local/tools/Openlane/designs/rvmyth/src/include
-//cp src/include/*.vh /usr/local/tools/Openlane/designs/rvmyth/src/include
-mkdir -p output/rvmyth_layout
+mkdir -p output/alphasoc_layout
+mkdir -p /usr/local/tools/OpenLane/designs/alphasoc
+mkdir -p /usr/local/tools/OpenLane/designs/alphasoc/src
+mkdir -p /usr/local/tools/OpenLane/designs/alphasoc/src/module
+cp src/module/alphasoc.v /usr/local/tools/OpenLane/designs/alphasoc/src/module
+cp src/module/alphacore.v /usr/local/tools/OpenLane/designs/alphasoc/src/module
+cp src/module/alphasoc_mem.v /usr/local/tools/OpenLane/designs/alphasoc/src/module
+cp src/module/alphasoc_reg.v /usr/local/tools/OpenLane/designs/alphasoc/src/module
+cp src/module/simpleuart.v /usr/local/tools/OpenLane/designs/alphasoc/src/module
+cp src/module/spimemio.v /usr/local/tools/OpenLane/designs/alphasoc/src/module
+cp src/lib/*.lib /usr/local/tools/OpenLane/designs/alphasoc/src
+touch /usr/local/tools/OpenLane/designs/alphasoc/config.tcl
+touch /usr/local/tools/OpenLane/designs/alphasoc/src/alphasoc_synthesis.sdc
 ```
+
+- Enter the following contents in `config.tcl`
+```tcl
+set ::env(DESIGN_NAME) "alphasoc"
+set ::env(VERILOG_FILES) [glob $::env(DESIGN_DIR)/src/module/*.v]
+set ::env(EXTRA_LIBS) [glob $::env(DESIGN_DIR)/src/*.lib]
+set ::env(BASE_SDC_FILE) [glob $::env(DESIGN_DIR)/src/*.sdc]
+
+set ::env(CLOCK_PERIOD) "1100.00"
+set ::env(CLOCK_PORT) "clk"
+set ::env(CLOCK_NET) $::env(CLOCK_PORT)
+```
+
+- Enter the following contents in `alphasoc.sdc`
+```tcl
+set_units -time ns
+create_clock [get_ports clk] -name core_clk -period 1100
+```
+
 - We then run the following command to generate the layout:
-```
-./flow.tcl -design alphacore
+```bash
+cd /usr/local/tools/Openlane/
+make mount
+./flow.tcl -design alphasoc | tee /home/alphadelta1803/Desktop/projects/pes_riscv_processor/output/alphasoc_layout/layout.log
+exit
 ```
 - We then copy the result back into our main project directory:
 ```bash
-cp -r /usr/local/tools/Openlane/designs/rvmyth/runs/* output/rvmyth_layout
+cp -r /usr/local/tools/Openlane/designs/alphasoc/runs/* output/alphasoc_layout
 ```

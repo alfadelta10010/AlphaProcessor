@@ -94,7 +94,7 @@ module alphasoc (
 	alphacore #(
 		.STACKADDR(STACKADDR),
 		.PROGADDR_RESET(PROGADDR_RESET),
-		.PROGADDR_IRQ(PROGADDR_IRQ),
+		.PROGADDR_IRQ(PROGADDR_IRQ)
 	) cpu (
 		.clk         (clk        ),
 		.resetn      (resetn     ),

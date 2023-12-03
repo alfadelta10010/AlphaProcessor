@@ -1,7 +1,7 @@
 OpenROAD 6f9b2bb8b808b1bb5831d4525d868212ae50517a 
 This program is licensed under the BSD-3 license. See the LICENSE file for details.
 Components of this program may be licensed under more restrictive licenses which must be honored.
-[INFO]: Reading ODB at '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/results/cts/alphasoc_mem.odb'…
+[INFO]: Reading ODB at '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/results/cts/alphasoc_mem.odb'…
 define_corners Slowest Typical Fastest
 read_liberty -corner Slowest /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib
 read_liberty -corner Slowest /openlane/designs/alphasoc_mem/src/sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -1028,24 +1028,24 @@ Placement Analysis
 total displacement          0.0 u
 average displacement        0.0 u
 max displacement            0.0 u
-original HPWL         1210022.8 u
-legalized HPWL        1237424.3 u
+original HPWL         1191551.7 u
+legalized HPWL        1220232.3 u
 delta HPWL                    2 %
 
-[INFO DPL-0020] Mirrored 9759 instances
-[INFO DPL-0021] HPWL before          1237424.3 u
-[INFO DPL-0022] HPWL after           1210022.8 u
-[INFO DPL-0023] HPWL delta               -2.2 %
+[INFO DPL-0020] Mirrored 9711 instances
+[INFO DPL-0021] HPWL before          1220232.3 u
+[INFO DPL-0022] HPWL after           1191551.7 u
+[INFO DPL-0023] HPWL delta               -2.4 %
 Setting global connections for newly added cells…
-Writing OpenROAD database to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/cts/14-alphasoc_mem.resized.odb'…
-Writing netlist to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/cts/14-alphasoc_mem.resized.nl.v'…
-Writing powered netlist to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/cts/14-alphasoc_mem.resized.pnl.v'…
-Writing layout to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/cts/14-alphasoc_mem.resized.def'…
-Writing timing constraints to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/cts/14-alphasoc_mem.resized.sdc'…
+Writing OpenROAD database to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/cts/14-alphasoc_mem.resized.odb'…
+Writing netlist to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/cts/14-alphasoc_mem.resized.nl.v'…
+Writing powered netlist to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/cts/14-alphasoc_mem.resized.pnl.v'…
+Writing layout to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/cts/14-alphasoc_mem.resized.def'…
+Writing timing constraints to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/cts/14-alphasoc_mem.resized.sdc'…
 area_report
 
 ===========================================================================
 report_design_area
 ============================================================================
-Design area 405615 u^2 53% utilization.
+Design area 405493 u^2 53% utilization.
 area_report_end

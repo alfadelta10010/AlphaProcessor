@@ -1,19 +1,19 @@
 Design Name: alphasoc_mem
-Run Directory: /openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33
+Run Directory: /openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22
 ----------------------------------------
 
 Magic DRC Summary:
-Source: /openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/reports/signoff/drc.rpt
+Source: /openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/reports/signoff/drc.rpt
 Total Magic DRC violations is 0
 ----------------------------------------
 
 LVS Summary:
-Source: /openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/logs/signoff/38-alphasoc_mem.lef.lvs.log
-Number of nets: 33270                      |Number of nets: 33270                      
+Source: /openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/logs/signoff/38-alphasoc_mem.lef.lvs.log
+Number of nets: 33267                      |Number of nets: 33267                      
 Design is LVS clean.
 ----------------------------------------
 
 Antenna Summary:
-Source: /openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/logs/signoff/40-arc.log
-Pin violations: 353
-Net violations: 196
+Source: /openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/logs/signoff/40-arc.log
+Pin violations: 391
+Net violations: 238

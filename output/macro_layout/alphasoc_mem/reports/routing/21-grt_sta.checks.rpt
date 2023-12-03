@@ -4,8 +4,8 @@ report_checks -unconstrained
 ===========================================================================
 ======================= Typical Corner ===================================
 
-Startpoint: _51916_ (rising edge-triggered flip-flop clocked by core_clk)
-Endpoint: _49644_ (rising edge-triggered flip-flop clocked by core_clk)
+Startpoint: _51920_ (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: _49648_ (rising edge-triggered flip-flop clocked by core_clk)
 Path Group: core_clk
 Path Type: max
 
@@ -13,38 +13,38 @@ Fanout     Cap    Slew   Delay    Time   Description
 -----------------------------------------------------------------------------
                   0.00    0.00    0.00   clock core_clk (rise edge)
                           0.00    0.00   clock network delay (ideal)
-                  0.00    0.00    0.00 ^ _51916_/CLK (sky130_fd_sc_hd__dfxtp_1)
-     2    0.00    0.03    0.28    0.28 v _51916_/Q (sky130_fd_sc_hd__dfxtp_1)
-                                         mem[169][10] (net)
-                  0.03    0.00    0.28 v _25792_/A1 (sky130_fd_sc_hd__mux4_1)
-     1    0.00    0.08    0.48    0.75 v _25792_/X (sky130_fd_sc_hd__mux4_1)
-                                         _09856_ (net)
-                  0.08    0.00    0.75 v _25795_/A2 (sky130_fd_sc_hd__a22o_1)
-     1    0.00    0.04    0.23    0.98 v _25795_/X (sky130_fd_sc_hd__a22o_1)
-                                         _09859_ (net)
-                  0.04    0.00    0.98 v _25796_/C1 (sky130_fd_sc_hd__a221o_1)
-     1    0.00    0.05    0.25    1.23 v _25796_/X (sky130_fd_sc_hd__a221o_1)
-                                         _09860_ (net)
-                  0.05    0.00    1.23 v _25824_/A2 (sky130_fd_sc_hd__a2111o_1)
-     1    0.00    0.06    0.39    1.62 v _25824_/X (sky130_fd_sc_hd__a2111o_1)
-                                         _09888_ (net)
-                  0.06    0.00    1.62 v _25940_/A2 (sky130_fd_sc_hd__a2111o_1)
-     1    0.00    0.05    0.39    2.01 v _25940_/X (sky130_fd_sc_hd__a2111o_1)
-                                         _00001_ (net)
-                  0.05    0.00    2.01 v _49644_/D (sky130_fd_sc_hd__dfxtp_2)
-                                  2.01   data arrival time
+                  0.00    0.00    0.00 ^ _51920_/CLK (sky130_fd_sc_hd__dfxtp_1)
+     2    0.00    0.03    0.28    0.28 v _51920_/Q (sky130_fd_sc_hd__dfxtp_1)
+                                         mem[169][14] (net)
+                  0.03    0.00    0.28 v _26338_/A1 (sky130_fd_sc_hd__mux4_1)
+     1    0.00    0.08    0.48    0.75 v _26338_/X (sky130_fd_sc_hd__mux4_1)
+                                         _10398_ (net)
+                  0.08    0.00    0.75 v _26341_/A2 (sky130_fd_sc_hd__a22o_1)
+     1    0.00    0.04    0.23    0.98 v _26341_/X (sky130_fd_sc_hd__a22o_1)
+                                         _10401_ (net)
+                  0.04    0.00    0.98 v _26342_/C1 (sky130_fd_sc_hd__a221o_1)
+     1    0.00    0.05    0.25    1.23 v _26342_/X (sky130_fd_sc_hd__a221o_1)
+                                         _10402_ (net)
+                  0.05    0.00    1.23 v _26376_/A2 (sky130_fd_sc_hd__a2111o_2)
+     2    0.00    0.06    0.46    1.69 v _26376_/X (sky130_fd_sc_hd__a2111o_2)
+                                         _10436_ (net)
+                  0.06    0.00    1.69 v _26484_/A2 (sky130_fd_sc_hd__a2111o_1)
+     1    0.00    0.05    0.39    2.08 v _26484_/X (sky130_fd_sc_hd__a2111o_1)
+                                         _00005_ (net)
+                  0.05    0.00    2.08 v _49648_/D (sky130_fd_sc_hd__dfxtp_4)
+                                  2.08   data arrival time
 
                   0.00 1100.00 1100.00   clock core_clk (rise edge)
                           0.00 1100.00   clock network delay (ideal)
                           0.00 1100.00   clock reconvergence pessimism
-                               1100.00 ^ _49644_/CLK (sky130_fd_sc_hd__dfxtp_2)
-                         -0.13 1099.87   library setup time
-                               1099.87   data required time
+                               1100.00 ^ _49648_/CLK (sky130_fd_sc_hd__dfxtp_4)
+                         -0.12 1099.88   library setup time
+                               1099.88   data required time
 -----------------------------------------------------------------------------
-                               1099.87   data required time
-                                 -2.01   data arrival time
+                               1099.88   data required time
+                                 -2.08   data arrival time
 -----------------------------------------------------------------------------
-                               1097.86   slack (MET)
+                               1097.80   slack (MET)
 
 
 
@@ -70,7 +70,7 @@ max cap violations count Typical: 0
 ===========================================================================
 report_parasitic_annotation -report_unannotated
 ============================================================================
-Found 33282 unannotated drivers.
+Found 33279 unannotated drivers.
  addr[0]
  addr[10]
  addr[11]
@@ -32589,6 +32589,7 @@ Found 33282 unannotated drivers.
  clkbuf_leaf_111_clk/X
  clkbuf_leaf_112_clk/X
  clkbuf_leaf_113_clk/X
+ clkbuf_leaf_114_clk/X
  clkbuf_leaf_115_clk/X
  clkbuf_leaf_116_clk/X
  clkbuf_leaf_117_clk/X
@@ -32640,6 +32641,7 @@ Found 33282 unannotated drivers.
  clkbuf_leaf_159_clk/X
  clkbuf_leaf_15_clk/X
  clkbuf_leaf_160_clk/X
+ clkbuf_leaf_161_clk/X
  clkbuf_leaf_162_clk/X
  clkbuf_leaf_163_clk/X
  clkbuf_leaf_164_clk/X
@@ -33239,12 +33241,6 @@ Found 33282 unannotated drivers.
  clkbuf_leaf_69_clk/X
  clkbuf_leaf_6_clk/X
  clkbuf_leaf_700_clk/X
- clkbuf_leaf_701_clk/X
- clkbuf_leaf_702_clk/X
- clkbuf_leaf_703_clk/X
- clkbuf_leaf_704_clk/X
- clkbuf_leaf_705_clk/X
- clkbuf_leaf_706_clk/X
  clkbuf_leaf_70_clk/X
  clkbuf_leaf_71_clk/X
  clkbuf_leaf_72_clk/X
@@ -33255,6 +33251,7 @@ Found 33282 unannotated drivers.
  clkbuf_leaf_77_clk/X
  clkbuf_leaf_78_clk/X
  clkbuf_leaf_79_clk/X
+ clkbuf_leaf_7_clk/X
  clkbuf_leaf_80_clk/X
  clkbuf_leaf_81_clk/X
  clkbuf_leaf_82_clk/X

@@ -1,0 +1,31 @@
+OpenLane f691c8c0712ca6c6645e3fd548985b3cbcf08c78
+All rights reserved. (c) 2020-2022 Efabless Corporation and contributors.
+Available under the Apache License, version 2.0. See the LICENSE file for more details.
+
+[36m[INFO]: Using configuration in 'designs/alphasoc/config.tcl'...[39m
+[36m[INFO]: PDK Root: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks[39m
+[36m[INFO]: Process Design Kit: sky130A[39m
+[36m[INFO]: Standard Cell Library: sky130_fd_sc_hd[39m
+[36m[INFO]: Optimization Standard Cell Library: sky130_fd_sc_hd[39m
+[36m[INFO]: Run Directory: /openlane/designs/alphasoc/runs/RUN_2023.12.03_17.43.09[39m
+[36m[INFO]: Saving runtime environment...[39m
+[36m[INFO]: Preparing LEF files for the nom corner...[39m
+[36m[INFO]: Preparing LEF files for the min corner...[39m
+[36m[INFO]: Preparing LEF files for the max corner...[39m
+[31m[ERROR]: Step 0 (verilator_lint_check) failed with error:
+-code 1 -level 0 -errorcode NONE -errorinfo {no such variable
+    (read trace on "::env(VERILOG_FILES)")
+    invoked from within
+"lappend arg_list {*}$::env(VERILOG_FILES)"
+    (procedure "run_verilator" line 41)
+    invoked from within
+"run_verilator"
+    (procedure "run_verilator_step" line 3)
+    invoked from within
+"run_verilator_step"} -errorline 1[39m
+[36m[INFO]: Saving current set of views in 'designs/alphasoc/runs/RUN_2023.12.03_17.43.09/results/final'...[39m
+[36m[INFO]: Generating final set of reports...[39m
+[36m[INFO]: Created manufacturability report at 'designs/alphasoc/runs/RUN_2023.12.03_17.43.09/reports/manufacturability.rpt'.[39m
+[36m[INFO]: Created metrics report at 'designs/alphasoc/runs/RUN_2023.12.03_17.43.09/reports/metrics.csv'.[39m
+[36m[INFO]: Saving runtime environment...[39m
+[31m[ERROR]: Flow failed.[39m

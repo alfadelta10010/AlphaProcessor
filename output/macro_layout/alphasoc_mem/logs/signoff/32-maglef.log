@@ -12,7 +12,7 @@ The following types are not handled by extraction and will be treated as non-ele
 Scaled tech values by 2 / 1 to match internal grid scaling
 Loading sky130A Device Generator Menu ...
 Using technology "sky130A", version 1.0.455-1-ge0f692f
-Reading LEF data from file /openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/results/signoff/alphasoc_mem.lef.
+Reading LEF data from file /openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/results/signoff/alphasoc_mem.lef.
 This action cannot be undone.
-LEF read: Processed 1240 lines.
+LEF read: Processed 1150 lines.
 [INFO]: DONE GENERATING MAGLEF VIEW

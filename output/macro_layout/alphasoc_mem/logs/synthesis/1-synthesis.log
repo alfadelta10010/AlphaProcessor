@@ -36,7 +36,7 @@ Generating RTLIL representation for module `\alphasoc_mem'.
 Successfully finished Verilog frontend.
 
 3. Generating Graphviz representation of design.
-Writing dot description to `/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/synthesis/hierarchy.dot'.
+Writing dot description to `/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/synthesis/hierarchy.dot'.
 Dumping module alphasoc_mem to page 1.
 
 4. Executing HIERARCHY pass (managing design hierarchy).
@@ -1678,7 +1678,7 @@ Checking module alphasoc_mem...
 Found and reported 0 problems.
 
 44. Generating Graphviz representation of design.
-Writing dot description to `/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/synthesis/post_techmap.dot'.
+Writing dot description to `/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/synthesis/post_techmap.dot'.
 Dumping module alphasoc_mem to page 1.
 
 45. Executing SHARE pass (SAT-based resource sharing).
@@ -1820,16 +1820,16 @@ Mapping DFF cells in module `\alphasoc_mem':
 
 55. Executing ABC pass (technology mapping using ABC).
 
-55.1. Extracting gate netlist of module `\alphasoc_mem' to `/tmp/yosys-abc-n9LCwv/input.blif'..
+55.1. Extracting gate netlist of module `\alphasoc_mem' to `/tmp/yosys-abc-aBX9Dj/input.blif'..
 Extracted 17680 gates and 25916 wires to a netlist network with 8236 inputs and 8224 outputs.
 
 55.1.1. Executing ABC.
-Running ABC command: "/build/bin/yosys-abc" -s -f /tmp/yosys-abc-n9LCwv/abc.script 2>&1
-ABC: ABC command line: "source /tmp/yosys-abc-n9LCwv/abc.script".
+Running ABC command: "/build/bin/yosys-abc" -s -f /tmp/yosys-abc-aBX9Dj/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-aBX9Dj/abc.script".
 ABC: 
-ABC: + read_blif /tmp/yosys-abc-n9LCwv/input.blif 
-ABC: + read_lib -w /openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/synthesis/trimmed.lib 
-ABC: Parsing finished successfully.  Parsing time =     0.11 sec
+ABC: + read_blif /tmp/yosys-abc-aBX9Dj/input.blif 
+ABC: + read_lib -w /openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.12 sec
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
@@ -1847,13 +1847,13 @@ ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
 ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
 ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
 ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
-ABC: Library "sky130A_merged" from "/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.15 sec
-ABC: Memory =    9.54 MB. Time =     0.15 sec
+ABC: Library "sky130A_merged" from "/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.16 sec
+ABC: Memory =    9.54 MB. Time =     0.16 sec
 ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
-ABC: + read_constr -v /openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/synthesis/synthesis.sdc 
+ABC: + read_constr -v /openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/synthesis/synthesis.sdc 
 ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
 ABC: Setting output load to be 33.442001.
-ABC: + read_constr /openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/synthesis/synthesis.sdc 
+ABC: + read_constr /openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/synthesis/synthesis.sdc 
 ABC: + fx 
 ABC: + mfs 
 ABC: + strash 
@@ -1933,7 +1933,7 @@ ABC: Path  8 --   17006 : 5    1 sky130_fd_sc_hd__a2111o_2 A =  12.51  Df =2930.
 ABC: Start-point = pi2 (\addr [0]).  End-point = po1 ($\mem$rdreg[0]$d [1]).
 ABC: + print_stats -m 
 ABC: netlist                       : i/o = 8236/ 8224  lat =    0  nd = 24150  edge =  57578  area =204811.53  delay =10.00  lev = 10
-ABC: + write_blif /tmp/yosys-abc-n9LCwv/output.blif 
+ABC: + write_blif /tmp/yosys-abc-aBX9Dj/output.blif 
 
 55.1.2. Re-integrating ABC results.
 ABC RESULTS:   sky130_fd_sc_hd__nor2b_2 cells:        2
@@ -2011,6 +2011,6 @@ Found and reported 0 problems.
 63. Executing Verilog backend.
 Dumping module `\alphasoc_mem'.
 
-End of script. Logfile hash: 66f52a1f2b, CPU: user 15.37s system 0.72s, MEM: 125.80 MB peak
+End of script. Logfile hash: 9e9cfc6e1f, CPU: user 15.08s system 0.71s, MEM: 125.76 MB peak
 Yosys 0.34 (git sha1 4a1b5599258, gcc 8.3.1 -fPIC -Os)
-Time spent: 68% 2x abc (32 sec), 8% 18x opt_expr (4 sec), ...
+Time spent: 73% 2x abc (38 sec), 7% 18x opt_expr (3 sec), ...

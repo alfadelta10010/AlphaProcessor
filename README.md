@@ -407,8 +407,19 @@ magic output/macro_layout/alphacore/RUN_2023.12.03_09.03.48/results/final/mag/al
 ### Creating the core: AlphaSoc
 - First, we set up our environment as follows:
 ```bash
-cp output/macro_layout/alphacore/RUN*/
-cp output/macro_layout/alphasoc_mem/RUN*/
-cp output/macro_layout/simpleuart/
-cp output/macro_layout/spimemio/
+cp output/macro_layout/alphacore/results/lef/alphacore.lef src/designs/alphasoc/src/
+cp output/macro_layout/alphasoc_mem/results/lef/alphasoc_mem.lef src/designs/alphasoc/src/
+cp output/macro_layout/simpleuart/results/lef/simpleuart.lef src/designs/alphasoc/src/
+cp output/macro_layout/spimemio/results/lef/spimemio.lef src/designs/alphasoc/src/
+cp output/macro_layout/alphacore/results/lib/alphacore.lib src/designs/alphasoc/src/
+cp output/macro_layout/alphasoc_mem/results/lib/alphasoc_mem.lib src/designs/alphasoc/src/
+cp output/macro_layout/simpleuart/results/lib/simpleuart.lib src/designs/alphasoc/src/
+cp output/macro_layout/spimemio/results/lib/spimemio.lib src/designs/alphasoc/src/
+cp output/macro_layout/alphacore/results/gds/alphacore.gds src/designs/alphasoc/src/
+cp output/macro_layout/alphasoc_mem/results/gds/alphasoc_mem.gds src/designs/alphasoc/src/
+cp output/macro_layout/simpleuart/results/gds/simpleuart.gds src/designs/alphasoc/src/
+cp output/macro_layout/spimemio/results/gds/spimemio.gds src/designs/alphasoc/src/
+cp -r src/designs/alphasoc /usr/local/tools/OpenLane/designs/
 ```
+
+

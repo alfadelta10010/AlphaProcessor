@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
- <description>XOR /openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/results/signoff/alphasoc_mem.gds vs. /openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/results/signoff/alphasoc_mem.klayout.gds</description>
+ <description>XOR /openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/results/signoff/alphasoc_mem.gds vs. /openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/results/signoff/alphasoc_mem.klayout.gds</description>
  <original-file/>
  <generator>drc: script='/openlane/scripts/klayout/xor.drc'</generator>
  <top-cell>alphasoc_mem</top-cell>
@@ -146,12 +146,6 @@
    </categories>
   </category>
   <category>
-   <name>70/16</name>
-   <description>XOR data for layer 70/16</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>70/20</name>
    <description>XOR data for layer 70/20</description>
    <categories>
@@ -259,13 +253,2950 @@
  <items>
   <item>
    <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08294_',r0 567.18,468.52)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08307_',r0 584.43,747.575)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08326_',r0 683.215,586.5)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08474_',r0 651.015,573.58)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08541_',r0 681.375,496.06)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08555_',r0 608.58,492.66)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08606_',r0 473.34,573.92)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08723_',r0 643.195,565.42)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09203_',r0 613.41,764.745)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09211_',r0 518.305,476.34)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09262_',r0 564.535,579.02)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09331_',r0 620.195,752.42)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09397_',r0 567.41,740.265)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09431_',r0 645.61,488.495)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09484_',r0 528.885,835.38)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09534_',r0 567.41,753.015)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09608_',r0 549.47,660.535)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09733_',r0 553.61,647.7)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09748_',r0 556.37,661.385)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09757_',r0 559.13,661.895)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09849_',r0 545.675,627.98)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10028_',r0 582.13,683.825)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10353_',r0 711.965,742.22)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10543_',r0 528.885,672.86)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10572_',r0 701.155,836.74)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10814_',r0 524.285,681.02)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10835_',r0 626.75,699.975)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10963_',r0 639.63,708.815)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10971_',r0 472.42,709.58)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11103_',r0 635.49,705.585)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11110_',r0 842.49,706.095)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11250_',r0 654.35,703.375)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11381_',r0 491.05,704.905)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11524_',r0 669.07,703.545)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11647_',r0 569.02,702.44)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11654_',r0 673.67,703.375)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11937_',r0 753.135,589.22)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12094_',r0 610.075,579.7)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12107_',r0 493.81,490.535)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12295_',r0 563.385,562.7)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12324_',r0 576.265,559.98)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12410_',r0 566.03,561.425)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12459_',r0 591.79,540.175)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12574_',r0 589.03,532.015)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12628_',r0 455.17,466.735)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12779_',r0 575.69,495.975)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_17891_',r0 623.99,580.38)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_18921_',r0 775.33,481.015)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_19088_',r0 784.53,674.985)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_19105_',r0 837.43,482.545)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_19193_',r0 725.65,689.86)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_19271_',r0 806.38,689.86)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_19755_',r0 739.91,469.625)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_20938_',r0 510.6,689.18)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_23197_',r0 676.43,545.7)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[11\\]\\[2\\]',r0 553.15,485.095)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[146\\]\\[22\\]',r0 803.85,797.895)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('net25',r0 491.165,683.74)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('net26',r0 492.315,647.02)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('net32',r0 550.045,862.58)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('net47',r0 486.22,669.8)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('net56',r0 582.59,880.175)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('net69',r0 872.39,880.175)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09594_',r0 392.15,659.175)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11136_',r0 185.495,760.58)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11151_',r0 194.235,759.22)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08288_',r0 287.27,517.905)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09610_',r0 50.6,642.94)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11431_',r0 198.49,746.215)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09631_',r0 317.285,683.74)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11562_',r0 199.87,738.055)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08640_',r0 301.07,605.455)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09741_',r0 389.39,660.025)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11691_',r0 198.49,729.895)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11718_',r0 388.7,565.42)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11758_',r0 440.45,522.665)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11921_',r0 261.97,684.335)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08346_',r0 75.21,575.535)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11945_',r0 389.39,498.865)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11947_',r0 390.31,550.375)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12036_',r0 271.17,675.495)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12060_',r0 262.89,536.775)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09196_',r0 364.09,607.495)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09765_',r0 187.45,637.585)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12177_',r0 259.67,653.225)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08357_',r0 164.91,657.815)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08360_',r0 377.89,493.425)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12381_',r0 296.47,683.655)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12407_',r0 300.61,642.345)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10069_',r0 191.59,667.335)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10098_',r0 324.645,489.94)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12481_',r0 300.15,668.015)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12522_',r0 304.29,645.575)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10169_',r0 96.83,679.575)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12625_',r0 371.68,462.06)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10172_',r0 95.45,680.935)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12640_',r0 388.01,464.695)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10311_',r0 101.43,695.215)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_13164_',r0 79.695,687.14)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_13764_',r0 109.94,572.56)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_14694_',r0 229.08,579.02)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10320_',r0 187.795,691.9)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_18392_',r0 364.09,691.815)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10337_',r0 190.21,695.215)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09238_',r0 149.27,500.905)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10364_',r0 323.955,565.42)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10366_',r0 422.855,468.18)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10395_',r0 430.215,697.34)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10441_',r0 75.21,712.215)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_20575_',r0 104.995,469.54)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_20577_',r0 105.915,489.94)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_20581_',r0 104.995,485.18)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_20791_',r0 278.99,566.185)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10504_',r0 373.06,581.74)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_21847_',r0 361.445,489.94)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_22488_',r0 172.27,651.695)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_22503_',r0 311.65,762.025)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08375_',r0 261.165,581.06)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_23659_',r0 164.91,841.585)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09322_',r0 362.71,610.215)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10608_',r0 185.61,702.695)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[186\\]\\[5\\]',r0 325.45,598.825)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[203\\]\\[15\\]',r0 329.59,772.055)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[203\\]\\[25\\]',r0 415.61,854.505)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[208\\]\\[9\\]',r0 224.71,750.295)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[215\\]\\[31\\]',r0 300.15,832.745)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[215\\]\\[9\\]',r0 185.61,750.295)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[230\\]\\[25\\]',r0 209.53,695.895)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[239\\]\\[10\\]',r0 14.03,653.735)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[27\\]\\[24\\]',r0 232.53,528.785)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[2\\]\\[26\\]',r0 292.905,489.94)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('net14',r0 162.265,776.22)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10637_',r0 428.835,472.94)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08409_',r0 199.295,784.38)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_07525_',r0 177.79,799.255)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('net41',r0 15.87,879.665)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08531_',r0 287.73,738.905)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08305_',r0 277.035,462.06)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('net6',r0 100.05,880.175)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08241_',r0 300.61,681.615)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12400_',r0 436.08,379.78)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12402_',r0 388.93,443.785)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10612_',r0 244.49,248.455)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10626_',r0 370.07,403.495)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09676_',r0 79.35,411.655)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10745_',r0 272.09,194.055)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12510_',r0 369.15,151.385)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10770_',r0 203.09,410.295)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12525_',r0 392.15,448.375)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09111_',r0 225.17,313.735)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09144_',r0 422.05,357.935)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10898_',r0 387.78,401.88)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08257_',r0 195.73,189.975)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08478_',r0 283.36,413.1)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08490_',r0 293.25,381.225)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_13378_',r0 395.715,89.42)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09809_',r0 375.935,400.18)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09813_',r0 285.43,412.335)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_15041_',r0 187.91,368.815)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_15629_',r0 293.02,165.58)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08516_',r0 418.37,409.105)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09246_',r0 192.05,457.895)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11318_',r0 203.55,417.095)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09250_',r0 225.63,324.615)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10076_',r0 288.65,289.425)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11460_',r0 386.515,435.54)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08707_',r0 197.57,452.455)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08714_',r0 358.11,317.135)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11573_',r0 360.985,358.7)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11584_',r0 428.95,406.385)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08287_',r0 190.555,156.06)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10218_',r0 377.315,407.66)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10228_',r0 62.79,420.665)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11698_',r0 262.66,383.52)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11705_',r0 377.2,290.02)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11715_',r0 390.54,422.96)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08802_',r0 99.13,392.615)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09408_',r0 264.27,360.825)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('clknet_0_clk',r0 277.035,365.5)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11810_',r0 184.46,256.02)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11820_',r0 393.99,93.415)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09410_',r0 193.89,427.975)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11928_',r0 382.605,428.06)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11935_',r0 393.07,102.935)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08838_',r0 193.89,439.025)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10359_',r0 65.55,406.215)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08849_',r0 356.27,321.895)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[22\\]\\[4\\]',r0 156.63,424.745)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08874_',r0 305.21,357.255)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12043_',r0 387.55,436.305)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[255\\]\\[2\\]',r0 147.89,330.735)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09544_',r0 181.01,422.535)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[2\\]\\[18\\]',r0 373.29,392.785)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[2\\]\\[22\\]',r0 358.11,404.855)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12065_',r0 394.91,436.135)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[39\\]\\[1\\]',r0 327.29,315.095)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[39\\]\\[23\\]',r0 158.01,234.855)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[3\\]\\[13\\]',r0 337.87,400.265)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[59\\]\\[0\\]',r0 410.09,282.455)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08875_',r0 440.91,355.215)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10490_',r0 365.01,400.775)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12158_',r0 392.61,434.095)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08979_',r0 252.31,328.185)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12273_',r0 201.71,278.375)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12285_',r0 432.975,382.5)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09003_',r0 351.9,362.44)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09098_',r0 189.75,450.415)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09657_',r0 283.59,298.775)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11722_',r0 643.425,359.38)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11734_',r0 643.31,365.585)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11741_',r0 643.655,361.42)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10221_',r0 467.59,411.825)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10225_',r0 464.83,181.305)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_17448_',r0 652.51,357.425)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08574_',r0 557.52,205.02)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11823_',r0 445.51,431.375)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_18506_',r0 460.23,392.02)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_18518_',r0 479.78,359.04)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10259_',r0 495.65,175.695)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10263_',r0 564.65,177.735)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09714_',r0 602.485,193.46)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11069_',r0 640.09,396.015)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11938_',r0 448.73,425.935)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11940_',r0 445.51,110.585)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_19787_',r0 773.03,448.46)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11080_',r0 621.345,68.34)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11083_',r0 731.63,281.775)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09024_',r0 507.15,277.015)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09032_',r0 537.625,344.42)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12055_',r0 455.285,434.86)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09423_',r0 449.65,385.815)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09074_',r0 518.075,455.26)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11203_',r0 613.41,47.175)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11206_',r0 802.93,279.225)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09451_',r0 592.71,296.055)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12170_',r0 466.9,364.82)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[11\\]\\[1\\]',r0 538.545,385.9)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11313_',r0 458.965,372.3)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12209_',r0 624.22,396.78)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08292_',r0 674.245,400.18)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12283_',r0 453.79,442.255)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11343_',r0 865.95,363.375)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11351_',r0 591.79,36.295)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12305_',r0 758.31,357.425)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09533_',r0 569.25,408.425)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09841_',r0 602.83,199.665)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08766_',r0 587.19,296.055)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_08991_',r0 549.01,390.575)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10528_',r0 492.43,158.865)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09275_',r0 514.74,376.38)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12428_',r0 462.99,136.935)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09282_',r0 498.87,399.415)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11604_',r0 569.25,370.855)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11617_',r0 643.31,357.935)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09164_',r0 491.51,199.665)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10114_',r0 749.11,455.175)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10624_',r0 710.125,449.14)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('mem\\[94\\]\\[10\\]',r0 716.91,308.295)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09180_',r0 569.02,321.3)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12626_',r0 676.775,402.22)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09391_',r0 583.97,413.015)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_11707_',r0 787.75,420.495)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12661_',r0 576.035,345.1)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_10669_',r0 750.03,272.935)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_12991_',r0 496.57,294.695)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_13044_',r0 565.57,454.58)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'70/5'</category>
+   <cell>alphasoc_mem</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>label: ('_09671_',r0 457.585,399.5)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
    <category>'72/5'</category>
    <cell>alphasoc_mem</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <image/>
    <values>
-    <value>label: ('_11491_',r0 365.7,750.04)</value>
+    <value>label: ('_09107_',r0 200.1,450.16)</value>
    </values>
   </item>
  </items>

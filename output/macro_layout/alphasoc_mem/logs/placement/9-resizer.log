@@ -1,7 +1,7 @@
 OpenROAD 6f9b2bb8b808b1bb5831d4525d868212ae50517a 
 This program is licensed under the BSD-3 license. See the LICENSE file for details.
 Components of this program may be licensed under more restrictive licenses which must be honored.
-[INFO]: Reading ODB at '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/placement/7-global.odb'…
+[INFO]: Reading ODB at '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/placement/7-global.odb'…
 define_corners Slowest Typical Fastest
 read_liberty -corner Slowest /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib
 read_liberty -corner Slowest /openlane/designs/alphasoc_mem/src/sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -1025,30 +1025,30 @@ Reading design constraints file at '/openlane/designs/alphasoc_mem/src/alphasoc_
 [INFO RSZ-0027] Inserted 44 input buffers.
 [INFO RSZ-0028] Inserted 32 output buffers.
 [INFO RSZ-0058] Using max wire length 3191um.
-[INFO RSZ-0039] Resized 32186 instances.
+[INFO RSZ-0039] Resized 32082 instances.
 Placement Analysis
 ---------------------------------
-total displacement     100145.4 u
+total displacement     100142.3 u
 average displacement        2.3 u
-max displacement           18.3 u
-original HPWL         1071316.3 u
-legalized HPWL        1180724.5 u
+max displacement           17.3 u
+original HPWL         1052943.6 u
+legalized HPWL        1163205.5 u
 delta HPWL                   10 %
 
-[INFO DPL-0020] Mirrored 9346 instances
-[INFO DPL-0021] HPWL before          1180724.5 u
-[INFO DPL-0022] HPWL after           1154978.7 u
-[INFO DPL-0023] HPWL delta               -2.2 %
+[INFO DPL-0020] Mirrored 9298 instances
+[INFO DPL-0021] HPWL before          1163205.5 u
+[INFO DPL-0022] HPWL after           1136255.4 u
+[INFO DPL-0023] HPWL delta               -2.3 %
 Setting global connections for newly added cells…
-Writing OpenROAD database to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/placement/9-resizer.odb'…
-Writing netlist to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/placement/9-resizer.nl.v'…
-Writing powered netlist to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/placement/9-resizer.pnl.v'…
-Writing layout to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/placement/9-resizer.def'…
-Writing timing constraints to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/tmp/placement/9-resizer.sdc'…
+Writing OpenROAD database to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/placement/9-resizer.odb'…
+Writing netlist to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/placement/9-resizer.nl.v'…
+Writing powered netlist to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/placement/9-resizer.pnl.v'…
+Writing layout to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/placement/9-resizer.def'…
+Writing timing constraints to '/openlane/designs/alphasoc_mem/runs/RUN_2023.12.03_14.26.22/tmp/placement/9-resizer.sdc'…
 area_report
 
 ===========================================================================
 report_design_area
 ============================================================================
-Design area 401131 u^2 53% utilization.
+Design area 401023 u^2 53% utilization.
 area_report_end

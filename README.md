@@ -293,7 +293,7 @@ cp -r src/designs/spimemio /usr/local/tools/OpenLane/designs
 cp -r src/designs/simpleuart /usr/local/tools/OpenLane/designs
 ```
 
-#### Creating macros
+### Creating macros
 - Synthesizing the entire top module as a whole will not work, as our module is incredibly dense.
 - As a result, we synthesize our sub-modules, create hardened macros and then integrade them into our final chip.
 - A Macro is a reusable piece of logic that can be used in another design, without rebuilding them from scratch.
@@ -381,3 +381,13 @@ cp -r /usr/local/tools/Openlane/designs/MacroName/runs/* output/macro_layout/Mac
 - Overall, we generate 4 macros, `spimemio`, `simpleuart`, `alphasoc_mem` and `alphacore`
 - We then integrate these macros into our final core
 
+#### AlphaCore Final GDSII Layout
+- We run the following commands to see the GDSII layout of the core
+```bash
+magic output/macro_layout/alphacore/RUN_2023.12.03_09.03.48/results/final/mag/alphacore.mag -T src/lib/sky130A.tech
+```
+- The Magic window opens up, and this is our layout for the core:
+
+![AlphaCore GDSII Layout](images/alphacore_gdsii.png)
+
+### Creating the final file

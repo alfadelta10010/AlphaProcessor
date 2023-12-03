@@ -1,72 +1,55 @@
-OpenLane dc5af9827620a2189f65fa42d9965e7a3d7b4695
+OpenLane f691c8c0712ca6c6645e3fd548985b3cbcf08c78
 All rights reserved. (c) 2020-2022 Efabless Corporation and contributors.
 Available under the Apache License, version 2.0. See the LICENSE file for more details.
 
 [36m[INFO]: Using configuration in 'designs/alphasoc/config.tcl'...[39m
-[36m[INFO]: PDK Root: /home/alphadelta1803/.volare[39m
+[36m[INFO]: PDK Root: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks[39m
 [36m[INFO]: Process Design Kit: sky130A[39m
 [36m[INFO]: Standard Cell Library: sky130_fd_sc_hd[39m
 [36m[INFO]: Optimization Standard Cell Library: sky130_fd_sc_hd[39m
-[36m[INFO]: Run Directory: /openlane/designs/alphasoc/runs/RUN_2023.11.26_10.02.05[39m
+[36m[INFO]: Run Directory: /openlane/designs/alphasoc/runs/RUN_2023.12.02_15.16.11[39m
 [36m[INFO]: Saving runtime environment...[39m
 [36m[INFO]: Preparing LEF files for the nom corner...[39m
 [36m[INFO]: Preparing LEF files for the min corner...[39m
 [36m[INFO]: Preparing LEF files for the max corner...[39m
-[36m[INFO]: Running linter (Verilator) (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/synthesis/linter.log)...[39m
+[36m[INFO]: Running linter (Verilator) (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/synthesis/linter.log)...[39m
 [36m[INFO]: 0 errors found by linter[39m
-[33m[WARNING]: 620 warnings found by linter[39m
+[33m[WARNING]: 617 warnings found by linter[39m
 [STEP 1]
-[36m[INFO]: Running Synthesis (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/synthesis/1-synthesis.log)...[39m
+[36m[INFO]: Running Synthesis (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/synthesis/1-synthesis.log)...[39m
 [STEP 2]
-[36m[INFO]: Running Single-Corner Static Timing Analysis (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/synthesis/2-sta.log)...[39m
+[36m[INFO]: Running Single-Corner Static Timing Analysis (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/synthesis/2-sta.log)...[39m
 [STEP 3]
-[36m[INFO]: Running Initial Floorplanning (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/floorplan/3-initial_fp.log)...[39m
-[36m[INFO]: Floorplanned with width 1013.84 and height 1011.84.[39m
+[36m[INFO]: Running Initial Floorplanning (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/floorplan/3-initial_fp.log)...[39m
+[36m[INFO]: Floorplanned with width 2988.62 and height 2975.68.[39m
 [STEP 4]
-[36m[INFO]: Running IO Placement (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/floorplan/4-io.log)...[39m
+[36m[INFO]: Running IO Placement (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/floorplan/4-io.log)...[39m
 [STEP 5]
-[36m[INFO]: Running Tap/Decap Insertion (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/floorplan/5-tap.log)...[39m
+[36m[INFO]: Running Tap/Decap Insertion (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/floorplan/5-tap.log)...[39m
 [36m[INFO]: Power planning with power {VPWR} and ground {VGND}...[39m
 [STEP 6]
-[36m[INFO]: Generating PDN (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/floorplan/6-pdn.log)...[39m
+[36m[INFO]: Generating PDN (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/floorplan/6-pdn.log)...[39m
 [STEP 7]
-[36m[INFO]: Running Global Placement (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/placement/7-global_skip_io.log)...[39m
+[36m[INFO]: Running Global Placement (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/placement/7-global_skip_io.log)...[39m
 [STEP 8]
-[36m[INFO]: Running Single-Corner Static Timing Analysis (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/placement/8-gpl_sta.log)...[39m
+[36m[INFO]: Running Single-Corner Static Timing Analysis (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/placement/8-gpl_sta.log)...[39m
 [STEP 9]
-[36m[INFO]: Running IO Placement (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/placement/9-io.log)...[39m
+[36m[INFO]: Running IO Placement (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/placement/9-io.log)...[39m
 [STEP 10]
-[36m[INFO]: Running Global Placement (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/placement/10-global.log)...[39m
+[36m[INFO]: Running Global Placement (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/placement/10-global.log)...[39m
 [STEP 11]
-[36m[INFO]: Running Single-Corner Static Timing Analysis (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/placement/11-gpl_sta.log)...[39m
+[36m[INFO]: Running Single-Corner Static Timing Analysis (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/placement/11-gpl_sta.log)...[39m
 [STEP 12]
-[36m[INFO]: Running Placement Resizer Design Optimizations (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/placement/12-resizer.log)...[39m
+[36m[INFO]: Running Placement Resizer Design Optimizations (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/placement/12-resizer.log)...[39m
 [STEP 13]
-[36m[INFO]: Running Detailed Placement (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/placement/13-detailed.log)...[39m
+[36m[INFO]: Running Detailed Placement (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/placement/13-detailed.log)...[39m
 [STEP 14]
-[36m[INFO]: Running Single-Corner Static Timing Analysis (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/placement/14-dpl_sta.log)...[39m
+[36m[INFO]: Running Single-Corner Static Timing Analysis (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/placement/14-dpl_sta.log)...[39m
 [STEP 15]
-[36m[INFO]: Running Clock Tree Synthesis (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/cts/15-cts.log)...[39m
+[36m[INFO]: Running Clock Tree Synthesis (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/cts/15-cts.log)...[39m
 [STEP 16]
-[36m[INFO]: Running Single-Corner Static Timing Analysis (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/cts/16-cts_sta.log)...[39m
+[36m[INFO]: Running Single-Corner Static Timing Analysis (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/cts/16-cts_sta.log)...[39m
 [STEP 17]
-[36m[INFO]: Running Placement Resizer Timing Optimizations (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/cts/17-resizer.log)...[39m
+[36m[INFO]: Running Placement Resizer Timing Optimizations (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/cts/17-resizer.log)...[39m
 [STEP 18]
-[36m[INFO]: Running Global Routing Resizer Design Optimizations (log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/routing/18-resizer_design.log)...[39m
-[31m[ERROR]: during executing openroad script /openlane/scripts/openroad/resizer_routing_design.tcl[39m
-[31m[ERROR]: Log: designs/alphasoc/runs/RUN_2023.11.26_10.02.05/logs/routing/18-resizer_design.log[39m
-[31m[ERROR]: Last 10 lines:
-met4             84833         41450           48.86%             0 /  0 /  0
-met5             21168          6272           29.63%             0 /  0 /  0
----------------------------------------------------------------------------------------
-Total           690661        378379           54.79%             0 /  0 /  0
-
-[INFO GRT-0018] Total wirelength: 3555728 um
-[INFO GRT-0014] Routed nets: 47371
-[INFO]: Setting RC values...
-[INFO RSZ-0058] Using max wire length 3191um.
-child killed: software termination signal
-[39m
-[31m[ERROR]: Creating issue reproducible...[39m
-[36m[INFO]: Saving runtime environment...[39m
-[36m[INFO]: Reproducible packaged at 'designs/alphasoc/runs/RUN_2023.11.26_10.02.05/issue_reproducible'.[39m
+[36m[INFO]: Running Global Routing Resizer Design Optimizations (log: designs/alphasoc/runs/RUN_2023.12.02_15.16.11/logs/routing/18-resizer_design.log)...[39m

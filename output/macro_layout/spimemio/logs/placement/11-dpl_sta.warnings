@@ -1,4 +1,0 @@
-[WARNING STA-0053] /openlane/designs/spimemio/src/sky130_fd_sc_hd__tt_025C_1v80.lib line 1, library sky130_fd_sc_hd__tt_025C_1v80 already exists.
-Warning: There are 66 input ports missing set_input_delay.
-Warning: There are 75 unconstrained endpoints.
-[WARNING] Did not save OpenROAD database!

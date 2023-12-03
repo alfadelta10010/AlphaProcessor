@@ -1,10 +1,6 @@
 # AlphaCore
-- AlphaSoc is a System-On-Chip which includes a RISC-V Processor, SPI Memory Controller, UART controller and a Onboard SRAM, made as a part of the VLSI Physical Design for ASICs course.
+- AlphaCore is a RISC-V Processor, made as a part of the VLSI Physical Design for ASICs course.
 - AlphaCore is a simple RISC-V CPU, written in Verilog.
-
-### AlphaSoc Block Diagram
-
-![Block Diagram](images/block_diagram.png)
 
 ## Modelling
 ### Running pre-synthesis simulations
@@ -15,7 +11,6 @@ mkdir output/pre_synth_sim
 iverilog -o output/pre_synth_sim/testbench.vvp src/module/testbench.v src/module/alphacore.v -I src/module
 chmod -x output/pre_synth_sim/testbench.vvp
 vvp -N output/pre_synth_sim/testbench.vvp +vcd
-# mv testbench.vcd output/pre_synth_sim/
 gtkwave output/pre_synth_sim/testbench.vcd
 ```
 - It gives the following output:
@@ -36,13 +31,9 @@ yosys
 ```
 - To synthesize our design, we execute the following commands in yosys:
 ```
-read_verilog ./module/alphasoc.v
-read_verilog -I./include ./module/alphacore.v
-read_verilog -I./include ./module/alphasoc_mem.v
-read_verilog -I./include ./module/simpleuart.v
-read_verilog -I./include ./module/spimemio.v
+read_verilog ./module/alphacore.v
 read_liberty -lib ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-synth -top alphasoc
+synth -top alphacore
 dfflibmap -liberty ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 opt
 abc -liberty ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib -script +strash;scorr;ifraig;retime;{D};strash;dch,-f;map,-M,1,{D}
@@ -51,90 +42,10 @@ setundef -zero
 clean -purge
 rename -enumerate
 stat
-write_verilog -noattr ../output/synth/alphasoc.synth.v
+write_verilog -noattr ../output/synth/alphacore.synth.v
 ```
-- After running these commands, we get a synthesized module with all of our individual components connected together in `alphasoc.synth.v`, found [here](output/synth/alphasoc.synth.v).
+- After running these commands, we get a synthesized module with all of our individual components connected together in `alphacore.synth.v`, found [here](output/synth/alphacore.synth.v).
 - These are the statistics of the design:
-```
-=== alphasoc ===
-
-   Number of wires:              46908
-   Number of wire bits:          57149
-   Number of public wires:       46908
-   Number of public wire bits:   57149
-   Number of memories:               0
-   Number of memory bits:            0
-   Number of processes:              0
-   Number of cells:              57000
-     sky130_fd_sc_hd__a2111o_1       1
-     sky130_fd_sc_hd__a2111oi_0     18
-     sky130_fd_sc_hd__a211o_2        2
-     sky130_fd_sc_hd__a211oi_1      78
-     sky130_fd_sc_hd__a21boi_0      19
-     sky130_fd_sc_hd__a21o_2         5
-     sky130_fd_sc_hd__a21oi_1     7727
-     sky130_fd_sc_hd__a221o_2        1
-     sky130_fd_sc_hd__a221oi_1      43
-     sky130_fd_sc_hd__a22o_2         2
-     sky130_fd_sc_hd__a22oi_1      138
-     sky130_fd_sc_hd__a2bb2oi_1      1
-     sky130_fd_sc_hd__a311o_2        1
-     sky130_fd_sc_hd__a311oi_1       7
-     sky130_fd_sc_hd__a31o_2        31
-     sky130_fd_sc_hd__a31oi_1       91
-     sky130_fd_sc_hd__a32o_1        12
-     sky130_fd_sc_hd__a32oi_1       38
-     sky130_fd_sc_hd__a41o_2         1
-     sky130_fd_sc_hd__a41oi_1       20
-     sky130_fd_sc_hd__and2_2        10
-     sky130_fd_sc_hd__and2b_2        2
-     sky130_fd_sc_hd__and3_2         9
-     sky130_fd_sc_hd__and3b_2        2
-     sky130_fd_sc_hd__clkinv_1    1854
-     sky130_fd_sc_hd__dfxtp_1    10256
-     sky130_fd_sc_hd__lpflow_inputiso0p_1      3
-     sky130_fd_sc_hd__maj3_1         1
-     sky130_fd_sc_hd__mux2_2        39
-     sky130_fd_sc_hd__mux2i_1       93
-     sky130_fd_sc_hd__nand2_1    11659
-     sky130_fd_sc_hd__nand3_1     6360
-     sky130_fd_sc_hd__nand3b_1     919
-     sky130_fd_sc_hd__nand4_1     2716
-     sky130_fd_sc_hd__nor2_1      8472
-     sky130_fd_sc_hd__nor3_1       279
-     sky130_fd_sc_hd__nor3b_1       14
-     sky130_fd_sc_hd__nor4_1        90
-     sky130_fd_sc_hd__nor4b_1        4
-     sky130_fd_sc_hd__o2111a_1       1
-     sky130_fd_sc_hd__o2111ai_1    314
-     sky130_fd_sc_hd__o211a_1        3
-     sky130_fd_sc_hd__o211ai_1     131
-     sky130_fd_sc_hd__o21a_1        23
-     sky130_fd_sc_hd__o21ai_0     4791
-     sky130_fd_sc_hd__o21ba_2        1
-     sky130_fd_sc_hd__o21bai_1      35
-     sky130_fd_sc_hd__o221a_2        1
-     sky130_fd_sc_hd__o221ai_1      50
-     sky130_fd_sc_hd__o22ai_1      289
-     sky130_fd_sc_hd__o2bb2ai_1      1
-     sky130_fd_sc_hd__o311ai_0       9
-     sky130_fd_sc_hd__o31ai_1       49
-     sky130_fd_sc_hd__o32ai_1        8
-     sky130_fd_sc_hd__o41ai_1       17
-     sky130_fd_sc_hd__or2_2         41
-     sky130_fd_sc_hd__or2b_2        64
-     sky130_fd_sc_hd__or3_2          2
-     sky130_fd_sc_hd__or3b_2         1
-     sky130_fd_sc_hd__or4_2          7
-     sky130_fd_sc_hd__xnor2_1       21
-     sky130_fd_sc_hd__xnor3_4       31
-     sky130_fd_sc_hd__xor2_1        91
-     sky130_fd_sc_hd__xor3_4         1
-```
-- The synthesis log can be found in [synth.log](output/synth/synth.log)
-
-- We also synthesize our core separately to test for it's functionality in post-simulation synthesis.
-- The statistics of the design are as follows:
 ```
 === alphacore ===
 
@@ -231,8 +142,8 @@ gtkwave output/post_synth_sim/testbench.vcd
 read_liberty -min ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_liberty -max ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 set_units -time ns
-read_verilog ../output/synth/alphasoc.synth.v
-link_design alphasoc
+read_verilog ../output/synth/alphacore.synth.v
+link_design alphacore
 create_clock [get_ports clk] -name core_clk -period 1100
 report_checks
 ```
@@ -285,32 +196,24 @@ Path Type: max
 ### Set-up
 - We first run the following commands to set up our system and OpenLANE for layout generation:
 ```bash
-mkdir -p output/alphasoc_layout
+mkdir -p output/alphacore_layout
 cp -r src/designs/alphacore /usr/local/tools/OpenLane/designs
-cp -r src/designs/alphasoc /usr/local/tools/OpenLane/designs
-cp -r src/designs/alphasoc_mem /usr/local/tools/OpenLane/designs
-cp -r src/designs/spimemio /usr/local/tools/OpenLane/designs
-cp -r src/designs/simpleuart /usr/local/tools/OpenLane/designs
 ```
 
-### Creating macros
-- Synthesizing the entire top module as a whole will not work, as our module is incredibly dense.
-- As a result, we synthesize our sub-modules, create hardened macros and then integrade them into our final chip.
-- A Macro is a reusable piece of logic that can be used in another design, without rebuilding them from scratch.
-- Let us examine the OpenLane settings that we use to create macros:
+### Physical Design
+- Let us examine the OpenLane settings that we use to design our processor:
 ```tcl
-set ::env(DESIGN_NAME) "spimemio"
-set ::env(VERILOG_FILES) [glob $::env(DESIGN_DIR)/src/module/*.v]
+set ::env(DESIGN_NAME) "alphacore"
+set ::env(VERILOG_FILES) [glob $::env(DESIGN_DIR)/src/*.v]
 set ::env(BASE_SDC_FILE) [glob $::env(DESIGN_DIR)/src/*.sdc]
 set ::env(FP_PIN_ORDER_CFG) [glob $::env(DESIGN_DIR)/pin_order.cfg]
+
 set ::env(CLOCK_PERIOD) "1100.00"
 set ::env(CLOCK_PORT) "clk"
 set ::env(CLOCK_NET) $::env(CLOCK_PORT)
-set ::(DESIGN_IS_CORE) {0}
-set ::(FP_CORE_UTIL) 5
-set ::(PL_TARGET_FREQUENCY) 0.5
-set ::(RUN_HEURISTIC_DIODE_INSERTION) {1}
 
+set ::env(DESIGN_IS_CORE) {0}
+set ::env(RUN_HEURISTIC_DIODE_INSERTION) {1}
 ```
 - `DESIGN_NAME`: The name of the top level module of the design
 - `VERILOG_FILES`: The path of the design's Verilog files
@@ -325,44 +228,45 @@ set ::(RUN_HEURISTIC_DIODE_INSERTION) {1}
 - `FP_CORE_UTIL`: Core utilization percentage, set to a low value for macros
 
 - For each macro, we create a Pin Configuration file to specify pin placement:
-`spimemio/pin_order.cfg`
+`alphacore/pin_order.cfg`
 ```
 #N
+trap
+mem_la_read
+mem_la_write
+mem_la_wdata.*
+mem_la_addr.*
+mem_la_wstrb.*
+cpi_valid
+cpi_insn.*
+cpi_rs1.*
+cpi_rs2.*
+cpi_wait
+eoi.*
+trace_valid
+trace_data.*
 
 #S
-clk
 resetn
-
-#W
-flash_io0_di
-flash_io1_di
-flash_io2_di
-flash_io3_di
-flash_io0_oe
-flash_io1_oe
-flash_io2_oe
-flash_io3_oe
-flash_io0_do
-flash_io1_do
-flash_io2_do
-flash_io3_do
-flash_csb
-flash_clk
+clk
 
 #E
-valid
-cfgreg_we.*
-cfgreg_di.*
-cfgreg_do.*
-ready
-addr.*
-rdata.*
+irq.*
+
+#W
+mem_valid
+mem_instr
+mem_ready
+mem_addr.*
+mem_wdata.*
+mem_wstrb.*
+mem_rdata.*
 ```
 - Each input/output of the module is mapped to the direction the pin should be in the final macro
 - For multiple bit wide ports, we define the mapping with `portname.*` to tell the floorplanner to include all the bits of the port.
 
 - We also create a base SDC file for each macro to instruct the Static Timing Analyser for analysis done at various stages
-File: `spimemio/spimemio.sdc`
+File: `alphacore_synthesis.sdc`
 ```tcl
 set_units -time ns
 create_clock [get_ports clk] -name core_clk -period 1100
@@ -370,32 +274,17 @@ create_clock [get_ports clk] -name core_clk -period 1100
 
 - We then run the following command to generate the layout:
 ```bash
-./flow.tcl -design MacroName | tee /home/alphadelta1803/pes_riscv_processor/output/macro_layout/MacroName.log
+./flow.tcl -design alphacore | tee /home/alphadelta1803/pes_riscv_processor/output/alphacore_layout/alphacore.log
 ```
 
 - We then copy the result back into our main project directory:
 ```bash
-cp -r /usr/local/tools/Openlane/designs/spimemio/runs/RUN*/logs output/macro_layout/spimemio/logs
-cp -r /usr/local/tools/Openlane/designs/spimemio/runs/RUN*/results/final output/macro_layout/spimemio/results
-cp -r /usr/local/tools/Openlane/designs/spimemio/runs/RUN*/reports output/macro_layout/spimemio/reports
-
-cp -r /usr/local/tools/Openlane/designs/alphasoc_mem/runs/RUN*/logs output/macro_layout/alphasoc_mem/logs
-cp -r /usr/local/tools/Openlane/designs/alphasoc_mem/runs/RUN*/results/final output/macro_layout/alphasoc_mem/results
-cp -r /usr/local/tools/Openlane/designs/alphasoc_mem/runs/RUN*/reports output/macro_layout/alphasoc_mem/reports
-
-cp -r /usr/local/tools/Openlane/designs/alphacore/runs/RUN*/logs output/macro_layout/alphacore/logs
-cp -r /usr/local/tools/Openlane/designs/alphacore/runs/RUN*/results/final output/macro_layout/alphacore/results
-cp -r /usr/local/tools/Openlane/designs/alphacore/runs/RUN*/reports output/macro_layout/alphacore/reports
-
-cp -r /usr/local/tools/Openlane/designs/simpleuart/runs/RUN*/logs output/macro_layout/simpleuart/logs
-cp -r /usr/local/tools/Openlane/designs/simpleuart/runs/RUN*/results/final output/macro_layout/simpleuart/results
-cp -r /usr/local/tools/Openlane/designs/simpleuart/runs/RUN*/reports output/macro_layout/simpleuart/reports
+cp -r /usr/local/tools/Openlane/designs/alphacore/runs/RUN*/logs output/alphacore_layout/logs
+cp -r /usr/local/tools/Openlane/designs/alphacore/runs/RUN*/results/final output/alphacore_layout/results
+cp -r /usr/local/tools/Openlane/designs/alphacore/runs/RUN*/reports output/alphacore_layout/reports
 ```
 
-- Overall, we generate 4 macros, `spimemio`, `simpleuart`, `alphasoc_mem` and `alphacore`
-- We then integrate these macros into our final core
-
-#### Macro AlphaCore Final GDSII Layout
+#### AlphaCore Final GDSII Layout
 - We run the following commands to see the GDSII layout of the core
 ```bash
 magic output/macro_layout/alphacore/RUN_2023.12.03_09.03.48/results/final/mag/alphacore.mag -T src/lib/sky130A.tech
@@ -403,23 +292,4 @@ magic output/macro_layout/alphacore/RUN_2023.12.03_09.03.48/results/final/mag/al
 - The Magic window opens up, and this is our layout for the core:
 
 ![AlphaCore GDSII Layout](images/alphacore_gdsii.png)
-
-### Creating the core: AlphaSoc
-- First, we set up our environment as follows:
-```bash
-cp output/macro_layout/alphacore/results/lef/alphacore.lef src/designs/alphasoc/src/
-cp output/macro_layout/alphasoc_mem/results/lef/alphasoc_mem.lef src/designs/alphasoc/src/
-cp output/macro_layout/simpleuart/results/lef/simpleuart.lef src/designs/alphasoc/src/
-cp output/macro_layout/spimemio/results/lef/spimemio.lef src/designs/alphasoc/src/
-cp output/macro_layout/alphacore/results/lib/alphacore.lib src/designs/alphasoc/src/
-cp output/macro_layout/alphasoc_mem/results/lib/alphasoc_mem.lib src/designs/alphasoc/src/
-cp output/macro_layout/simpleuart/results/lib/simpleuart.lib src/designs/alphasoc/src/
-cp output/macro_layout/spimemio/results/lib/spimemio.lib src/designs/alphasoc/src/
-cp output/macro_layout/alphacore/results/gds/alphacore.gds src/designs/alphasoc/src/
-cp output/macro_layout/alphasoc_mem/results/gds/alphasoc_mem.gds src/designs/alphasoc/src/
-cp output/macro_layout/simpleuart/results/gds/simpleuart.gds src/designs/alphasoc/src/
-cp output/macro_layout/spimemio/results/gds/spimemio.gds src/designs/alphasoc/src/
-cp -r src/designs/alphasoc /usr/local/tools/OpenLane/designs/
-```
-
 

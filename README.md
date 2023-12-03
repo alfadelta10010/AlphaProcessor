@@ -375,7 +375,7 @@ create_clock [get_ports clk] -name core_clk -period 1100
 
 - We then copy the result back into our main project directory:
 ```bash
-cp -r /usr/local/tools/Openlane/designs/ModuleName/runs/* output/macro_layout/ModuleName/
+cp -r /usr/local/tools/Openlane/designs/MacroName/runs/* output/macro_layout/MacroName/
 ```
 
 - Overall, we generate 4 macros, `spimemio`, `simpleuart`, `alphasoc_mem` and `alphacore`

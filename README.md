@@ -1,8 +1,8 @@
 # AlphaCore
-- AlphaCore is a System-On-Chip which includes a RISC-V Processor and a Register file, made as a part of the VLSI Physical Design for ASICs course.
+- AlphaSoc is a System-On-Chip which includes a RISC-V Processor, SPI Memory Controller, UART controller and a Onboard SRAM, made as a part of the VLSI Physical Design for ASICs course.
 - AlphaCore is a simple RISC-V CPU, written in Verilog.
 
-### AlphaCore Block Diagram
+### AlphaSoc Block Diagram
 
 ![Block Diagram](images/block_diagram.png)
 
@@ -282,37 +282,80 @@ Path Type: max
 - We run OpenLANE in interactive mode, so that we can control the various stages
 - We also use [Magic](https://github.com/RTimothyEdwards/magic) in viewing and designing our circuit layout.
 
-### Layout Generation
+### Set-up
 - We first run the following commands to set up our system and OpenLANE for layout generation:
 ```bash
 mkdir -p output/alphasoc_layout
-mkdir -p /usr/local/tools/OpenLane/designs/alphasoc
-mkdir -p /usr/local/tools/OpenLane/designs/alphasoc/src
-mkdir -p /usr/local/tools/OpenLane/designs/alphasoc/src/module
-cp src/module/alphasoc.v /usr/local/tools/OpenLane/designs/alphasoc/src/module
-cp src/module/alphacore.v /usr/local/tools/OpenLane/designs/alphasoc/src/module
-cp src/module/alphasoc_mem.v /usr/local/tools/OpenLane/designs/alphasoc/src/module
-cp src/module/alphasoc_reg.v /usr/local/tools/OpenLane/designs/alphasoc/src/module
-cp src/module/simpleuart.v /usr/local/tools/OpenLane/designs/alphasoc/src/module
-cp src/module/spimemio.v /usr/local/tools/OpenLane/designs/alphasoc/src/module
-cp src/lib/*.lib /usr/local/tools/OpenLane/designs/alphasoc/src
-touch /usr/local/tools/OpenLane/designs/alphasoc/config.tcl
-touch /usr/local/tools/OpenLane/designs/alphasoc/src/alphasoc_synthesis.sdc
+cp -r src/designs/alphacore /usr/local/tools/OpenLane/designs
+cp -r src/designs/alphasoc /usr/local/tools/OpenLane/designs
+cp -r src/designs/alphasoc_mem /usr/local/tools/OpenLane/designs
+cp -r src/designs/spimemio /usr/local/tools/OpenLane/designs
+cp -r src/designs/simpleuart /usr/local/tools/OpenLane/designs
 ```
 
-- Enter the following contents in `config.tcl`
+#### Creating macros
+- Synthesizing the entire top module as a whole will not work, as our module is incredibly dense.
+- As a result, we synthesize our sub-modules, create hardened macros and then integrade them into our final chip.
+- A Macro is a reusable piece of logic that can be used in another design, without rebuilding them from scratch.
+- Let us examine the OpenLane settings that we use to create macros:
 ```tcl
-set ::env(DESIGN_NAME) "alphasoc"
+set ::env(DESIGN_NAME) "spimemio"
 set ::env(VERILOG_FILES) [glob $::env(DESIGN_DIR)/src/module/*.v]
-set ::env(EXTRA_LIBS) [glob $::env(DESIGN_DIR)/src/*.lib]
 set ::env(BASE_SDC_FILE) [glob $::env(DESIGN_DIR)/src/*.sdc]
-
+set ::env(FP_PIN_ORDER_CFG) [glob $::env(DESIGN_DIR)/pin_order.cfg]
 set ::env(CLOCK_PERIOD) "1100.00"
 set ::env(CLOCK_PORT) "clk"
 set ::env(CLOCK_NET) $::env(CLOCK_PORT)
+set ::(DESIGN_IS_CORE) {0}
 ```
+- `DESIGN_NAME`: The name of the top level module of the design
+- `VERILOG_FILES`: The path of the design's Verilog files
+- `BASE_SDC_FILE`: Specifies the base SDC file using during the flow
+- `FP_PIN_ORDER_CFG`: Points to the pin order configuration file to set the pins in specific directions
+- `CLOCK_PORT`: The name of the net input to root clock buffer
+- `CLOCK_PERIOD`: The clock period used for clocks in the design, in nanoseconds
+- `CLOCK_NET`: The name of the net input to root clock buffer
+- `DESIGN_IS_CORE`: Controls the layers used in the power grid, we set it to `0` as our design is a macro which goes inside the core.
 
-- Enter the following contents in `alphasoc.sdc`
+- For each macro, we create a Pin Configuration file to specify pin placement:
+`spimemio/pin_order.cfg`
+```
+#N
+
+#S
+clk
+resetn
+
+#W
+flash_io0_di
+flash_io1_di
+flash_io2_di
+flash_io3_di
+flash_io0_oe
+flash_io1_oe
+flash_io2_oe
+flash_io3_oe
+flash_io0_do
+flash_io1_do
+flash_io2_do
+flash_io3_do
+flash_csb
+flash_clk
+
+#E
+valid
+cfgreg_we.*
+cfgreg_di.*
+cfgreg_do.*
+ready
+addr.*
+rdata.*
+```
+- Each input/output of the module is mapped to the direction the pin should be in the final macro
+- For multiple bit wide ports, we define the mapping with `portname.*` to tell the floorplanner to include all the bits of the port.
+
+- We also create a base SDC file for each macro to instruct the Static Timing Analyser for analysis done at various stages
+`spimemio/spimemio.sdc`
 ```tcl
 set_units -time ns
 create_clock [get_ports clk] -name core_clk -period 1100
@@ -320,12 +363,14 @@ create_clock [get_ports clk] -name core_clk -period 1100
 
 - We then run the following command to generate the layout:
 ```bash
-cd /usr/local/tools/Openlane/
-make mount
-./flow.tcl -design alphasoc | tee /home/alphadelta1803/Desktop/projects/pes_riscv_processor/output/alphasoc_layout/layout.log
-exit
+./flow.tcl -design MacroName | tee /home/alphadelta1803/Desktop/projects/pes_riscv_processor/output/alphasoc_layout/MacroName.log
 ```
+
 - We then copy the result back into our main project directory:
 ```bash
-cp -r /usr/local/tools/Openlane/designs/alphasoc/runs/* output/alphasoc_layout
+cp -r /usr/local/tools/Openlane/designs/ModuleName/runs/* output/alphasoc_layout/ModuleName/
 ```
+
+- Overall, we generate 4 macros, `spimemio`, `simpleuart`, `alphasoc_mem` and `alphacore`
+- We then integrate these macros into our final core
+

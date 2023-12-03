@@ -1,0 +1,19 @@
+Design Name: simpleuart
+Run Directory: /openlane/designs/simpleuart/runs/RUN_2023.12.03_10.07.08
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openlane/designs/simpleuart/runs/RUN_2023.12.03_10.07.08/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /openlane/designs/simpleuart/runs/RUN_2023.12.03_10.07.08/logs/signoff/40-simpleuart.lef.lvs.log
+Number of nets: 1115                       |Number of nets: 1115                       
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /openlane/designs/simpleuart/runs/RUN_2023.12.03_10.07.08/logs/signoff/42-arc.log
+Pin violations: 1
+Net violations: 1

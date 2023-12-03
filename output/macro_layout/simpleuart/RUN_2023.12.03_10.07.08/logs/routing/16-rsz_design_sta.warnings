@@ -1,0 +1,7 @@
+[WARNING STA-0053] /openlane/designs/simpleuart/src/sky130_fd_sc_hd__tt_025C_1v80.lib line 1, library sky130_fd_sc_hd__tt_025C_1v80 already exists.
+[WARNING GRT-0026] Missing route to pin _0794_/X.
+[WARNING GRT-0026] Missing route to pin _1409_/A.
+[WARNING GRT-0026] Missing route to pin _0773_/A.
+Warning: There are 72 input ports missing set_input_delay.
+Warning: There are 66 unconstrained endpoints.
+[WARNING] Did not save OpenROAD database!

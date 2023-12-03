@@ -1,0 +1,21 @@
+OpenROAD 6f9b2bb8b808b1bb5831d4525d868212ae50517a 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0222] Reading LEF file: /openlane/designs/simpleuart/runs/RUN_2023.12.03_10.07.08/tmp/merged.nom.lef
+[INFO ODB-0223]     Created 13 technology layers
+[INFO ODB-0224]     Created 25 technology vias
+[INFO ODB-0225]     Created 442 library cells
+[INFO ODB-0226] Finished LEF file:  /openlane/designs/simpleuart/runs/RUN_2023.12.03_10.07.08/tmp/merged.nom.lef
+[INFO ODB-0127] Reading DEF file: /openlane/designs/simpleuart/runs/RUN_2023.12.03_10.07.08/results/routing/simpleuart.def
+[INFO ODB-0128] Design: simpleuart
+[INFO ODB-0130]     Created 141 pins.
+[INFO ODB-0131]     Created 19158 components and 75620 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 71672 connections.
+[INFO ODB-0133]     Created 1137 nets and 3948 connections.
+[INFO ODB-0134] Finished DEF file: /openlane/designs/simpleuart/runs/RUN_2023.12.03_10.07.08/results/routing/simpleuart.def
+Top-level design name: simpleuart
+Found default power net 'VPWR'
+Found default ground net 'VGND'
+Found 1 power ports.
+Found 1 ground ports.
+Modified power connections of 19158/19158 cells.

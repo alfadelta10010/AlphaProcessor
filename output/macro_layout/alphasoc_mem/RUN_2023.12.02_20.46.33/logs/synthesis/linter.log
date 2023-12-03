@@ -1,0 +1,26 @@
+%Warning-WIDTHTRUNC: /openlane/designs/alphasoc_mem/src/alphasoc_mem.v:13:15: Bit extraction of array[255:0] requires 8 bit index, not 22 bits.
+                                                                            : ... note: In instance 'alphasoc_mem'
+   13 |   rdata <= mem[addr];
+      |               ^
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.018
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHTRUNC: /openlane/designs/alphasoc_mem/src/alphasoc_mem.v:14:18: Bit extraction of array[255:0] requires 8 bit index, not 22 bits.
+                                                                            : ... note: In instance 'alphasoc_mem'
+   14 |   if (wen[0]) mem[addr][ 7: 0] <= wdata[ 7: 0];
+      |                  ^
+%Warning-WIDTHTRUNC: /openlane/designs/alphasoc_mem/src/alphasoc_mem.v:15:18: Bit extraction of array[255:0] requires 8 bit index, not 22 bits.
+                                                                            : ... note: In instance 'alphasoc_mem'
+   15 |   if (wen[1]) mem[addr][15: 8] <= wdata[15: 8];
+      |                  ^
+%Warning-WIDTHTRUNC: /openlane/designs/alphasoc_mem/src/alphasoc_mem.v:16:18: Bit extraction of array[255:0] requires 8 bit index, not 22 bits.
+                                                                            : ... note: In instance 'alphasoc_mem'
+   16 |   if (wen[2]) mem[addr][23:16] <= wdata[23:16];
+      |                  ^
+%Warning-WIDTHTRUNC: /openlane/designs/alphasoc_mem/src/alphasoc_mem.v:17:18: Bit extraction of array[255:0] requires 8 bit index, not 22 bits.
+                                                                            : ... note: In instance 'alphasoc_mem'
+   17 |   if (wen[3]) mem[addr][31:24] <= wdata[31:24];
+      |                  ^
+%Warning-UNUSEDSIGNAL: /openlane/designs/alphasoc_mem/src/alphasoc_mem.v:6:15: Bits of signal are not used: 'addr'[21:8]
+                                                                             : ... note: In instance 'alphasoc_mem'
+    6 |  input [21:0] addr,
+      |               ^~~~

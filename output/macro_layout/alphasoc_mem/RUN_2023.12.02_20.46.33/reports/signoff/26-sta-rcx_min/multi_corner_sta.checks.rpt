@@ -1,0 +1,405 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Fastest Corner ===================================
+
+Startpoint: _51902_ (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: _49654_ (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+Corner: Fastest
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _51902_/CLK (sky130_fd_sc_hd__dfxtp_1)
+     2    0.03    0.09    0.23    0.23 v _51902_/Q (sky130_fd_sc_hd__dfxtp_1)
+                                         mem[16][20] (net)
+                  0.09    0.00    0.23 v _27267_/A0 (sky130_fd_sc_hd__mux4_2)
+     1    0.03    0.10    0.33    0.56 v _27267_/X (sky130_fd_sc_hd__mux4_2)
+                                         _11321_ (net)
+                  0.10    0.00    0.57 v _27269_/A2 (sky130_fd_sc_hd__a22o_1)
+     1    0.02    0.07    0.19    0.76 v _27269_/X (sky130_fd_sc_hd__a22o_1)
+                                         _11323_ (net)
+                  0.07    0.00    0.76 v _27270_/A2 (sky130_fd_sc_hd__o21a_2)
+     1    0.10    0.17    0.27    1.03 v _27270_/X (sky130_fd_sc_hd__o21a_2)
+                                         _11324_ (net)
+                  0.18    0.00    1.03 v _27272_/A4 (sky130_fd_sc_hd__o41a_1)
+     1    0.02    0.09    0.29    1.32 v _27272_/X (sky130_fd_sc_hd__o41a_1)
+                                         _11326_ (net)
+                  0.09    0.00    1.32 v _27312_/C1 (sky130_fd_sc_hd__a2111o_1)
+     1    0.00    0.04    0.17    1.49 v _27312_/X (sky130_fd_sc_hd__a2111o_1)
+                                         _00012_ (net)
+                  0.04    0.00    1.49 v _49654_/D (sky130_fd_sc_hd__dfxtp_1)
+                                  1.49   data arrival time
+
+                  0.00 1100.00 1100.00   clock core_clk (rise edge)
+                          0.00 1100.00   clock network delay (ideal)
+                          0.00 1100.00   clock reconvergence pessimism
+                               1100.00 ^ _49654_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                         -0.08 1099.92   library setup time
+                               1099.92   data required time
+-----------------------------------------------------------------------------
+                               1099.92   data required time
+                                 -1.49   data arrival time
+-----------------------------------------------------------------------------
+                               1098.43   slack (MET)
+
+
+
+======================= Slowest Corner ===================================
+
+Startpoint: _51902_ (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: _49654_ (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+Corner: Slowest
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _51902_/CLK (sky130_fd_sc_hd__dfxtp_1)
+     2    0.03    0.23    0.69    0.69 v _51902_/Q (sky130_fd_sc_hd__dfxtp_1)
+                                         mem[16][20] (net)
+                  0.23    0.00    0.69 v _27267_/A0 (sky130_fd_sc_hd__mux4_2)
+     1    0.03    0.27    1.27    1.96 v _27267_/X (sky130_fd_sc_hd__mux4_2)
+                                         _11321_ (net)
+                  0.27    0.00    1.96 v _27269_/A2 (sky130_fd_sc_hd__a22o_1)
+     1    0.02    0.19    0.62    2.58 v _27269_/X (sky130_fd_sc_hd__a22o_1)
+                                         _11323_ (net)
+                  0.19    0.00    2.58 v _27270_/A2 (sky130_fd_sc_hd__o21a_2)
+     1    0.10    0.47    0.77    3.35 v _27270_/X (sky130_fd_sc_hd__o21a_2)
+                                         _11324_ (net)
+                  0.47    0.00    3.36 v _27272_/A4 (sky130_fd_sc_hd__o41a_1)
+     1    0.02    0.24    0.90    4.26 v _27272_/X (sky130_fd_sc_hd__o41a_1)
+                                         _11326_ (net)
+                  0.24    0.00    4.26 v _27312_/C1 (sky130_fd_sc_hd__a2111o_1)
+     1    0.00    0.10    0.72    4.97 v _27312_/X (sky130_fd_sc_hd__a2111o_1)
+                                         _00012_ (net)
+                  0.10    0.00    4.97 v _49654_/D (sky130_fd_sc_hd__dfxtp_1)
+                                  4.97   data arrival time
+
+                  0.00 1100.00 1100.00   clock core_clk (rise edge)
+                          0.00 1100.00   clock network delay (ideal)
+                          0.00 1100.00   clock reconvergence pessimism
+                               1100.00 ^ _49654_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                         -0.30 1099.70   library setup time
+                               1099.70   data required time
+-----------------------------------------------------------------------------
+                               1099.70   data required time
+                                 -4.97   data arrival time
+-----------------------------------------------------------------------------
+                               1094.73   slack (MET)
+
+
+
+======================= Typical Corner ===================================
+
+Startpoint: _51902_ (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: _49654_ (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+Corner: Typical
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _51902_/CLK (sky130_fd_sc_hd__dfxtp_1)
+     2    0.03    0.12    0.36    0.36 v _51902_/Q (sky130_fd_sc_hd__dfxtp_1)
+                                         mem[16][20] (net)
+                  0.12    0.00    0.36 v _27267_/A0 (sky130_fd_sc_hd__mux4_2)
+     1    0.03    0.14    0.57    0.93 v _27267_/X (sky130_fd_sc_hd__mux4_2)
+                                         _11321_ (net)
+                  0.14    0.00    0.93 v _27269_/A2 (sky130_fd_sc_hd__a22o_1)
+     1    0.02    0.10    0.33    1.26 v _27269_/X (sky130_fd_sc_hd__a22o_1)
+                                         _11323_ (net)
+                  0.10    0.00    1.26 v _27270_/A2 (sky130_fd_sc_hd__o21a_2)
+     1    0.10    0.25    0.41    1.67 v _27270_/X (sky130_fd_sc_hd__o21a_2)
+                                         _11324_ (net)
+                  0.25    0.00    1.68 v _27272_/A4 (sky130_fd_sc_hd__o41a_1)
+     1    0.02    0.13    0.46    2.13 v _27272_/X (sky130_fd_sc_hd__o41a_1)
+                                         _11326_ (net)
+                  0.13    0.00    2.14 v _27312_/C1 (sky130_fd_sc_hd__a2111o_1)
+     1    0.00    0.06    0.36    2.50 v _27312_/X (sky130_fd_sc_hd__a2111o_1)
+                                         _00012_ (net)
+                  0.06    0.00    2.50 v _49654_/D (sky130_fd_sc_hd__dfxtp_1)
+                                  2.50   data arrival time
+
+                  0.00 1100.00 1100.00   clock core_clk (rise edge)
+                          0.00 1100.00   clock network delay (ideal)
+                          0.00 1100.00   clock reconvergence pessimism
+                               1100.00 ^ _49654_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                         -0.13 1099.87   library setup time
+                               1099.87   data required time
+-----------------------------------------------------------------------------
+                               1099.87   data required time
+                                 -2.50   data arrival time
+-----------------------------------------------------------------------------
+                               1097.38   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Fastest Corner ===================================
+
+No paths found.
+
+======================= Slowest Corner ===================================
+
+No paths found.
+
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Fastest Corner ===================================
+
+
+max slew violations count Fastest: 0
+max fanout violations count Fastest: 0
+max cap violations count Fastest: 0
+======================= Slowest Corner ===================================
+
+max slew
+
+Pin                                    Limit    Slew   Slack
+------------------------------------------------------------
+_28923_/Y                               1.50    1.79   -0.29 (VIOLATED)
+_28924_/A                               1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_165/DIODE                       1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1046/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1049/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1042/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1044/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1047/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1040/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+_47918_/C                               1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1041/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1043/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+_48224_/C                               1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1045/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1048/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1057/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1050/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1052/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1053/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1051/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+_48188_/C                               1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1054/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1055/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1056/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+_44148_/A                               1.50    1.79   -0.29 (VIOLATED)
+ANTENNA_1225/DIODE                      1.50    1.79   -0.29 (VIOLATED)
+_48152_/C                               1.50    1.79   -0.29 (VIOLATED)
+_40899_/A                               1.50    1.79   -0.29 (VIOLATED)
+_29019_/Y                               1.50    1.60   -0.10 (VIOLATED)
+_47566_/C                               1.50    1.60   -0.10 (VIOLATED)
+ANTENNA_763/DIODE                       1.50    1.60   -0.10 (VIOLATED)
+ANTENNA_760/DIODE                       1.50    1.60   -0.10 (VIOLATED)
+ANTENNA_761/DIODE                       1.50    1.60   -0.10 (VIOLATED)
+ANTENNA_762/DIODE                       1.50    1.60   -0.10 (VIOLATED)
+_48062_/C                               1.50    1.60   -0.10 (VIOLATED)
+ANTENNA_179/DIODE                       1.50    1.60   -0.10 (VIOLATED)
+_34029_/A                               1.50    1.60   -0.10 (VIOLATED)
+_47530_/C                               1.50    1.60   -0.10 (VIOLATED)
+_47494_/C                               1.50    1.60   -0.10 (VIOLATED)
+_29020_/A                               1.50    1.60   -0.10 (VIOLATED)
+_36041_/A                               1.50    1.60   -0.10 (VIOLATED)
+_29075_/A                               1.50    1.60   -0.10 (VIOLATED)
+_28903_/Y                               1.50    1.58   -0.08 (VIOLATED)
+ANTENNA_1036/DIODE                      1.50    1.58   -0.08 (VIOLATED)
+ANTENNA_1038/DIODE                      1.50    1.58   -0.08 (VIOLATED)
+ANTENNA_1034/DIODE                      1.50    1.58   -0.08 (VIOLATED)
+ANTENNA_1032/DIODE                      1.50    1.58   -0.08 (VIOLATED)
+ANTENNA_1030/DIODE                      1.50    1.58   -0.08 (VIOLATED)
+ANTENNA_1028/DIODE                      1.50    1.58   -0.08 (VIOLATED)
+_48026_/C                               1.50    1.58   -0.08 (VIOLATED)
+ANTENNA_1029/DIODE                      1.50    1.58   -0.08 (VIOLATED)
+ANTENNA_1031/DIODE                      1.50    1.58   -0.08 (VIOLATED)
+ANTENNA_1033/DIODE                      1.50    1.58   -0.08 (VIOLATED)
+ANTENNA_1035/DIODE                      1.50    1.58   -0.08 (VIOLATED)
+ANTENNA_1037/DIODE                      1.50    1.58   -0.08 (VIOLATED)
+_33766_/A                               1.50    1.58   -0.08 (VIOLATED)
+ANTENNA_753/DIODE                       1.50    1.58   -0.08 (VIOLATED)
+_40722_/A                               1.50    1.58   -0.08 (VIOLATED)
+_44511_/A                               1.50    1.58   -0.08 (VIOLATED)
+_35968_/A                               1.50    1.58   -0.08 (VIOLATED)
+_41956_/C                               1.50    1.58   -0.08 (VIOLATED)
+_42679_/C                               1.50    1.58   -0.08 (VIOLATED)
+_42715_/C                               1.50    1.58   -0.08 (VIOLATED)
+_29114_/Y                               1.50    1.54   -0.05 (VIOLATED)
+_34084_/A                               1.50    1.54   -0.04 (VIOLATED)
+_48098_/C                               1.50    1.54   -0.04 (VIOLATED)
+ANTENNA_782/DIODE                       1.50    1.54   -0.04 (VIOLATED)
+_41547_/A                               1.50    1.54   -0.04 (VIOLATED)
+_41785_/C                               1.50    1.54   -0.04 (VIOLATED)
+_36105_/A                               1.50    1.54   -0.04 (VIOLATED)
+_41821_/C                               1.50    1.54   -0.04 (VIOLATED)
+_41857_/C                               1.50    1.54   -0.04 (VIOLATED)
+_28882_/Y                               1.50    1.53   -0.04 (VIOLATED)
+_48116_/C                               1.50    1.53   -0.03 (VIOLATED)
+_48080_/C                               1.50    1.53   -0.03 (VIOLATED)
+_48044_/C                               1.50    1.53   -0.03 (VIOLATED)
+_44037_/A                               1.50    1.53   -0.03 (VIOLATED)
+_28883_/A                               1.50    1.53   -0.03 (VIOLATED)
+ANTENNA_157/DIODE                       1.50    1.53   -0.03 (VIOLATED)
+_47882_/C                               1.50    1.53   -0.03 (VIOLATED)
+ANTENNA_1027/DIODE                      1.50    1.53   -0.03 (VIOLATED)
+_33674_/A                               1.50    1.53   -0.03 (VIOLATED)
+ANTENNA_1026/DIODE                      1.50    1.53   -0.03 (VIOLATED)
+_40918_/A                               1.50    1.53   -0.03 (VIOLATED)
+
+max capacitance
+
+Pin                                    Limit     Cap   Slack
+------------------------------------------------------------
+_28923_/Y                               0.27    0.33   -0.06 (VIOLATED)
+_29019_/Y                               0.27    0.29   -0.02 (VIOLATED)
+_28903_/Y                               0.27    0.29   -0.02 (VIOLATED)
+_29114_/Y                               0.27    0.28   -0.01 (VIOLATED)
+_28882_/Y                               0.27    0.28   -0.01 (VIOLATED)
+_28740_/Y                               0.27    0.27   -0.00 (VIOLATED)
+
+
+max slew violations count Slowest: 84
+max fanout violations count Slowest: 0
+max cap violations count Slowest: 6
+======================= Typical Corner ===================================
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 0
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 14 unannotated drivers.
+ addr[10]
+ addr[11]
+ addr[12]
+ addr[13]
+ addr[14]
+ addr[15]
+ addr[16]
+ addr[17]
+ addr[18]
+ addr[19]
+ addr[20]
+ addr[21]
+ addr[8]
+ addr[9]
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 84
+max fanout violation count 0
+max cap violation count 6
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 58 input ports missing set_input_delay.
+  addr[0]
+  addr[10]
+  addr[11]
+  addr[12]
+  addr[13]
+  addr[14]
+  addr[15]
+  addr[16]
+  addr[17]
+  addr[18]
+  addr[19]
+  addr[1]
+  addr[20]
+  addr[21]
+  addr[2]
+  addr[3]
+  addr[4]
+  addr[5]
+  addr[6]
+  addr[7]
+  addr[8]
+  addr[9]
+  wdata[0]
+  wdata[10]
+  wdata[11]
+  wdata[12]
+  wdata[13]
+  wdata[14]
+  wdata[15]
+  wdata[16]
+  wdata[17]
+  wdata[18]
+  wdata[19]
+  wdata[1]
+  wdata[20]
+  wdata[21]
+  wdata[22]
+  wdata[23]
+  wdata[24]
+  wdata[25]
+  wdata[26]
+  wdata[27]
+  wdata[28]
+  wdata[29]
+  wdata[2]
+  wdata[30]
+  wdata[31]
+  wdata[3]
+  wdata[4]
+  wdata[5]
+  wdata[6]
+  wdata[7]
+  wdata[8]
+  wdata[9]
+  wen[0]
+  wen[1]
+  wen[2]
+  wen[3]
+Warning: There are 32 unconstrained endpoints.
+  rdata[0]
+  rdata[10]
+  rdata[11]
+  rdata[12]
+  rdata[13]
+  rdata[14]
+  rdata[15]
+  rdata[16]
+  rdata[17]
+  rdata[18]
+  rdata[19]
+  rdata[1]
+  rdata[20]
+  rdata[21]
+  rdata[22]
+  rdata[23]
+  rdata[24]
+  rdata[25]
+  rdata[26]
+  rdata[27]
+  rdata[28]
+  rdata[29]
+  rdata[2]
+  rdata[30]
+  rdata[31]
+  rdata[3]
+  rdata[4]
+  rdata[5]
+  rdata[6]
+  rdata[7]
+  rdata[8]
+  rdata[9]

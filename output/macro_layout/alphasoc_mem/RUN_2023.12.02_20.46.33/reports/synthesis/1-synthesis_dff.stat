@@ -1,0 +1,20 @@
+
+54. Printing statistics.
+
+=== alphasoc_mem ===
+
+   Number of wires:              17910
+   Number of wire bits:          25963
+   Number of public wires:         261
+   Number of public wire bits:    8283
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              25904
+     $_ANDNOT_                    1024
+     $_MUX_                      16352
+     $_NAND_                         4
+     $_ORNOT_                        8
+     $_OR_                         292
+     sky130_fd_sc_hd__dfxtp_2     8224
+

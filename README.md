@@ -370,12 +370,12 @@ create_clock [get_ports clk] -name core_clk -period 1100
 
 - We then run the following command to generate the layout:
 ```bash
-./flow.tcl -design MacroName | tee /home/alphadelta1803/Desktop/projects/pes_riscv_processor/output/alphasoc_layout/MacroName.log
+./flow.tcl -design MacroName | tee /home/alphadelta1803/pes_riscv_processor/output/macro_layout/MacroName.log
 ```
 
 - We then copy the result back into our main project directory:
 ```bash
-cp -r /usr/local/tools/Openlane/designs/ModuleName/runs/* output/alphasoc_layout/ModuleName/
+cp -r /usr/local/tools/Openlane/designs/ModuleName/runs/* output/macro_layout/ModuleName/
 ```
 
 - Overall, we generate 4 macros, `spimemio`, `simpleuart`, `alphasoc_mem` and `alphacore`

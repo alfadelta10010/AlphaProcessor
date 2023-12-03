@@ -1,0 +1,6 @@
+<< properties >>
+string FIXED_BBOX 0 0 93103 95247
+string GDS_END 5713252
+string GDS_FILE /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/results/signoff/spimemio.magic.gds
+string GDS_START 688246
+<< end >>

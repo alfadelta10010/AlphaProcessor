@@ -1,0 +1,16 @@
+[WARNING STA-0053] /openlane/designs/spimemio/src/sky130_fd_sc_hd__tt_025C_1v80.lib line 1, library sky130_fd_sc_hd__tt_025C_1v80 already exists.
+[WARNING GRT-0026] Missing route to pin _1479_/X.
+[WARNING GRT-0026] Missing route to pin _0773_/X.
+[WARNING GRT-0026] Missing route to pin _0796_/X.
+[WARNING GRT-0026] Missing route to pin _0907_/B.
+[WARNING GRT-0026] Missing route to pin _1083_/Y.
+[WARNING GRT-0026] Missing route to pin _1479_/A1.
+[WARNING GRT-0026] Missing route to pin _1671_/Q.
+[WARNING GRT-0026] Missing route to pin input1/X.
+[WARNING GRT-0026] Missing route to pin input3/X.
+[WARNING GRT-0026] Missing route to pin input12/X.
+[WARNING GRT-0026] Missing route to pin _0796_/B.
+[WARNING GRT-0026] Missing route to pin _0773_/B.
+Warning: There are 66 input ports missing set_input_delay.
+Warning: There are 75 unconstrained endpoints.
+[WARNING] Did not save OpenROAD database!

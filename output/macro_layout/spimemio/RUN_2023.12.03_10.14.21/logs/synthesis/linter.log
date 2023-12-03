@@ -1,0 +1,55 @@
+%Warning-EOFNEWLINE: /openlane/designs/spimemio/src/spimemio.v:560:10: Missing newline at end of file (POSIX 3.206).
+                                                                     : ... Suggest add newline.
+  560 | endmodule
+      |          ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.018
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /openlane/designs/spimemio/src/spimemio.v:452:26: Operator SUB expects 4 bits on the RHS, but RHS's REDOR generates 1 bits.
+                                                                      : ... note: In instance 'spimemio.xfer'
+  452 |       next_count = count - |count;
+      |                          ^
+%Warning-WIDTHEXPAND: /openlane/designs/spimemio/src/spimemio.v:505:26: Operator SUB expects 4 bits on the RHS, but RHS's REPLICATE generates 2 bits.
+                                                                      : ... note: In instance 'spimemio.xfer'
+  505 |       next_count = count - {|count, 1'b0};
+      |                          ^
+%Warning-WIDTHEXPAND: /openlane/designs/spimemio/src/spimemio.v:535:32: Operator SUB expects 4 bits on the RHS, but RHS's VARREF 'flash_clk' generates 1 bits.
+                                                                      : ... note: In instance 'spimemio.xfer'
+  535 |     dummy_count <= dummy_count - flash_clk;
+      |                                ^
+%Warning-WIDTHTRUNC: /openlane/designs/spimemio/src/spimemio.v:537:4: Logical operator IF expects 1 bit on the If, but If's VARREF 'count' generates 4 bits.
+                                                                    : ... note: In instance 'spimemio.xfer'
+  537 |    if (count) begin
+      |    ^~
+%Warning-WIDTHTRUNC: /openlane/designs/spimemio/src/spimemio.v:533:4: Logical operator IF expects 1 bit on the If, but If's VARREF 'dummy_count' generates 4 bits.
+                                                                    : ... note: In instance 'spimemio.xfer'
+  533 |    if (dummy_count) begin
+      |    ^~
+%Warning-WIDTHTRUNC: /openlane/designs/spimemio/src/spimemio.v:548:17: Operator ASSIGNDLY expects 4 bits on the Assign RHS, but Assign RHS's COND generates 32 or 8 bits.
+                                                                     : ... note: In instance 'spimemio.xfer'
+  548 |     dummy_count <= din_rd ? din_data : 0;
+      |                 ^~
+%Warning-WIDTHTRUNC: /openlane/designs/spimemio/src/spimemio.v:81:27: Logical operator LOGOR expects 1 bit on the RHS, but RHS's VARREF 'cfgreg_we' generates 4 bits.
+                                                                    : ... note: In instance 'spimemio'
+   81 |   softreset <= !config_en || cfgreg_we;
+      |                           ^~
+%Warning-WIDTHEXPAND: /openlane/designs/spimemio/src/spimemio.v:300:16: Operator ASSIGNDLY expects 8 bits on the Assign RHS, but Assign RHS's VARREF 'config_dummy' generates 4 bits.
+                                                                      : ... note: In instance 'spimemio'
+  300 |       din_data <= config_dummy;
+      |                ^~
+%Warning-UNUSEDSIGNAL: /openlane/designs/spimemio/src/spimemio.v:28:16: Bits of signal are not used: 'cfgreg_di'[30:23,15:12,7:6]
+                                                                      : ... note: In instance 'spimemio'
+   28 |  input  [31:0] cfgreg_di,
+      |                ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/spimemio/src/spimemio.v:400:6: Signal is not used: 'xfer_cont'
+                                                                      : ... note: In instance 'spimemio.xfer'
+  400 |  reg xfer_cont;
+      |      ^~~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/spimemio/src/spimemio.v:496:5: Case conditions overlap (example pattern 0x3)
+  496 |     3'b ??1: begin
+      |     ^~~~~~~
+                      /openlane/designs/spimemio/src/spimemio.v:459:5: ... Location of overlapping condition
+  459 |     3'b 01?: begin
+      |     ^~~~~~~
+%Warning-CASEINCOMPLETE: /openlane/designs/spimemio/src/spimemio.v:445:4: Case values incompletely covered (example pattern 0x4)
+  445 |    casez ({xfer_ddr, xfer_qspi, xfer_dspi})
+      |    ^~~~~

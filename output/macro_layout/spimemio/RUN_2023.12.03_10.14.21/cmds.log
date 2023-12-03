@@ -1,0 +1,242 @@
+Sun Dec 03 10:14:21 UTC 2023 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/lefutil.py get_metal_layers -o /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/layers.list /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef}"
+
+Sun Dec 03 10:14:22 UTC 2023 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/merged.nom.lef -i /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef {/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null}"
+
+Sun Dec 03 10:14:22 UTC 2023 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/merged.min.lef -i /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef {/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null}"
+
+Sun Dec 03 10:14:22 UTC 2023 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/merged.max.lef -i /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__max.tlef {/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null}"
+
+Sun Dec 03 10:14:22 UTC 2023 - Executing "{python3 /openlane/scripts/mergeLib.py --output /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/synthesis/merged.lib --name sky130A_merged /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Sun Dec 03 10:14:23 UTC 2023 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/synthesis/trimmed.lib.exclude.list --output /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/synthesis/trimmed.lib /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/synthesis/merged.lib}"
+
+Sun Dec 03 10:14:23 UTC 2023 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/cts/cts.lib.exclude.list --output /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/cts/cts.lib /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Sun Dec 03 10:14:23 UTC 2023 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/cts/cts-fastest.lib.exclude.list --output /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/cts/cts-fastest.lib /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib}"
+
+Sun Dec 03 10:14:25 UTC 2023 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/cts/cts-slowest.lib.exclude.list --output /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/cts/cts-slowest.lib /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib}"
+
+Sun Dec 03 10:14:26 UTC 2023 - Executing "{python3 /openlane/scripts/new_tracks.py -i /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info -o /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/routing/config.tracks}"
+
+Sun Dec 03 10:14:26 UTC 2023 - Executing "{echo {OpenLane f691c8c0712ca6c6645e3fd548985b3cbcf08c78} > /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/OPENLANE_VERSION}"
+
+Sun Dec 03 10:14:26 UTC 2023 - Executing "{yosys -c /openlane/scripts/yosys/blackbox.tcl}"
+
+Sun Dec 03 10:14:26 UTC 2023 - Executing "{verilator -Wall --lint-only --Wno-DECLFILENAME --top-module spimemio /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/synthesis/blackbox/sky130_fd_sc_hd__blackbox.v /openlane/designs/spimemio/src/spimemio.v -Wno-fatal --relative-includes |& tee /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/synthesis/linter.log /dev/null}"
+
+Sun Dec 03 10:14:26 UTC 2023 - Executing "{sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib > /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/synthesis/1-sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib}"
+
+Sun Dec 03 10:14:27 UTC 2023 - Executing "{sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/synthesis/trimmed.lib > /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/synthesis/1-trimmed.no_pg.lib}"
+
+Sun Dec 03 10:14:27 UTC 2023 - Executing "yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/synthesis/1-synthesis.log"
+
+Sun Dec 03 10:14:27 UTC 2023 - Executing "{yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/synthesis/1-synthesis.log}"
+
+Sun Dec 03 10:14:32 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/spimemio\/runs\/RUN_2023.12.03_10.14.21\/results\/synthesis\/spimemio.v/} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/config.tcl}"
+
+Sun Dec 03 10:14:32 UTC 2023 - Executing "{sed -i.bak /defparam/d /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/results/synthesis/spimemio.v}"
+
+Sun Dec 03 10:14:32 UTC 2023 - Executing "sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/synthesis/2-sta.log"
+
+Sun Dec 03 10:14:32 UTC 2023 - Executing "{sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/synthesis/2-sta.log}"
+
+Sun Dec 03 10:14:33 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/floorplan.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/floorplan/3-initial_fp.log"
+
+Sun Dec 03 10:14:33 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/floorplan.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/floorplan/3-initial_fp.log}"
+
+Sun Dec 03 10:14:34 UTC 2023 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/defutil.py extract_core_dims --output-data /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/dimensions.txt --input-lef /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/merged.nom.lef /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/floorplan/3-initial_fp.def}"
+
+Sun Dec 03 10:14:35 UTC 2023 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/io_place.py --config /openlane/designs/spimemio/pin_order.cfg --hor-layer met3 --ver-layer met2 --ver-width-mult 2 --hor-width-mult 2 --hor-extension 0 --ver-extension 0 --length 4 --unmatched-error --input-lef /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/merged.nom.lef --output-def /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/floorplan/4-io.def --output /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/floorplan/4-io.odb /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/floorplan/3-initial_fp.odb |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/floorplan/4-place_io.log}"
+
+Sun Dec 03 10:14:36 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/tapcell.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/floorplan/5-tap.log"
+
+Sun Dec 03 10:14:36 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/tapcell.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/floorplan/5-tap.log}"
+
+Sun Dec 03 10:14:37 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/pdn.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/floorplan/6-pdn.log"
+
+Sun Dec 03 10:14:37 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/pdn.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/floorplan/6-pdn.log}"
+
+Sun Dec 03 10:14:39 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/placement/7-global.log"
+
+Sun Dec 03 10:14:39 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/placement/7-global.log}"
+
+Sun Dec 03 10:14:43 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/spimemio\/runs\/RUN_2023.12.03_10.14.21\/tmp\/placement\/7-global.nl.v/} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/config.tcl}"
+
+Sun Dec 03 10:14:44 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/placement/8-gpl_sta.log"
+
+Sun Dec 03 10:14:44 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/placement/8-gpl_sta.log}"
+
+Sun Dec 03 10:14:45 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/resizer.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/placement/9-resizer.log"
+
+Sun Dec 03 10:14:45 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/resizer.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/placement/9-resizer.log}"
+
+Sun Dec 03 10:14:50 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/spimemio\/runs\/RUN_2023.12.03_10.14.21\/tmp\/placement\/9-resizer.nl.v/} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/config.tcl}"
+
+Sun Dec 03 10:14:50 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/dpl.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/placement/10-detailed.log"
+
+Sun Dec 03 10:14:50 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/dpl.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/placement/10-detailed.log}"
+
+Sun Dec 03 10:14:51 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/spimemio\/runs\/RUN_2023.12.03_10.14.21\/results\/placement\/spimemio.nl.v/} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/config.tcl}"
+
+Sun Dec 03 10:14:52 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/placement/11-dpl_sta.log"
+
+Sun Dec 03 10:14:52 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/placement/11-dpl_sta.log}"
+
+Sun Dec 03 10:14:53 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/cts.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/cts/12-cts.log"
+
+Sun Dec 03 10:14:53 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/cts.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/cts/12-cts.log}"
+
+Sun Dec 03 10:15:49 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/cts/13-cts_sta.log"
+
+Sun Dec 03 10:15:49 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/cts/13-cts_sta.log}"
+
+Sun Dec 03 10:15:50 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/resizer_timing.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/cts/14-resizer.log"
+
+Sun Dec 03 10:15:51 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/resizer_timing.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/cts/14-resizer.log}"
+
+Sun Dec 03 10:15:54 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/spimemio\/runs\/RUN_2023.12.03_10.14.21\/tmp\/cts\/14-spimemio.resized.nl.v/} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/config.tcl}"
+
+Sun Dec 03 10:15:55 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/resizer_routing_design.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/15-resizer_design.log"
+
+Sun Dec 03 10:15:55 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/resizer_routing_design.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/15-resizer_design.log}"
+
+Sun Dec 03 10:16:00 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/spimemio\/runs\/RUN_2023.12.03_10.14.21\/tmp\/15-spimemio.nl.v/} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/config.tcl}"
+
+Sun Dec 03 10:16:00 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/16-rsz_design_sta.log"
+
+Sun Dec 03 10:16:00 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/16-rsz_design_sta.log}"
+
+Sun Dec 03 10:16:02 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/resizer_routing_timing.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/17-resizer_timing.log"
+
+Sun Dec 03 10:16:02 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/resizer_routing_timing.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/17-resizer_timing.log}"
+
+Sun Dec 03 10:16:06 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/spimemio\/runs\/RUN_2023.12.03_10.14.21\/tmp\/17-spimemio.nl.v/} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/config.tcl}"
+
+Sun Dec 03 10:16:07 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/18-rsz_timing_sta.log"
+
+Sun Dec 03 10:16:07 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/18-rsz_timing_sta.log}"
+
+Sun Dec 03 10:16:08 UTC 2023 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/diodes.py place --diode-cell sky130_fd_sc_hd__diode_2 --diode-pin DIODE --threshold 90 --side-strategy source --port-protect none --input-lef /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/merged.nom.lef --output-def /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/routing/19-diodes.def --output /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/routing/19-diodes.odb /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/17-spimemio.odb |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/19-diodes.log}"
+
+Sun Dec 03 10:16:09 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/dpl.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/20-diode_legalization.log"
+
+Sun Dec 03 10:16:09 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/dpl.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/20-diode_legalization.log}"
+
+Sun Dec 03 10:16:10 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/spimemio\/runs\/RUN_2023.12.03_10.14.21\/tmp\/routing\/.\/19-diodes_legalized.nl.v/} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/config.tcl}"
+
+Sun Dec 03 10:16:11 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/repair_antennas.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/21-global.log"
+
+Sun Dec 03 10:16:11 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/repair_antennas.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/21-global.log}"
+
+Sun Dec 03 10:16:13 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/write_views.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/21-global_write_netlist.log"
+
+Sun Dec 03 10:16:13 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/write_views.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/21-global_write_netlist.log}"
+
+Sun Dec 03 10:16:14 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/spimemio\/runs\/RUN_2023.12.03_10.14.21\/tmp\/routing\/global.nl.v/} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/config.tcl}"
+
+Sun Dec 03 10:16:14 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/23-grt_sta.log"
+
+Sun Dec 03 10:16:14 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/23-grt_sta.log}"
+
+Sun Dec 03 10:16:16 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/fill.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/24-fill.log"
+
+Sun Dec 03 10:16:16 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/fill.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/24-fill.log}"
+
+Sun Dec 03 10:16:17 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/spimemio\/runs\/RUN_2023.12.03_10.14.21\/tmp\/routing\/24-fill.nl.v/} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/config.tcl}"
+
+Sun Dec 03 10:16:18 UTC 2023 - Executing "openroad -exit -metrics /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/routing/25-drt_metrics.json /openlane/scripts/openroad/droute.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/25-detailed.log"
+
+Sun Dec 03 10:16:18 UTC 2023 - Executing "{openroad -exit -metrics /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/routing/25-drt_metrics.json /openlane/scripts/openroad/droute.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/25-detailed.log}"
+
+Sun Dec 03 10:17:26 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/spimemio\/runs\/RUN_2023.12.03_10.14.21\/results\/routing\/spimemio.nl.v/} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/config.tcl}"
+
+Sun Dec 03 10:17:26 UTC 2023 - Executing "{python3 /openlane/scripts/drc_rosetta.py tr to_klayout -o /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/routing/drt.klayout.xml --design-name spimemio /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/routing/drt.drc}"
+
+Sun Dec 03 10:17:26 UTC 2023 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/wire_lengths.py --report-out /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/routing/26-wire_lengths.csv --input-lef /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/merged.nom.lef --output-def /dev/null --output /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/results/routing/spimemio.odb /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/results/routing/spimemio.odb |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/routing/26-wire_lengths.log}"
+
+Sun Dec 03 10:17:27 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/rcx.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/27-parasitics_extraction.min.log"
+
+Sun Dec 03 10:17:27 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/rcx.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/27-parasitics_extraction.min.log}"
+
+Sun Dec 03 10:17:29 UTC 2023 - Executing "sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/28-rcx_mcsta.min.log"
+
+Sun Dec 03 10:17:29 UTC 2023 - Executing "{sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/28-rcx_mcsta.min.log}"
+
+Sun Dec 03 10:17:36 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/rcx.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/29-parasitics_extraction.max.log"
+
+Sun Dec 03 10:17:36 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/rcx.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/29-parasitics_extraction.max.log}"
+
+Sun Dec 03 10:17:38 UTC 2023 - Executing "sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/30-rcx_mcsta.max.log"
+
+Sun Dec 03 10:17:38 UTC 2023 - Executing "{sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/30-rcx_mcsta.max.log}"
+
+Sun Dec 03 10:17:45 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/rcx.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/31-parasitics_extraction.nom.log"
+
+Sun Dec 03 10:17:45 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/rcx.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/31-parasitics_extraction.nom.log}"
+
+Sun Dec 03 10:17:47 UTC 2023 - Executing "sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/32-rcx_mcsta.nom.log"
+
+Sun Dec 03 10:17:47 UTC 2023 - Executing "{sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/32-rcx_mcsta.nom.log}"
+
+Sun Dec 03 10:17:54 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/irdrop.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/33-irdrop.log"
+
+Sun Dec 03 10:17:54 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/irdrop.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/33-irdrop.log}"
+
+Sun Dec 03 10:18:03 UTC 2023 - Executing "magic -noconsole -dnull -rcfile /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/34-gdsii.log"
+
+Sun Dec 03 10:18:03 UTC 2023 - Executing "{magic -noconsole -dnull -rcfile /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/34-gdsii.log}"
+
+Sun Dec 03 10:18:05 UTC 2023 - Executing "magic -noconsole -dnull -rcfile /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/34-gds_ptrs.log"
+
+Sun Dec 03 10:18:05 UTC 2023 - Executing "{magic -noconsole -dnull -rcfile /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/34-gds_ptrs.log}"
+
+Sun Dec 03 10:18:07 UTC 2023 - Executing "{sed -i.bak -n {/^<< properties >>/,/^<< end >>/p} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/signoff/gds_ptrs.mag}"
+
+Sun Dec 03 10:18:07 UTC 2023 - Executing "magic -noconsole -dnull -rcfile /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/34-lef.log"
+
+Sun Dec 03 10:18:07 UTC 2023 - Executing "{magic -noconsole -dnull -rcfile /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/34-lef.log}"
+
+Sun Dec 03 10:18:13 UTC 2023 - Executing "magic -noconsole -dnull -rcfile /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/34-maglef.log"
+
+Sun Dec 03 10:18:13 UTC 2023 - Executing "{magic -noconsole -dnull -rcfile /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/34-maglef.log}"
+
+Sun Dec 03 10:18:14 UTC 2023 - Executing "{python3 /openlane/scripts/klayout/stream_out.py --output /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/results/signoff/spimemio.klayout.gds --lyt /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/klayout/tech/sky130A.lyt --lym /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/klayout/tech/sky130A.map --lyp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/klayout/tech/sky130A.lyp --top spimemio --with-gds-file /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds --input-lef /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/merged.nom.lef /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/results/routing/spimemio.def |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/35-gdsii-klayout.log}"
+
+Sun Dec 03 10:18:15 UTC 2023 - Executing "{klayout -b -r /openlane/scripts/klayout/xor.drc -rd a=/openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/results/signoff/spimemio.gds -rd b=/openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/results/signoff/spimemio.klayout.gds -rd jobs=1 -rd rdb_out=/openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/signoff/36-xor.xml -rd ignore=81/14 -rd rpt_out=/openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/signoff/36-xor.rpt |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/36-xor.log}"
+
+Sun Dec 03 10:18:28 UTC 2023 - Executing "magic -noconsole -dnull -rcfile /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/37-spice.log"
+
+Sun Dec 03 10:18:28 UTC 2023 - Executing "{magic -noconsole -dnull -rcfile /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/37-spice.log}"
+
+Sun Dec 03 10:18:44 UTC 2023 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/power_utils.py write_powered_def --output /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/signoff/37-spimemio.p.def --input-lef /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/merged.nom.lef --power-port VPWR --ground-port VGND --powered-netlist {} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/results/routing/spimemio.def |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/38-write_powered_def.log}"
+
+Sun Dec 03 10:18:45 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/write_views.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/38-write_powered_verilog.log"
+
+Sun Dec 03 10:18:45 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/write_views.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/38-write_powered_verilog.log}"
+
+Sun Dec 03 10:18:46 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/spimemio\/runs\/RUN_2023.12.03_10.14.21\/tmp\/signoff\/37-spimemio.nl.v/} /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/config.tcl}"
+
+Sun Dec 03 10:18:47 UTC 2023 - Executing "{netgen -batch source /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/tmp/signoff/40-setup_file.lef.lvs |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/40-lvs.lef.log}"
+
+Sun Dec 03 10:18:49 UTC 2023 - Executing "magic -noconsole -dnull -rcfile /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/41-drc.log"
+
+Sun Dec 03 10:18:50 UTC 2023 - Executing "{magic -noconsole -dnull -rcfile /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/41-drc.log}"
+
+Sun Dec 03 10:19:34 UTC 2023 - Executing "{python3 /openlane/scripts/drc_rosetta.py magic to_tcl -o /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/signoff/drc.tcl /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/signoff/drc.rpt}"
+
+Sun Dec 03 10:19:34 UTC 2023 - Executing "{python3 /openlane/scripts/drc_rosetta.py magic to_tr -o /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/signoff/drc.tr /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/signoff/drc.rpt}"
+
+Sun Dec 03 10:19:34 UTC 2023 - Executing "{python3 /openlane/scripts/drc_rosetta.py tr to_klayout -o /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/signoff/drc.klayout.xml --design-name spimemio /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/signoff/drc.tr}"
+
+Sun Dec 03 10:19:34 UTC 2023 - Executing "{python3 /openlane/scripts/drc_rosetta.py magic to_rdb -o /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/signoff/drc.rdb /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/signoff/drc.rpt}"
+
+Sun Dec 03 10:19:35 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/antenna_check.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/42-arc.log"
+
+Sun Dec 03 10:19:35 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/antenna_check.tcl |& tee /dev/null /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/42-arc.log}"
+
+Sun Dec 03 10:19:36 UTC 2023 - Executing "{python3 /openlane/scripts/extract_antenna_violators.py --output /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/signoff/42-antenna_violators.rpt --plain-out /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/signoff/42-antenna_violators_pins.txt /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/logs/signoff/42-arc.log}"
+
+Sun Dec 03 10:19:37 UTC 2023 - Executing "{python3 /openlane/scripts/write_runtime.py --conclude --seconds --time-in 1701598777 {flow completed}}"
+
+Sun Dec 03 10:19:37 UTC 2023 - Executing "{python3 /openlane/scripts/generate_reports.py -d /openlane/designs/spimemio --design_name spimemio --tag RUN_2023.12.03_10.14.21 --output_file /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/metrics.csv --man_report /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21/reports/manufacturability.rpt --run_path /openlane/designs/spimemio/runs/RUN_2023.12.03_10.14.21}"
+

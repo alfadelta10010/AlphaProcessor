@@ -1,0 +1,25 @@
+
+54. Printing statistics.
+
+=== alphacore ===
+
+   Number of wires:              11349
+   Number of wire bits:          13781
+   Number of public wires:         161
+   Number of public wire bits:    2112
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              13456
+     $_ANDNOT_                    2223
+     $_AND_                        563
+     $_MUX_                       5468
+     $_NAND_                       380
+     $_NOR_                        399
+     $_NOT_                        257
+     $_ORNOT_                      238
+     $_OR_                        1621
+     $_XNOR_                       119
+     $_XOR_                        421
+     sky130_fd_sc_hd__dfxtp_2     1767
+

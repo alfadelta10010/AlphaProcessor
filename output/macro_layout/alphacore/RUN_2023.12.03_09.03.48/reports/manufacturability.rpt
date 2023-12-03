@@ -1,0 +1,19 @@
+Design Name: alphacore
+Run Directory: /openlane/designs/alphacore/runs/RUN_2023.12.03_09.03.48
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openlane/designs/alphacore/runs/RUN_2023.12.03_09.03.48/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /openlane/designs/alphacore/runs/RUN_2023.12.03_09.03.48/logs/signoff/40-alphacore.lef.lvs.log
+Number of nets: 10986                      |Number of nets: 10986                      
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /openlane/designs/alphacore/runs/RUN_2023.12.03_09.03.48/logs/signoff/42-arc.log
+Pin violations: 1
+Net violations: 1

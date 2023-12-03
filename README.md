@@ -307,6 +307,10 @@ set ::env(CLOCK_PERIOD) "1100.00"
 set ::env(CLOCK_PORT) "clk"
 set ::env(CLOCK_NET) $::env(CLOCK_PORT)
 set ::(DESIGN_IS_CORE) {0}
+set ::(FP_CORE_UTIL) 5
+set ::(PL_TARGET_FREQUENCY) 0.5
+set ::(RUN_HEURISTIC_DIODE_INSERTION) {1}
+
 ```
 - `DESIGN_NAME`: The name of the top level module of the design
 - `VERILOG_FILES`: The path of the design's Verilog files
@@ -316,6 +320,9 @@ set ::(DESIGN_IS_CORE) {0}
 - `CLOCK_PERIOD`: The clock period used for clocks in the design, in nanoseconds
 - `CLOCK_NET`: The name of the net input to root clock buffer
 - `DESIGN_IS_CORE`: Controls the layers used in the power grid, we set it to `0` as our design is a macro which goes inside the core.
+- `RUN_HEURISTIC_DIODE_INSERTION`: Uses a script to place diodes more efficiently
+- `PL_TARGET_FREQUENCY`: The desired placement density of cells, reflects how spread the cells would be on the core area, set to a high value for macros
+- `FP_CORE_UTIL`: Core utilization percentage, set to a low value for macros
 
 - For each macro, we create a Pin Configuration file to specify pin placement:
 `spimemio/pin_order.cfg`

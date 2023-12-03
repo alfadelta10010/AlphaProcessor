@@ -1,6 +1,0 @@
-<< properties >>
-string FIXED_BBOX 0 0 176515 178659
-string GDS_END 83539458
-string GDS_FILE /openlane/designs/alphasoc_mem/runs/RUN_2023.12.02_20.46.33/results/signoff/alphasoc_mem.magic.gds
-string GDS_START 338600
-<< end >>

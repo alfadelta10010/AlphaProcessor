@@ -1,6 +1,0 @@
-<< properties >>
-string FIXED_BBOX 0 0 97377 99521
-string GDS_END 39544006
-string GDS_FILE /openlane/designs/alphacore/runs/RUN_2023.12.03_09.03.48/results/signoff/alphacore.magic.gds
-string GDS_START 1198914
-<< end >>

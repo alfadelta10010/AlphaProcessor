@@ -362,7 +362,7 @@ rdata.*
 - For multiple bit wide ports, we define the mapping with `portname.*` to tell the floorplanner to include all the bits of the port.
 
 - We also create a base SDC file for each macro to instruct the Static Timing Analyser for analysis done at various stages
-`spimemio/spimemio.sdc`
+File: `spimemio/spimemio.sdc`
 ```tcl
 set_units -time ns
 create_clock [get_ports clk] -name core_clk -period 1100
@@ -375,13 +375,27 @@ create_clock [get_ports clk] -name core_clk -period 1100
 
 - We then copy the result back into our main project directory:
 ```bash
-cp -r /usr/local/tools/Openlane/designs/MacroName/runs/* output/macro_layout/MacroName/
+cp -r /usr/local/tools/Openlane/designs/spimemio/runs/RUN*/logs output/macro_layout/spimemio/logs
+cp -r /usr/local/tools/Openlane/designs/spimemio/runs/RUN*/results/final output/macro_layout/spimemio/results
+cp -r /usr/local/tools/Openlane/designs/spimemio/runs/RUN*/reports output/macro_layout/spimemio/reports
+
+cp -r /usr/local/tools/Openlane/designs/alphasoc_mem/runs/RUN*/logs output/macro_layout/alphasoc_mem/logs
+cp -r /usr/local/tools/Openlane/designs/alphasoc_mem/runs/RUN*/results/final output/macro_layout/alphasoc_mem/results
+cp -r /usr/local/tools/Openlane/designs/alphasoc_mem/runs/RUN*/reports output/macro_layout/alphasoc_mem/reports
+
+cp -r /usr/local/tools/Openlane/designs/alphacore/runs/RUN*/logs output/macro_layout/alphacore/logs
+cp -r /usr/local/tools/Openlane/designs/alphacore/runs/RUN*/results/final output/macro_layout/alphacore/results
+cp -r /usr/local/tools/Openlane/designs/alphacore/runs/RUN*/reports output/macro_layout/alphacore/reports
+
+cp -r /usr/local/tools/Openlane/designs/simpleuart/runs/RUN*/logs output/macro_layout/simpleuart/logs
+cp -r /usr/local/tools/Openlane/designs/simpleuart/runs/RUN*/results/final output/macro_layout/simpleuart/results
+cp -r /usr/local/tools/Openlane/designs/simpleuart/runs/RUN*/reports output/macro_layout/simpleuart/reports
 ```
 
 - Overall, we generate 4 macros, `spimemio`, `simpleuart`, `alphasoc_mem` and `alphacore`
 - We then integrate these macros into our final core
 
-#### AlphaCore Final GDSII Layout
+#### Macro AlphaCore Final GDSII Layout
 - We run the following commands to see the GDSII layout of the core
 ```bash
 magic output/macro_layout/alphacore/RUN_2023.12.03_09.03.48/results/final/mag/alphacore.mag -T src/lib/sky130A.tech
@@ -390,4 +404,11 @@ magic output/macro_layout/alphacore/RUN_2023.12.03_09.03.48/results/final/mag/al
 
 ![AlphaCore GDSII Layout](images/alphacore_gdsii.png)
 
-### Creating the final file
+### Creating the core: AlphaSoc
+- First, we set up our environment as follows:
+```bash
+cp output/macro_layout/alphacore/RUN*/
+cp output/macro_layout/alphasoc_mem/RUN*/
+cp output/macro_layout/simpleuart/
+cp output/macro_layout/spimemio/
+```
